@@ -31,3 +31,8 @@ source;translation
 СВ;Q
 Земля;Ground
 Неисправность;Fault
+АВР;ATS
+СШ;SEC
+1СШ;1SEC
+2СШ;2SEC
+1СШ 10кВ;1SEC 10kV
