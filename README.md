@@ -38,14 +38,24 @@ go run ./cmd/svg-text extract -in examples/sld -out strings
 
 Open the generated `.csv` files (they open cleanly in a spreadsheet app) and fill in the `translation` column. Re-running `extract` later (e.g. after an SVG changes) carries forward any translations already present under matching keys.
 
-Add `--ru-en` to pre-fill every still-blank `translation` with a plain Cyrillic-to-Latin transliteration (а→a, б→b, ж→zh, щ→shch, ...) instead of leaving it empty — a starting point to hand-edit into a real translation, not a translation itself. It never overwrites a translation that's already present:
+Use `-dictionary` to pre-fill still-blank translations from a lookup table of exact, whole-string matches — common single words/units that recur across many SVGs (`Гц;Hz`, `В;V`, `кВ;kV`, ...). [`dictionary.csv`](dictionary.csv) at the repo root is a starter set of electrical units; it's a plain two-column `source;translation` CSV (also `;`-separated), so add your own rows or point `-dictionary` at your own file:
 ```
-go run ./cmd/svg-text extract -in examples/sld -out strings --ru-en
+go run ./cmd/svg-text extract -in examples/sld -out strings -dictionary dictionary.csv
 ```
 ```
 key;source;translation
+8ced98b958cbabb5;кВ;kV
+1d15dbf70d129544;А;A
+```
+
+Add `--ru-en` to pre-fill any translation still blank after the dictionary lookup with a plain Cyrillic-to-Latin transliteration (а→a, б→b, ж→zh, щ→shch, ...) instead of leaving it empty — a starting point to hand-edit into a real translation, not a translation itself. Neither `-dictionary` nor `--ru-en` ever overwrites a translation that's already present, and they can be combined (dictionary matches win, everything else falls through to transliteration):
+```
+go run ./cmd/svg-text extract -in examples/sld -out strings -dictionary dictionary.csv --ru-en
+```
+```
+key;source;translation
+8ced98b958cbabb5;кВ;kV
 72a1642d8862f47b;1 сш 10 кВ;1 ssh 10 kV
-5d22aeca9ace40b4;100кВА;100kVA
 ```
 
 ### Inject translations back into the SVGs

@@ -55,11 +55,24 @@ func runExtract(args []string) error {
 	fs := flag.NewFlagSet("extract", flag.ExitOnError)
 	inPath := fs.String("in", "", "SVG file or directory to scan (required)")
 	outPath := fs.String("out", "", "Output .csv file, or directory when -in is a directory (required)")
-	ruEn := fs.Bool("ru-en", false, "Pre-fill blank translations with a Cyrillic-to-Latin transliteration (а->a, б->b, ...) instead of leaving them empty")
+	ruEn := fs.Bool("ru-en", false, "Pre-fill still-blank translations with a Cyrillic-to-Latin transliteration (а->a, б->b, ...) instead of leaving them empty")
+	dictionaryPath := fs.String("dictionary", "", "Optional source;translation CSV of common strings to pre-fill blank translations with, ahead of -ru-en")
 	fs.Parse(args)
 
 	if *inPath == "" || *outPath == "" {
 		return fmt.Errorf("extract: -in and -out are required")
+	}
+
+	var dict map[string]string
+	if *dictionaryPath != "" {
+		b, err := os.ReadFile(*dictionaryPath)
+		if err != nil {
+			return err
+		}
+		dict, err = svgtext.LoadDictionary(bytes.NewReader(b))
+		if err != nil {
+			return fmt.Errorf("reading dictionary %s: %w", *dictionaryPath, err)
+		}
 	}
 
 	info, err := os.Stat(*inPath)
@@ -68,7 +81,7 @@ func runExtract(args []string) error {
 	}
 
 	if !info.IsDir() {
-		return extractOne(*inPath, *outPath, *ruEn)
+		return extractOne(*inPath, *outPath, *ruEn, dict)
 	}
 
 	files, err := walkSVGFiles(*inPath)
@@ -80,14 +93,14 @@ func runExtract(args []string) error {
 		if err != nil {
 			return err
 		}
-		if err := extractOne(f, filepath.Join(*outPath, swapExt(rel, ".csv")), *ruEn); err != nil {
+		if err := extractOne(f, filepath.Join(*outPath, swapExt(rel, ".csv")), *ruEn, dict); err != nil {
 			return fmt.Errorf("%s: %w", f, err)
 		}
 	}
 	return nil
 }
 
-func extractOne(svgPath, outCSVPath string, ruEn bool) error {
+func extractOne(svgPath, outCSVPath string, ruEn bool, dict map[string]string) error {
 	raw, err := os.ReadFile(svgPath)
 	if err != nil {
 		return err
@@ -107,16 +120,21 @@ func extractOne(svgPath, outCSVPath string, ruEn bool) error {
 		return err
 	}
 
-	added, dropped, transliterated := 0, 0, 0
+	added, dropped, fromDict, transliterated := 0, 0, 0, 0
 	for k, e := range entries {
 		if old, ok := existing[k]; ok {
 			e.Translation = old.Translation
 		} else {
 			added++
 		}
-		if ruEn && e.Translation == "" {
-			e.Translation = svgtext.Transliterate(e.Source)
-			transliterated++
+		if e.Translation == "" {
+			if t, ok := dict[e.Source]; ok {
+				e.Translation = t
+				fromDict++
+			} else if ruEn {
+				e.Translation = svgtext.Transliterate(e.Source)
+				transliterated++
+			}
 		}
 		entries[k] = e
 	}
@@ -140,6 +158,9 @@ func extractOne(svgPath, outCSVPath string, ruEn bool) error {
 
 	fmt.Printf("%s -> %s: %d strings (%d new, %d matched existing, %d dropped",
 		svgPath, outCSVPath, len(entries), added, len(entries)-added, dropped)
+	if len(dict) > 0 {
+		fmt.Printf(", %d from dictionary", fromDict)
+	}
 	if ruEn {
 		fmt.Printf(", %d transliterated", transliterated)
 	}
