@@ -15,6 +15,14 @@ type Entry struct {
 	Translation string
 }
 
+// NullTranslation is a sentinel Translation value meaning "replace this
+// occurrence with an empty string" — as opposed to a blank Translation,
+// which means "not yet translated, leave the original text untouched."
+// Matched case-insensitively. Useful for placeholder/template text (e.g. a
+// live clock's "DD.MM.YYYY" label) that should simply be removed rather
+// than translated.
+const NullTranslation = "null"
+
 // fieldDelim is ';' rather than a tab: source strings in this SLD corpus
 // commonly contain literal commas (Russian decimal notation, e.g. "2,5"),
 // but never semicolons, so this needs almost no CSV quoting in practice —

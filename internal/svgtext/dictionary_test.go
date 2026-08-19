@@ -16,8 +16,8 @@ func TestLoadDictionary(t *testing.T) {
 		t.Fatalf("got %+v want %+v", dict, want)
 	}
 	for k, v := range want {
-		if dict[k] != v {
-			t.Fatalf("dict[%q] = %q, want %q", k, dict[k], v)
+		if dict[DictionaryKey(k)] != v {
+			t.Fatalf("dict[%q] = %q, want %q", k, dict[DictionaryKey(k)], v)
 		}
 	}
 }
@@ -27,7 +27,33 @@ func TestLoadDictionary_NoHeader(t *testing.T) {
 	if err != nil {
 		t.Fatalf("LoadDictionary: %v", err)
 	}
-	if dict["Гц"] != "Hz" {
+	if dict[DictionaryKey("Гц")] != "Hz" {
 		t.Fatalf("got %+v", dict)
+	}
+}
+
+func TestLoadDictionary_CaseInsensitiveLookup(t *testing.T) {
+	dict, err := LoadDictionary(strings.NewReader("source;translation\n1СШ 10кВ;1SEC 10kV\n"))
+	if err != nil {
+		t.Fatalf("LoadDictionary: %v", err)
+	}
+	for _, variant := range []string{"1СШ 10кВ", "1сш 10кв", "1Сш 10Кв"} {
+		if got := dict[DictionaryKey(variant)]; got != "1SEC 10kV" {
+			t.Fatalf("dict[DictionaryKey(%q)] = %q, want %q", variant, got, "1SEC 10kV")
+		}
+	}
+}
+
+func TestLoadDictionary_WhitespaceInsensitiveLookup(t *testing.T) {
+	dict, err := LoadDictionary(strings.NewReader("source;translation\n1СШ 10кВ;1SEC 10kV\n"))
+	if err != nil {
+		t.Fatalf("LoadDictionary: %v", err)
+	}
+	// Same tokens, different placement/amount of whitespace: this is a real
+	// formatting variance seen across the SLD corpus, not a hypothetical.
+	for _, variant := range []string{"1 сш 10 кВ", "1сш10кв", "1  СШ 10 КВ", "1СШ10кВ"} {
+		if got := dict[DictionaryKey(variant)]; got != "1SEC 10kV" {
+			t.Fatalf("dict[DictionaryKey(%q)] = %q, want %q", variant, got, "1SEC 10kV")
+		}
 	}
 }

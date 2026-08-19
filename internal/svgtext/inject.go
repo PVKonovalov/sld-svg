@@ -4,6 +4,7 @@ import (
 	"bytes"
 	"encoding/xml"
 	"fmt"
+	"strings"
 	"unicode"
 )
 
@@ -43,12 +44,15 @@ func InjectFile(raw []byte, translations map[string]Entry) ([]byte, Report, erro
 			missing[o.Key] = true
 			continue
 		}
-		if hasControl(entry.Translation) {
+		translation := entry.Translation
+		if strings.EqualFold(translation, NullTranslation) {
+			translation = ""
+		} else if hasControl(translation) {
 			invalid[o.Key] = true
 			continue
 		}
 		var buf bytes.Buffer
-		if err := xml.EscapeText(&buf, []byte(entry.Translation)); err != nil {
+		if err := xml.EscapeText(&buf, []byte(translation)); err != nil {
 			return nil, Report{}, fmt.Errorf("svgtext: escaping translation for key %s: %w", o.Key, err)
 		}
 		patches = append(patches, Patch{Start: o.Start, End: o.End, Replacement: buf.Bytes()})

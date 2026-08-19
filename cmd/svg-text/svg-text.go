@@ -57,6 +57,7 @@ func runExtract(args []string) error {
 	outPath := fs.String("out", "", "Output .csv file, or directory when -in is a directory (required)")
 	ruEn := fs.Bool("ru-en", false, "Pre-fill still-blank translations with a Cyrillic-to-Latin transliteration (а->a, б->b, ...) instead of leaving them empty")
 	dictionaryPath := fs.String("dictionary", "", "Optional source;translation CSV of common strings to pre-fill blank translations with, ahead of -ru-en")
+	rewrite := fs.Bool("rewrite", false, "Ignore any existing output .csv and regenerate every translation from -dictionary/-ru-en, instead of preserving translations already on disk")
 	fs.Parse(args)
 
 	if *inPath == "" || *outPath == "" {
@@ -81,7 +82,7 @@ func runExtract(args []string) error {
 	}
 
 	if !info.IsDir() {
-		return extractOne(*inPath, *outPath, *ruEn, dict)
+		return extractOne(*inPath, *outPath, *ruEn, *rewrite, dict)
 	}
 
 	files, err := walkSVGFiles(*inPath)
@@ -93,14 +94,14 @@ func runExtract(args []string) error {
 		if err != nil {
 			return err
 		}
-		if err := extractOne(f, filepath.Join(*outPath, swapExt(rel, ".csv")), *ruEn, dict); err != nil {
+		if err := extractOne(f, filepath.Join(*outPath, swapExt(rel, ".csv")), *ruEn, *rewrite, dict); err != nil {
 			return fmt.Errorf("%s: %w", f, err)
 		}
 	}
 	return nil
 }
 
-func extractOne(svgPath, outCSVPath string, ruEn bool, dict map[string]string) error {
+func extractOne(svgPath, outCSVPath string, ruEn, rewrite bool, dict map[string]string) error {
 	raw, err := os.ReadFile(svgPath)
 	if err != nil {
 		return err
@@ -111,13 +112,15 @@ func extractOne(svgPath, outCSVPath string, ruEn bool, dict map[string]string) e
 	}
 
 	existing := map[string]svgtext.Entry{}
-	if b, err := os.ReadFile(outCSVPath); err == nil {
-		existing, err = svgtext.LoadTranslations(bytes.NewReader(b))
-		if err != nil {
-			return fmt.Errorf("reading existing %s: %w", outCSVPath, err)
+	if !rewrite {
+		if b, err := os.ReadFile(outCSVPath); err == nil {
+			existing, err = svgtext.LoadTranslations(bytes.NewReader(b))
+			if err != nil {
+				return fmt.Errorf("reading existing %s: %w", outCSVPath, err)
+			}
+		} else if !os.IsNotExist(err) {
+			return err
 		}
-	} else if !os.IsNotExist(err) {
-		return err
 	}
 
 	added, dropped, fromDict, transliterated := 0, 0, 0, 0
@@ -128,7 +131,7 @@ func extractOne(svgPath, outCSVPath string, ruEn bool, dict map[string]string) e
 			added++
 		}
 		if e.Translation == "" {
-			if t, ok := dict[e.Source]; ok {
+			if t, ok := dict[svgtext.DictionaryKey(e.Source)]; ok {
 				e.Translation = t
 				fromDict++
 			} else if ruEn {
@@ -163,6 +166,9 @@ func extractOne(svgPath, outCSVPath string, ruEn bool, dict map[string]string) e
 	}
 	if ruEn {
 		fmt.Printf(", %d transliterated", transliterated)
+	}
+	if rewrite {
+		fmt.Printf(", rewritten")
 	}
 	fmt.Println(")")
 	return nil

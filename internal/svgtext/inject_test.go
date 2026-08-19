@@ -55,6 +55,47 @@ func TestRoundTrip_ExtractTranslateInject(t *testing.T) {
 	}
 }
 
+func TestInjectFile_NullTranslationDeletesText(t *testing.T) {
+	raw := wrap("", `<text>DD.MM.YYYY</text><rect data-name="DD:MM:YYYY HH:MM:SS"/>`)
+
+	entries, err := ExtractFile(raw)
+	if err != nil {
+		t.Fatalf("ExtractFile: %v", err)
+	}
+	for k, e := range entries {
+		switch e.Source {
+		case "DD.MM.YYYY":
+			e.Translation = "null"
+		case "DD:MM:YYYY HH:MM:SS":
+			e.Translation = "NULL" // case-insensitive
+		}
+		entries[k] = e
+	}
+
+	out, report, err := InjectFile(raw, entries)
+	if err != nil {
+		t.Fatalf("InjectFile: %v", err)
+	}
+	if report.Applied != 2 {
+		t.Fatalf("expected 2 applied, got %d (report=%+v)", report.Applied, report)
+	}
+
+	got := string(out)
+	for _, want := range []string{"<text></text>", `data-name=""`} {
+		if !strings.Contains(got, want) {
+			t.Fatalf("output missing %q: %s", want, got)
+		}
+	}
+	for _, oldText := range []string{"DD.MM.YYYY", "DD:MM:YYYY HH:MM:SS"} {
+		if strings.Contains(got, oldText) {
+			t.Fatalf("output still contains placeholder text %q: %s", oldText, got)
+		}
+	}
+	if _, err := Scan(out); err != nil {
+		t.Fatalf("Scan(injected output): %v", err)
+	}
+}
+
 func TestInjectFile_NoTranslationsLeavesFileUnchanged(t *testing.T) {
 	raw := wrap("", `<text>Untouched</text>`)
 	out, report, err := InjectFile(raw, map[string]Entry{})

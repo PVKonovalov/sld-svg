@@ -19,6 +19,7 @@ source;translation
 Ом;Ohm
 кОм;kOhm
 МОм;MOhm
+Iср;Iavr
 Ф;F
 мкФ;µF
 Гн;H
@@ -31,8 +32,37 @@ source;translation
 СВ;Q
 Земля;Ground
 Неисправность;Fault
+Предупреждение;Warning
 АВР;ATS
 СШ;SEC
+0СШ;0SEC
 1СШ;1SEC
 2СШ;2SEC
+3СШ;3SEC
 1СШ 10кВ;1SEC 10kV
+2СШ 10кВ;2SEC 10kV
+2СШ 10кВ;2SEC 10kV
+1СШ 110кВ;1SEC 110kV
+2СШ 110кВ;2SEC 110kV
+2СШ 110кВ;2SEC 110kV
+DD.MM.YYYY;null
+DD:MM:YYY HH:MM:SS;null
+DD:MM:YYYY HH:MM:SS;null
+ТУ Включено;Telecontrol enabled
+Срабатывние РЗА;Protection triggered
+Индикатор;Indicator
+Земля в сети;Grid grounded
+Земля на 1 сш 10кВ;1SEC 10kV grounded
+Земля на 2 сш 10кВ;2SEC 10kV grounded
+Журнал событий;Event log
+Авария;Accident
+КРУН-10 кВ;Switchgear 10kV
+ОРУ-110 кВ;AIS 110kV
+ОРУ-35 кВ;AIS 35kV
+РЗА;RPA
+kvar;kVAr
+Люди на ПС;People at S/S
+кВАР;kVAr
+МУ Включено;Local control ON
+Ключ МУ;Local control enabled
+Ключ ТУ;Telecontrol enabled
