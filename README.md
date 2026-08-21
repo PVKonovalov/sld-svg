@@ -104,10 +104,10 @@ go run ./cmd/svg-sld extract -in examples/sld -out diagrams -voltage-hints volta
 
 Example output (trimmed):
 ```xml
-<diagram width="2230" height="1600" source="RP_10kV_Vypolzovo.svg">
+<diagram width="2230" height="1600" source="SS_test.svg">
   <layers>
     <layer id="0" name="Base"></layer>
-    <layer id="10" name="Контейнеры"></layer>
+    <layer id="10" name="Groups"></layer>
   </layers>
   <voltageClasses>
     <class id="v1" name="6кВ" color="#326400"></class>
