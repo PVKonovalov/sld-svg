@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Reusable per-shape SVG templates used by `svg-sld render` to draw an
+  slddoc.Diagram's elements. Each <symbol> is keyed by the xsde2svg
+  ObjectType code an Element.Shape carries (see internal/slddoc/elements.go)
+  and is drawn in local coordinates around the origin (0,0), in the shape's
+  native (unrotated) orientation. The renderer places it with
+  transform="translate(x,y) rotate(orient)".
+
+  Geometry here was derived directly from the corresponding
+  element_<code>.go rendering function in the xsde2svg source (a sibling
+  project, xsde2svg), not guessed from rendered
+  output, so it reproduces the original shapes exactly for the default
+  (unscaled, default-spacing) case each formula covers.
+
+  Placeholders: {color} is the voltage class's display color; {fill} is a
+  state-dependent fill (breakers only — red/lawngreen/yellow for
+  open/closed/unknown, "none" when no state was recorded).
+  {state:parallel|perpendicular|diagonal} picks one of the three given path
+  "d" fragments by the element's State: parallel (drawn along the device's
+  own vertical axis) for closed (1) or unrecorded, perpendicular for open
+  (0), diagonal (45°) for any other recorded value. The parallel/
+  perpendicular geometry is confirmed from the corresponding xsde2svg
+  element_<code>.go source; the diagonal case is a live-status convention
+  this static export format doesn't itself encode.
+-->
+<symbols>
+  <!-- 41: Breaker (fixed) -->
+  <symbol shape="41">
+    <template><![CDATA[
+<path d="M -7 -7 h 14 v 14 h -14 z" style="fill:{fill};stroke:{color};stroke-width:1" />
+<path d="{state:M 0 -5 v 10|M -5 0 h 10|M -3.5 -3.5 l 7 7}" style="stroke:{color};stroke-width:1" />
+<path d="M 0 -10 v 3 M 0 10 v -3" style="stroke:{color};stroke-width:1" />
+]]></template>
+  </symbol>
+
+  <!-- 43: Breaker (withdrawable). The line+chevron
+       pair close to the box on each side is the withdrawable "trolley"
+       isolating contact; the small gap out to the far chevron is the
+       isolating throw distance, drawn as a gap by design, not a missing
+       connector. -->
+  <symbol shape="43">
+    <template><![CDATA[
+<path d="M -8 -8 h 17 v 17 h -17 z" style="fill:{fill};stroke:{color};stroke-width:1" />
+<path d="{state:M 0 -5 v 11|M -5 0 h 11|M -3.9 -3.9 l 7.8 7.8}" style="stroke:{color};stroke-width:1" />
+<path d="M 0 -8 v -13 m 0 0 l -4 4 m 4 -4 l 4 4 M 0 8 v 13 m 0 0 l -4 -4 m 4 4 l 4 -4" style="stroke:{color};stroke-width:1" />
+<path d="M 0 -30 l -4 4 m 8 0 l -4 -4 M 0 30 l -4 -4 m 8 0 l -4 4" style="stroke:{color};stroke-width:1" />
+]]></template>
+  </symbol>
+
+  <!-- 71 / 162: Disconnector -->
+  <symbol shape="71">
+    <template><![CDATA[
+<path d="{state:M 0 6 v -13|M -6 0 h 13|M -4.6 -4.6 l 9.2 9.2}" style="fill:none;stroke:{color};stroke-width:1" />
+<path d="M -4 -9 h 8 m 0 18 h -8" style="fill:none;stroke:{color};stroke-width:1" />
+<path d="M 0 -9 v -1 M 0 9 v 1" style="fill:none;stroke:{color};stroke-width:1" />
+]]></template>
+  </symbol>
+  <symbol shape="162">
+    <template><![CDATA[
+<path d="{state:M 0 6 v -13|M -6 0 h 13|M -4.6 -4.6 l 9.2 9.2}" style="fill:none;stroke:{color};stroke-width:1" />
+<path d="M -4 -9 h 8 m 0 18 h -8" style="fill:none;stroke:{color};stroke-width:1" />
+<path d="M 0 -9 v -1 M 0 9 v 1" style="fill:none;stroke:{color};stroke-width:1" />
+]]></template>
+  </symbol>
+
+  <!-- 54: Ground switch -->
+  <symbol shape="54">
+    <template><![CDATA[
+<path d="M 0 12 v -9 m -4 0 h 8 m -8 -20 h 8 m -4 0 v -8 m -8 0 h 16 m -2 -3 h -12 m 2 -3 h 8" style="fill:none;stroke:{color};stroke-width:1" />
+<path d="M 6 -8 h -12" style="fill:none;stroke:{color};stroke-width:1" />
+]]></template>
+  </symbol>
+
+  <!-- 47: Power transformer, 2-winding case -->
+  <symbol shape="47">
+    <template><![CDATA[
+<circle cx="18" cy="0" r="22" style="fill:none;stroke:{color};stroke-width:2" />
+<path d="M 40 0 h 13" style="fill:none;stroke:{color};stroke-width:2" />
+<path d="M 18 0 l -7 -7 M 18 0 l 7 -7 M 18 0 l 0 7" style="fill:none;stroke:{color};stroke-width:1" />
+<circle cx="-18" cy="0" r="22" style="fill:none;stroke:{color};stroke-width:2" />
+<path d="M -40 0 h -13" style="fill:none;stroke:{color};stroke-width:2" />
+<path d="M -18 0 l -7 -7 M -18 0 l 7 -7 M -18 0 l 0 7" style="fill:none;stroke:{color};stroke-width:1" />
+]]></template>
+  </symbol>
+
+  <!-- 7: Junction point (explicit dot) -->
+  <symbol shape="7">
+    <template><![CDATA[
+<circle cx="0" cy="0" r="3" style="fill:none;stroke:{color};stroke-width:1" />
+]]></template>
+  </symbol>
+
+  <!-- 42: Load-break switch -->
+  <symbol shape="42">
+    <template><![CDATA[
+<path d="M 0 -10 v 2 m 0 16 v 2 m -8 -2 h 16 m -16 -16 h 16" style="fill:none;stroke:{color};stroke-width:1" />
+<path d="M 0 -8 l 8 8 l -8 8 l -8 -8 l 8 -8" style="fill:{fill};stroke:{color};stroke-width:1" />
+<path d="{state:M 0 -5 v 10|M -5 0 h 10|M -3.5 -3.5 l 7 7}" style="fill:none;stroke:{color};stroke-width:1" />
+]]></template>
+  </symbol>
+
+  <!-- 49: Disconnector (withdrawable) -->
+  <symbol shape="49">
+    <template><![CDATA[
+<path d="M 0 -22 l -4 4 m 4 -4 l 4 4 m -4 -4 v 12 m -4 0 h 8 m -4 2 v 16 m -4 2 h 8 m -4 0 v 12 l -4 -4 m 4 4 l 4 -4" style="fill:none;stroke:{color};stroke-width:1" />
+<path d="M 0 30 l -4 -4 m 4 4 l 4 -4 M 0 -30 l -4 4 m 4 -4 l 4 4" style="fill:none;stroke:{color};stroke-width:1" />
+]]></template>
+  </symbol>
+
+  <!-- 33: Choke coil -->
+  <symbol shape="33">
+    <template><![CDATA[
+<path d="M 0 -20 v 5 h 1 m 0 0 a 5 5 0 1 1 0 10 a 5 5 0 1 1 0 10 a 5 5 0 1 1 0 10 h -1 v 5" style="fill:none;stroke:{color};stroke-width:1" />
+]]></template>
+  </symbol>
+
+  <!-- 34: Current transformer -->
+  <symbol shape="34">
+    <template><![CDATA[
+<path d="M -8 -8 h 8 a 6 4 0 0 1 0 8 a 6 4 0 0 1 0 8 h -8" style="fill:none;stroke:{color};stroke-width:1" />
+<path d="M 0 -11 v 22" style="fill:none;stroke:{color};stroke-width:1" />
+]]></template>
+  </symbol>
+
+  <!-- 35: Surge arrester -->
+  <symbol shape="35">
+    <template><![CDATA[
+<path d="M 0 -10 v 8 M 0 10 v -8" style="fill:none;stroke:{color};stroke-width:1" />
+<path d="M 0 -2 l -3 -6 l 6 0 z M 0 2 l -3 6 l 6 0 z" style="fill:{color};stroke:{color};stroke-width:1" />
+]]></template>
+  </symbol>
+
+  <!-- 203: Fuse -->
+  <symbol shape="203">
+    <template><![CDATA[
+<path d="M 0 -10 v 20 m 0 -20 h 5 v 20 h -10 v -20 h 5" style="fill:none;stroke:{color};stroke-width:1" />
+]]></template>
+  </symbol>
+
+  <!-- 388: Capacitor -->
+  <symbol shape="388">
+    <template><![CDATA[
+<path d="M 0 -10 v 5 m -12 0 h 24 m -24 10 h 24 m -12 0 v 5" style="fill:none;stroke:{color};stroke-width:1" />
+]]></template>
+  </symbol>
+
+  <!-- 31: Ground terminal -->
+  <symbol shape="31">
+    <template><![CDATA[
+<path d="M 0 0 v -10 m -8 10 h 16 m -2 3 h -12 m 2 3 h 8" style="fill:none;stroke:{color};stroke-width:1" />
+]]></template>
+  </symbol>
+</symbols>

@@ -1,0 +1,174 @@
+package slddoc
+
+import (
+	"fmt"
+	"io"
+	"math"
+	"regexp"
+	"strconv"
+	"strings"
+)
+
+// defaultBackground matches the background-color xsde2svg wrote on every
+// example diagram in this corpus. v1 does not model a per-diagram
+// background.
+const defaultBackground = "#12161d"
+
+var attrEscaper = strings.NewReplacer(`&`, "&amp;", `<`, "&lt;", `>`, "&gt;", `"`, "&quot;")
+
+func esc(s string) string { return attrEscaper.Replace(s) }
+
+func fmtNum(v float64) string {
+	if v == math.Trunc(v) {
+		return strconv.FormatInt(int64(v), 10)
+	}
+	return strconv.FormatFloat(v, 'g', -1, 64)
+}
+
+func stateFill(state *int) string {
+	if state == nil {
+		return "none"
+	}
+	switch *state {
+	case 0:
+		return "red"
+	case 1:
+		return "lawngreen"
+	default:
+		return "yellow"
+	}
+}
+
+// stateLineRe matches a template's {state:parallel|perpendicular|diagonal}
+// placeholder: the switch-like devices' internal state indicator, drawn
+// parallel to the device's own (locally-vertical) axis when closed (state
+// 1), perpendicular when open (state 0), and at 45° for any other recorded
+// state (verified against xsde2svg source for parallel/perpendicular — see
+// element_41.go, element_42.go, element_43.go, element_71.go; the diagonal
+// case is a live-status convention this static export format doesn't
+// itself encode, per user-supplied domain knowledge).
+var stateLineRe = regexp.MustCompile(`\{state:([^|}]*)\|([^|}]*)\|([^}]*)\}`)
+
+func applyStateLine(tmpl string, state *int) string {
+	return stateLineRe.ReplaceAllStringFunc(tmpl, func(m string) string {
+		g := stateLineRe.FindStringSubmatch(m)
+		switch {
+		case state == nil, *state == 1:
+			return g[1]
+		case *state == 0:
+			return g[2]
+		default:
+			return g[3]
+		}
+	})
+}
+
+// Render writes d as a fresh SVG document, using lib to place each
+// Element's symbol. It does not attempt to reproduce the source SVG
+// byte-for-byte (see the package doc comment); the output is a new,
+// independently generated rendering of the same diagram.
+//
+// If d.Elements references a Shape absent from lib, Render still writes
+// every other element and connector, then returns an error listing every
+// missing shape once rendering is otherwise complete, so a single run
+// surfaces the whole gap instead of stopping at the first one.
+func Render(d *Diagram, lib *SymbolLibrary, w io.Writer) error {
+	voltageColor := map[string]string{}
+	for _, vc := range d.VoltageClasses {
+		voltageColor[vc.ID] = vc.Color
+	}
+
+	fmt.Fprintf(w, "<?xml version=\"1.0\"?>\n<svg width=\"%s\" height=\"%s\" style=\"stroke-width: 0px; background-color: %s;\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\">\n",
+		fmtNum(d.Width), fmtNum(d.Height), defaultBackground)
+
+	var missing []string
+	seenMissing := map[string]bool{}
+
+	for _, e := range d.Elements {
+		color := voltageColor[e.Voltage]
+		if color == "" {
+			// A PowerTransformer's two windings can carry different
+			// voltages that v1's schema doesn't record per-port (see
+			// parsePowerTransformer); fall back to a visible neutral color
+			// rather than emitting an empty stroke.
+			color = "gray"
+		}
+		if e.Class == ClassBusBarSection {
+			writePolyline(w, e.Points, color, false)
+			continue
+		}
+
+		tmpl, ok := lib.templates[e.Shape]
+		if !ok {
+			if !seenMissing[e.Shape] {
+				seenMissing[e.Shape] = true
+				missing = append(missing, e.Shape)
+			}
+			continue
+		}
+		body := applyStateLine(tmpl, e.State)
+		body = strings.NewReplacer(
+			"{color}", esc(color),
+			"{fill}", stateFill(e.State),
+		).Replace(body)
+		fmt.Fprintf(w, "<g id=\"%s\" data-name=\"%s\" transform=\"translate(%s,%s) rotate(%d)\">\n%s\n</g>\n",
+			esc(e.ID), esc(e.Name), fmtNum(e.X), fmtNum(e.Y), e.Orient, body)
+	}
+
+	for _, c := range d.Connectors {
+		writePolyline(w, c.Points, voltageColor[c.Voltage], c.Dashed)
+	}
+
+	for _, l := range d.Labels {
+		writeLabel(w, l)
+	}
+
+	fmt.Fprint(w, "</svg>\n")
+
+	if len(missing) > 0 {
+		return fmt.Errorf("slddoc: symbol library missing shape(s): %s", strings.Join(missing, ", "))
+	}
+	return nil
+}
+
+func writePolyline(w io.Writer, pts []Point, color string, dashed bool) {
+	if color == "" {
+		color = "black"
+	}
+	var sb strings.Builder
+	for i, p := range pts {
+		if i > 0 {
+			sb.WriteByte(' ')
+		}
+		sb.WriteString(fmtNum(p.X))
+		sb.WriteByte(',')
+		sb.WriteString(fmtNum(p.Y))
+	}
+	dash := ""
+	if dashed {
+		dash = "stroke-dasharray: 14,9;"
+	}
+	fmt.Fprintf(w, "<polyline points=\"%s\" style=\"fill:none;stroke:%s;%sstroke-width:1\" />\n",
+		esc(sb.String()), esc(color), dash)
+}
+
+func writeLabel(w io.Writer, l Label) {
+	anchor := l.Anchor
+	if anchor == "" {
+		anchor = "start"
+	}
+	weight := ""
+	if l.Bold {
+		weight = "font-weight: bold;"
+	}
+	style := fmt.Sprintf("fill:white;text-anchor:%s;font-size:%spx;font-family:Arial;%swhite-space: pre;",
+		anchor, fmtNum(l.Size), weight)
+
+	lines := strings.Split(l.Text, "\n")
+	fmt.Fprintf(w, "<text x=\"%s\" y=\"%s\" style=\"%s\">%s", fmtNum(l.X), fmtNum(l.Y), esc(style), esc(lines[0]))
+	for _, ln := range lines[1:] {
+		fmt.Fprintf(w, "<tspan x=\"%s\" dy=\"%s\" style=\"%s\">%s</tspan>",
+			fmtNum(l.X), fmtNum(l.Size*1.4), esc(style), esc(ln))
+	}
+	fmt.Fprint(w, "</text>\n")
+}

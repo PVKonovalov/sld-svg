@@ -1,0 +1,9 @@
+// hexColor;voltageClassName
+// Seed table for `svg-sld extract`: pre-fills a diagram's inferred voltage
+// classes when a color has already been confirmed to mean a given real
+// voltage level elsewhere in the corpus. Same idea as dictionary.csv for
+// svg-text — a starting guess, not a guarantee; check a diagram's own
+// <voltageClasses> after extracting, especially for a color not listed here.
+#962896;10кВ
+#326400;6кВ
+#00a0f0;110кВ

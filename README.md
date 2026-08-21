@@ -82,3 +82,80 @@ Some SVGs have Cyrillic filenames themselves (e.g. `Схема ТП Пример
 go run ./cmd/svg-text inject -in examples/sld -translations strings -out translated --filename-en
 ```
 `examples/sld/Схема ТП Пример Л-1 ПС Образец.svg` is written as `translated/Shema TP Primer L-1 PS Obrazets.svg`. Only the filename itself is transliterated — subdirectory names in the mirrored structure are left as-is.
+
+## svg-sld
+
+`svg-sld` extracts a diagram's placed elements, their coordinates, and the electrical topology connecting them out of an SLD SVG into a standalone `.xml` document, and can render such a document back into a fresh SVG using a symbol library.
+
+It only understands a subset of the equipment xsde2svg can draw — busbars, generic wires, junction points, breakers (fixed and withdrawable), load-break switches, disconnectors (fixed and withdrawable), ground switches, ground terminals, choke coils, current transformers, surge arresters, fuses, capacitors, and 2-winding power transformers. Anything else in the source SVG is left out of the extracted diagram; `extract` reports what it skipped rather than guessing.
+
+### Extract a diagram
+
+```
+go run ./cmd/svg-sld extract -in examples/sld/substation.svg -out diagrams/substation.xml -voltage-hints voltage-hints.csv
+```
+
+Whole directory (recurses, mirroring structure, `.svg` swapped for `.xml`):
+```
+go run ./cmd/svg-sld extract -in examples/sld -out diagrams -voltage-hints voltage-hints.csv
+```
+
+`-voltage-hints` is optional; it pre-fills a diagram's `<voltageClasses>` table with the real voltage-level name (`"10кВ"`, `"6кВ"`, ...) for colors already confirmed elsewhere in the corpus — see [`voltage-hints.csv`](voltage-hints.csv) at the repo root. Without it, a class still gets extracted, just named after its own color as a placeholder to fill in by hand.
+
+Example output (trimmed):
+```xml
+<diagram width="2230" height="1600" source="RP_10kV_Vypolzovo.svg">
+  <layers>
+    <layer id="0" name="Base"></layer>
+    <layer id="10" name="Контейнеры"></layer>
+  </layers>
+  <voltageClasses>
+    <class id="v1" name="6кВ" color="#326400"></class>
+    <class id="v2" name="10кВ" color="#962896"></class>
+  </voltageClasses>
+  <nodes>
+    <node id="n1" x="810" y="240"></node>
+    <node id="n2" x="900" y="270"></node>
+    ...
+  </nodes>
+  <elements>
+    <element id="148694372" class="BusBarSection" shape="24" name="СШ 6 кВ" voltage="v1" layer="0" x="810" y="240">
+      <geometry>
+        <point x="810" y="240"></point>
+        <point x="1320" y="240"></point>
+      </geometry>
+    </element>
+    <element id="2413" class="Breaker" shape="41" name="В-10 Л-22" voltage="v2" layer="0" x="900" y="660" state="1">
+      <port name="1" node="n12"></port>
+      <port name="2" node="n13"></port>
+    </element>
+    ...
+  </elements>
+  <connectors>
+    <connector id="2405" kind="BusbarWire" voltage="v2" layer="0" from="n11" to="n12">
+      <point x="900" y="590"></point>
+      <point x="900" y="650"></point>
+    </connector>
+    ...
+  </connectors>
+  <labels>
+    <label for="2413" layer="0" x="920" y="663" size="13" anchor="start">В-10 Л-22</label>
+    ...
+  </labels>
+</diagram>
+```
+
+`class`/`shape` are independent: `class` is the equipment's real-world kind (`Breaker`, `Disconnector`, ...), while `shape` is the original xsde2svg numeric code (`"41"` vs `"43"` for a fixed vs. withdrawable breaker) — two shapes can share one class but need different render templates. `voltage` on an element/connector is a `<voltageClasses>` id, never a raw color. Every element/connector/label carries a `layer`, always resolvable against `<layers>` (an implicit `"0"`/`Base` layer is added even when the source SVG never wrote a `data-layer`), so a viewer can show/hide by layer.
+
+### Render a diagram back into SVG
+
+```
+go run ./cmd/svg-sld render -in diagrams/substation.xml -symbols symbols.xml -out rendered/substation.svg
+```
+
+Whole directory:
+```
+go run ./cmd/svg-sld render -in diagrams -symbols symbols.xml -out rendered
+```
+
+[`symbols.xml`](symbols.xml) at the repo root is the tracked symbol library — one local-coordinate SVG template per `shape` code. `render` does not aim to byte-for-byte reproduce the original SVG (unlike `svg-text inject`); it draws a fresh document from the diagram model. If an element's `shape` has no template in the library, `render` still writes everything else and reports the missing shape(s) once the document is complete, instead of stopping at the first one.
