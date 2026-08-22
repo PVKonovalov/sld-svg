@@ -13,9 +13,14 @@
   output, so it reproduces the original shapes exactly for the default
   (unscaled, default-spacing) case each formula covers.
 
-  Placeholders: {color} is the voltage class's display color; {fill} is a
-  state-dependent fill (breakers only — red/lawngreen/yellow for
-  open/closed/unknown, "none" when no state was recorded).
+  Placeholders: {color} is the voltage class's display color, except for a
+  Lamp (106), which isn't part of the electrical network — there it's the
+  element's own FillOff/FillOn (from its data-fill="0:off,1:on" attribute),
+  chosen by State. {fill} is a state-dependent fill (breakers only —
+  red/lawngreen/yellow for open/closed/unknown, "none" when no state was
+  recorded). {radius} is a Lamp's own recorded circle radius (its real
+  instances draw meaningfully different sizes for different roles, so it
+  isn't a fixed constant like other shapes' template geometry).
   {state:parallel|perpendicular|diagonal} picks one of the three given path
   "d" fragments by the element's State: parallel (drawn along the device's
   own vertical axis) for closed (1) or unrecorded, perpendicular for open
@@ -149,6 +154,13 @@
   <symbol shape="31">
     <template><![CDATA[
 <path d="M 0 0 v -10 m -8 10 h 16 m -2 3 h -12 m 2 3 h 8" style="fill:none;stroke:{color};stroke-width:1" />
+]]></template>
+  </symbol>
+
+  <!-- 106: Lamp (status indicator, not a real electrical device) -->
+  <symbol shape="106">
+    <template><![CDATA[
+<circle cx="0" cy="0" r="{radius}" style="fill:{color};stroke:slategray;stroke-width:2" />
 ]]></template>
   </symbol>
 </symbols>

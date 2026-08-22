@@ -1,9 +1,11 @@
 package slddoc
 
 import (
+	"bytes"
 	"encoding/xml"
 	"fmt"
 	"io"
+	"regexp"
 )
 
 // BaseLayer is the implicit layer every element belongs to when the source
@@ -80,6 +82,7 @@ const (
 	ClassCapacitor          Class = "Capacitor"
 	ClassBusBarSection      Class = "BusBarSection"
 	ClassJunctionPoint      Class = "JunctionPoint"
+	ClassLamp               Class = "Lamp"
 )
 
 // Element is one placed piece of equipment.
@@ -106,6 +109,21 @@ type Element struct {
 	// State carries an element's data-state (e.g. breaker open/closed), when
 	// the source recorded one.
 	State *int `xml:"state,attr,omitempty"`
+	// FillOff/FillOn are a Lamp's (shape 106) two display colors, from its
+	// data-fill="0:off,1:on" attribute; State selects which one is current.
+	// Unlike the switch-like devices' state indicator (rendered from a fixed
+	// red/lawngreen/yellow convention, see stateFill in render.go), a lamp's
+	// colors are chosen per-instance in the source and carry real meaning,
+	// so they're recorded rather than reduced to that convention.
+	FillOff string `xml:"fillOff,attr,omitempty"`
+	FillOn  string `xml:"fillOn,attr,omitempty"`
+	// Radius is a Lamp's (shape 106) drawn circle radius, from its own r
+	// attribute. Unlike other shapes' fixed template geometry, real
+	// instances draw meaningfully different sizes for different roles (e.g.
+	// r=11 standalone "Индикатор" panel lights vs. r=5 lamps clustered in
+	// triplets next to a breaker), so it's recorded per instance rather
+	// than assumed constant.
+	Radius float64 `xml:"radius,attr,omitempty"`
 
 	Ports []Port `xml:"port,omitempty"`
 	// Points holds a BusBarSection's own drawn geometry (its two or more
@@ -157,15 +175,25 @@ type Label struct {
 	Text   string  `xml:",chardata"`
 }
 
+// emptyElement matches a start tag immediately followed by its own end tag
+// (encoding/xml never emits self-closing tags, even for elements with no
+// content), so Save can collapse them into the shorter self-closing form.
+var emptyElement = regexp.MustCompile(`<([A-Za-z][\w:.-]*)((?:\s+[A-Za-z_:][\w:.-]*="[^"]*")*)></([A-Za-z][\w:.-]*)>`)
+
 // Save writes d as indented XML.
 func (d *Diagram) Save(w io.Writer) error {
 	if _, err := io.WriteString(w, xml.Header); err != nil {
 		return err
 	}
-	enc := xml.NewEncoder(w)
+	var buf bytes.Buffer
+	enc := xml.NewEncoder(&buf)
 	enc.Indent("", "  ")
 	if err := enc.Encode(d); err != nil {
 		return fmt.Errorf("slddoc: encoding diagram: %w", err)
+	}
+	out := emptyElement.ReplaceAll(buf.Bytes(), []byte("<$1$2/>"))
+	if _, err := w.Write(out); err != nil {
+		return err
 	}
 	_, err := io.WriteString(w, "\n")
 	return err

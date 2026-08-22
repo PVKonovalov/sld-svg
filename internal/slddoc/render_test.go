@@ -96,6 +96,49 @@ func TestApplyStateLine(t *testing.T) {
 	}
 }
 
+func TestRender_AnnotatesTypeGroups(t *testing.T) {
+	lib, err := LoadSymbolLibrary(strings.NewReader(testSymbols))
+	if err != nil {
+		t.Fatal(err)
+	}
+	d := &Diagram{
+		Width: 100, Height: 100,
+		Elements: []Element{
+			{ID: "b1", Class: ClassBreaker, Shape: "41", X: 1, Y: 1},
+			{ID: "b2", Class: ClassBreaker, Shape: "41", X: 2, Y: 2},
+			{ID: "l1", Class: ClassLamp, Shape: "106", X: 3, Y: 3, Radius: 8},
+		},
+		Connectors: []Connector{
+			{ID: "w1", Kind: KindOverheadLine, Points: []Point{{0, 0}, {1, 1}}},
+			{ID: "w2", Kind: KindOverheadLine, Points: []Point{{1, 1}, {2, 2}}},
+			{ID: "w3", Kind: KindCableLine, Points: []Point{{2, 2}, {3, 3}}},
+		},
+	}
+	lib.templates["106"] = `<circle r="{radius}" style="fill:{color}" />`
+
+	var buf bytes.Buffer
+	if err := Render(d, lib, &buf); err != nil {
+		t.Fatal(err)
+	}
+	out := buf.String()
+
+	if n := strings.Count(out, "<!-- Breaker:41 -->"); n != 1 {
+		t.Errorf("want exactly one Breaker:41 header for the two consecutive breakers, got %d:\n%s", n, out)
+	}
+	if !strings.Contains(out, "<!-- Lamp:106 -->") {
+		t.Errorf("missing Lamp:106 header: %s", out)
+	}
+	if n := strings.Count(out, "<!-- Overhead line -->"); n != 1 {
+		t.Errorf("want exactly one Overhead line header for the two consecutive connectors, got %d:\n%s", n, out)
+	}
+	if !strings.Contains(out, "<!-- Cable line -->") {
+		t.Errorf("missing Cable line header: %s", out)
+	}
+	if !strings.Contains(out, `r="8"`) {
+		t.Errorf("lamp radius placeholder not substituted: %s", out)
+	}
+}
+
 func TestRender_ReportsMissingShape(t *testing.T) {
 	lib, err := LoadSymbolLibrary(strings.NewReader(`<symbols></symbols>`))
 	if err != nil {

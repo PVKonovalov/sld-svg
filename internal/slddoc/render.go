@@ -63,6 +63,77 @@ func applyStateLine(tmpl string, state *int) string {
 	})
 }
 
+// lampColor picks a Lamp element's current display color: FillOn when
+// State records 1 (lit), FillOff otherwise (including an unrecorded
+// state, since every real corpus instance is state 0/unlit).
+func lampColor(e Element) string {
+	color := e.FillOff
+	if e.State != nil && *e.State == 1 {
+		color = e.FillOn
+	}
+	if color == "" {
+		color = "none"
+	}
+	return color
+}
+
+// shapeName gives the English equipment name Render annotates a run of
+// same-Shape elements with, mirroring the source SVG's own
+// "<!-- <russian_name>:<code> -->" comment convention (one per contiguous
+// block of same-data-type elements — see e.g. PS_110kV_Valdai.svg). Kept
+// per-shape rather than per-Class since the source itself distinguishes,
+// e.g., a fixed breaker (41: "выключатель") from a withdrawable one (43:
+// "выключатель_выдвижной") despite both being ClassBreaker.
+var shapeName = map[string]string{
+	"7":   "Junction point",
+	"24":  "Busbar",
+	"31":  "Ground terminal",
+	"33":  "Choke coil",
+	"34":  "Current transformer",
+	"35":  "Surge arrester",
+	"41":  "Breaker",
+	"42":  "Load-break switch",
+	"43":  "Breaker (withdrawable)",
+	"47":  "Power transformer",
+	"49":  "Disconnector (withdrawable)",
+	"54":  "Ground switch",
+	"71":  "Disconnector",
+	"106": "Lamp",
+	"162": "Disconnector",
+	"203": "Fuse",
+	"388": "Capacitor",
+}
+
+// connectorKindName gives the English wire kind name Render annotates a run
+// of same-Kind connectors with, the same way shapeName does for elements.
+var connectorKindName = map[string]string{
+	string(KindBusbarWire):   "Busbar wire",
+	string(KindOverheadLine): "Overhead line",
+	string(KindCableLine):    "Cable line",
+	string(KindObjectLink):   "Object link",
+}
+
+// typeComment writes a "<!-- Name:shape -->" line the first time shape is
+// seen or whenever it changes from the previous call, so consecutive
+// same-shape elements/connectors get one header the way the source SVG
+// does — never a redundant repeat for every instance. last is updated
+// in place.
+func typeComment(w io.Writer, names map[string]string, key, code string, last *string) {
+	if key == "" || key == *last {
+		return
+	}
+	*last = key
+	name, ok := names[key]
+	if !ok {
+		name = key
+	}
+	label := name
+	if code != "" {
+		label += ":" + code
+	}
+	fmt.Fprintf(w, "<!-- %s -->\n", esc(label))
+}
+
 // Render writes d as a fresh SVG document, using lib to place each
 // Element's symbol. It does not attempt to reproduce the source SVG
 // byte-for-byte (see the package doc comment); the output is a new,
@@ -84,14 +155,24 @@ func Render(d *Diagram, lib *SymbolLibrary, w io.Writer) error {
 	var missing []string
 	seenMissing := map[string]bool{}
 
+	var lastShape string
 	for _, e := range d.Elements {
-		color := voltageColor[e.Voltage]
-		if color == "" {
-			// A PowerTransformer's two windings can carry different
-			// voltages that v1's schema doesn't record per-port (see
-			// parsePowerTransformer); fall back to a visible neutral color
-			// rather than emitting an empty stroke.
-			color = "gray"
+		typeComment(w, shapeName, e.Shape, e.Shape, &lastShape)
+
+		var color string
+		if e.Class == ClassLamp {
+			// A Lamp's colors are its own data-fill off/on pair, not a
+			// VoltageClass — it isn't part of the electrical network.
+			color = lampColor(e)
+		} else {
+			color = voltageColor[e.Voltage]
+			if color == "" {
+				// A PowerTransformer's two windings can carry different
+				// voltages that v1's schema doesn't record per-port (see
+				// parsePowerTransformer); fall back to a visible neutral
+				// color rather than emitting an empty stroke.
+				color = "gray"
+			}
 		}
 		if e.Class == ClassBusBarSection {
 			writePolyline(w, e.Points, color, false)
@@ -110,12 +191,15 @@ func Render(d *Diagram, lib *SymbolLibrary, w io.Writer) error {
 		body = strings.NewReplacer(
 			"{color}", esc(color),
 			"{fill}", stateFill(e.State),
+			"{radius}", fmtNum(e.Radius),
 		).Replace(body)
 		fmt.Fprintf(w, "<g id=\"%s\" data-name=\"%s\" transform=\"translate(%s,%s) rotate(%d)\">\n%s\n</g>\n",
 			esc(e.ID), esc(e.Name), fmtNum(e.X), fmtNum(e.Y), e.Orient, body)
 	}
 
+	var lastConnKind string
 	for _, c := range d.Connectors {
+		typeComment(w, connectorKindName, string(c.Kind), "", &lastConnKind)
 		writePolyline(w, c.Points, voltageColor[c.Voltage], c.Dashed)
 	}
 

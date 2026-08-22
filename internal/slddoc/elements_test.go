@@ -327,6 +327,30 @@ func TestParseJunctionPoint(t *testing.T) {
 	}
 }
 
+func TestParseLamp(t *testing.T) {
+	n := parseFirst(t, `<circle cx="382" cy="203" r="11" style="fill:none;stroke:slategray;stroke-width:2" data-type="106" data-state="0" data-fill="0:none,1:red" data-name="АВ Валдай" id="148704876" />`)
+
+	el, err := parseLamp(n)
+	if err != nil {
+		t.Fatal(err)
+	}
+	if el.Class != ClassLamp || el.X != 382 || el.Y != 203 {
+		t.Errorf("unexpected element: %+v", el)
+	}
+	if el.FillOff != "none" || el.FillOn != "red" {
+		t.Errorf("fillOff/fillOn = %q/%q, want none/red", el.FillOff, el.FillOn)
+	}
+	if el.Radius != 11 {
+		t.Errorf("radius = %v, want 11 (from the circle's own r attribute)", el.Radius)
+	}
+	if el.State == nil || *el.State != 0 {
+		t.Errorf("state = %v, want 0", el.State)
+	}
+	if len(el.Ports) != 0 {
+		t.Errorf("ports = %v, want none (a lamp is a status indicator, not a wired device)", el.Ports)
+	}
+}
+
 func TestParseConnector(t *testing.T) {
 	n := parseFirst(t, `<polyline points="900,360 900,420" style="fill:none;stroke:#326400;stroke-dasharray: 14,9;stroke-width:1 " data-type="23" id="148694387" data-voltage="#326400" />`)
 

@@ -5,6 +5,7 @@ import (
 	"math"
 	"regexp"
 	"strconv"
+	"strings"
 )
 
 // This file parses the xsde2svg shape codes v1 understands into
@@ -29,15 +30,22 @@ import (
 //     leads/leg reach, so it never disturbs the extremes. See
 //     elements_test.go for the specific shapes this was verified against.
 //   - Some of these shapes bake their orientation directly into the path's
-//     own numbers (breaker, disconnector, ...); others draw a fixed local
-//     shape and place it with a transform="rotate(angle,cx,cy)" (choke
-//     coil, current transformer, surge arrester, capacitor, ...).
-//     parseTwoPortDevice handles both: when a rotate() is present, the
-//     element's own anchor is that transform's center and the extracted
-//     extremes are rotated through it to get global port coordinates
-//     (rotate() operates on raw, non-shifted coordinates, so this needs no
-//     separate "make local" step); otherwise the anchor is the ports'
-//     midpoint and the extremes are already global.
+//     own numbers when unrotated (breaker, disconnector, ...); others always
+//     draw a fixed local shape and place it with a
+//     transform="rotate(angle,cx,cy)" (choke coil, current transformer,
+//     surge arrester, capacitor, ...). A rotate() can land on the element's
+//     own top-level tag or on an inner wrapping <g> around just its
+//     <path>s — xsde2svg emits either depending on shape/version, e.g. a
+//     breaker/disconnector placed at a non-default angle wraps its
+//     (still vertically-drawn) paths in a plain unrotated <g> normally, but
+//     an inner <g transform="rotate(...)"> when turned — so the search
+//     considers the element and its descendants, not just the element
+//     itself. parseTwoPortDevice handles both cases: when a rotate() is
+//     found, the element's own anchor is that transform's center and the
+//     extracted extremes are rotated through it to get global port
+//     coordinates (rotate() operates on raw, non-shifted coordinates, so
+//     this needs no separate "make local" step); otherwise the anchor is
+//     the ports' midpoint and the extremes are already global.
 //   - GroundSwitch (54) and Ground (31) are single-electrical-port devices
 //     at the element's own rotation anchor (Ground falls back to its path's
 //     own first point when undrawn without a transform, since real
@@ -134,7 +142,16 @@ func orientFromPorts(a, b Point) int {
 	return 0
 }
 
+// parseState looks for a data-state attribute on n itself (the case for a
+// bare-element shape like Lamp's <circle>) or, failing that, on any of n's
+// <path> children (the case for a <g>-wrapped shape whose state lives on its
+// state-indicator path, e.g. a breaker/disconnector).
 func parseState(n *rawNode) *int {
+	if v, ok := n.Attrs["data-state"]; ok {
+		if s, err := strconv.Atoi(v); err == nil {
+			return &s
+		}
+	}
 	for _, p := range elementPaths(n) {
 		if v, ok := p.Attrs["data-state"]; ok {
 			s, err := strconv.Atoi(v)
@@ -144,6 +161,26 @@ func parseState(n *rawNode) *int {
 		}
 	}
 	return nil
+}
+
+// parseDataFill reads a data-fill="0:off,1:on" attribute (as written by
+// element_106.go for a Lamp, and by the switch-like devices' state
+// indicator, though the latter isn't read back here — see stateFill in
+// render.go) and returns the colors for index 0 and 1.
+func parseDataFill(dataFill string) (off, on string) {
+	for _, entry := range strings.Split(dataFill, ",") {
+		k, v, found := strings.Cut(entry, ":")
+		if !found {
+			continue
+		}
+		switch strings.TrimSpace(k) {
+		case "0":
+			off = strings.TrimSpace(v)
+		case "1":
+			on = strings.TrimSpace(v)
+		}
+	}
+	return off, on
 }
 
 func firstNonEmpty(vals ...string) string {
@@ -174,7 +211,7 @@ func parseTwoPortDevice(n *rawNode, class Class, shape string) (Element, []Point
 	var anchor Point
 	var orient int
 	ports := []Point{p1, p2}
-	if angle, center, ok := parseRotate(n.attr("transform")); ok {
+	if angle, center, ok := parseRotate(n.firstAttrDescendant("transform")); ok {
 		anchor, orient = center, angle
 		ports[0] = rotate(p1, center, float64(angle))
 		ports[1] = rotate(p2, center, float64(angle))
@@ -349,6 +386,46 @@ func parseJunctionPoint(n *rawNode) (Element, error) {
 		X:       cx,
 		Y:       cy,
 		Ports:   []Port{{Name: "1"}},
+	}, nil
+}
+
+// parseLamp handles shape 106 (лампа/lamp): a standalone status-indicator
+// circle, not a real electrical device — it carries no ports, since real
+// corpus instances are never the endpoint of a drawn wire. Its data-voltage
+// (per element_106.go) is always absent in real instances (its data-fill
+// colors are read instead, since they carry the lamp's actual on/off
+// display colors, e.g. "0:magenta,1:#12161d" — arbitrary per instance, not
+// the fixed red/lawngreen/yellow convention the switch-like devices' own
+// state indicator uses). Its radius (r) is likewise recorded rather than
+// assumed constant: real instances draw meaningfully different sizes for
+// different roles, e.g. r=11 standalone "Индикатор" panel lights vs. r=5
+// lamps clustered in triplets next to a breaker (see PS_110kV_Valdai.svg).
+func parseLamp(n *rawNode) (Element, error) {
+	cx, err := strconv.ParseFloat(n.attr("cx"), 64)
+	if err != nil {
+		return Element{}, fmt.Errorf("slddoc: lamp %s: %w", n.attr("id"), err)
+	}
+	cy, err := strconv.ParseFloat(n.attr("cy"), 64)
+	if err != nil {
+		return Element{}, fmt.Errorf("slddoc: lamp %s: %w", n.attr("id"), err)
+	}
+	radius, err := strconv.ParseFloat(n.attr("r"), 64)
+	if err != nil {
+		return Element{}, fmt.Errorf("slddoc: lamp %s: %w", n.attr("id"), err)
+	}
+	off, on := parseDataFill(n.attr("data-fill"))
+	return Element{
+		ID:      n.attr("id"),
+		Class:   ClassLamp,
+		Shape:   "106",
+		Name:    n.attr("data-name"),
+		Layer:   resolveLayer(n.attr("data-layer")),
+		X:       cx,
+		Y:       cy,
+		State:   parseState(n),
+		FillOff: off,
+		FillOn:  on,
+		Radius:  radius,
 	}, nil
 }
 
