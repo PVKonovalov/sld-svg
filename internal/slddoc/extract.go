@@ -29,7 +29,7 @@ var elementDataTypes = map[string]bool{
 	"7": true, "21": true, "22": true, "23": true, "24": true, "28": true,
 	"41": true, "42": true, "43": true, "54": true, "71": true, "162": true,
 	"49": true, "47": true, "31": true, "33": true, "34": true, "35": true,
-	"203": true, "388": true, "106": true,
+	"203": true, "388": true, "106": true, "320003": true,
 }
 
 // twoPortShapes maps a two-terminal shape code (see parseTwoPortDevice) to
@@ -125,6 +125,14 @@ func Extract(raw []byte, source string, voltageHints map[string]string) (*Diagra
 
 		case "106":
 			el, err := parseLamp(n)
+			if err != nil {
+				report.Failed = append(report.Failed, n.attr("id"))
+				continue
+			}
+			addElement(el, nil)
+
+		case "320003":
+			el, err := parseFaultPassageIndicator(n)
 			if err != nil {
 				report.Failed = append(report.Failed, n.attr("id"))
 				continue

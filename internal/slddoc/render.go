@@ -5,6 +5,7 @@ import (
 	"io"
 	"math"
 	"regexp"
+	"sort"
 	"strconv"
 	"strings"
 )
@@ -85,23 +86,24 @@ func lampColor(e Element) string {
 // e.g., a fixed breaker (41: "выключатель") from a withdrawable one (43:
 // "выключатель_выдвижной") despite both being ClassBreaker.
 var shapeName = map[string]string{
-	"7":   "Junction point",
-	"24":  "Busbar",
-	"31":  "Ground terminal",
-	"33":  "Choke coil",
-	"34":  "Current transformer",
-	"35":  "Surge arrester",
-	"41":  "Breaker",
-	"42":  "Load-break switch",
-	"43":  "Breaker (withdrawable)",
-	"47":  "Power transformer",
-	"49":  "Disconnector (withdrawable)",
-	"54":  "Ground switch",
-	"71":  "Disconnector",
-	"106": "Lamp",
-	"162": "Disconnector",
-	"203": "Fuse",
-	"388": "Capacitor",
+	"7":      "Junction point",
+	"24":     "Busbar",
+	"31":     "Ground terminal",
+	"33":     "Choke coil",
+	"34":     "Current transformer",
+	"35":     "Surge arrester",
+	"41":     "Breaker",
+	"42":     "Load-break switch",
+	"43":     "Breaker (withdrawable)",
+	"47":     "Power transformer",
+	"49":     "Disconnector (withdrawable)",
+	"54":     "Ground switch",
+	"71":     "Disconnector",
+	"106":    "Lamp",
+	"162":    "Disconnector",
+	"203":    "Fuse",
+	"388":    "Capacitor",
+	"320003": "Fault passage indicator",
 }
 
 // connectorKindName gives the English wire kind name Render annotates a run
@@ -134,10 +136,78 @@ func typeComment(w io.Writer, names map[string]string, key, code string, last *s
 	fmt.Fprintf(w, "<!-- %s -->\n", esc(label))
 }
 
+// elementZOrder ranks the handful of Element classes that must draw above
+// connectors rather than in ordinary document order, instead of the default
+// 0 (drawn in document order, before connectors): JunctionPoint and
+// FaultPassageIndicator sit directly on top of a wire — unlike ordinary
+// equipment, which only ever touches a connector at a port, so painting the
+// wire afterward would cut through them — and Lamp is a decorative status
+// indicator meant to read as foreground UI. Render draws every such class in
+// ascending order of this value, each tier after the connectors loop.
+var elementZOrder = map[Class]int{
+	ClassJunctionPoint:         1,
+	ClassLamp:                  1,
+	ClassFaultPassageIndicator: 1,
+}
+
+// renderElement writes one Element's symbol (or, for a BusBarSection, its
+// drawn polyline), recording its Shape in missing/seenMissing when lib has
+// no template for it. lastShape tracks the running type-comment header, the
+// same way across whichever pass of Render calls it.
+func renderElement(w io.Writer, lib *SymbolLibrary, voltageColor map[string]string, e Element, missing *[]string, seenMissing map[string]bool, lastShape *string) {
+	typeComment(w, shapeName, e.Shape, e.Shape, lastShape)
+
+	var color string
+	if e.Class == ClassLamp {
+		// A Lamp's colors are its own data-fill off/on pair, not a
+		// VoltageClass — it isn't part of the electrical network.
+		color = lampColor(e)
+	} else if e.Class == ClassFaultPassageIndicator {
+		// Every real instance draws the same fixed dark fill regardless
+		// of state; it isn't part of the electrical network either.
+		color = defaultBackground
+	} else {
+		color = voltageColor[e.Voltage]
+		if color == "" {
+			// A PowerTransformer's two windings can carry different
+			// voltages that v1's schema doesn't record per-port (see
+			// parsePowerTransformer); fall back to a visible neutral
+			// color rather than emitting an empty stroke.
+			color = "gray"
+		}
+	}
+	if e.Class == ClassBusBarSection {
+		writePolyline(w, e.Points, color, false)
+		return
+	}
+
+	tmpl, ok := lib.templates[e.Shape]
+	if !ok {
+		if !seenMissing[e.Shape] {
+			seenMissing[e.Shape] = true
+			*missing = append(*missing, e.Shape)
+		}
+		return
+	}
+	body := applyStateLine(tmpl, e.State)
+	body = strings.NewReplacer(
+		"{color}", esc(color),
+		"{fill}", stateFill(e.State),
+		"{radius}", fmtNum(e.Radius),
+	).Replace(body)
+	fmt.Fprintf(w, "<g id=\"%s\" data-name=\"%s\" transform=\"translate(%s,%s) rotate(%d)\">\n%s\n</g>\n",
+		esc(e.ID), esc(e.Name), fmtNum(e.X), fmtNum(e.Y), e.Orient, body)
+}
+
 // Render writes d as a fresh SVG document, using lib to place each
 // Element's symbol. It does not attempt to reproduce the source SVG
 // byte-for-byte (see the package doc comment); the output is a new,
 // independently generated rendering of the same diagram.
+//
+// Elements are drawn in three passes rather than strict document order: any
+// Class absent from elementZOrder (the default, effectively 0) first, then
+// connectors, then each elementZOrder tier in ascending order, and finally
+// labels — see elementZOrder's doc comment for why.
 //
 // If d.Elements references a Shape absent from lib, Render still writes
 // every other element and connector, then returns an error listing every
@@ -155,52 +225,33 @@ func Render(d *Diagram, lib *SymbolLibrary, w io.Writer) error {
 	var missing []string
 	seenMissing := map[string]bool{}
 
+	elevated := map[int][]Element{}
+
 	var lastShape string
 	for _, e := range d.Elements {
-		typeComment(w, shapeName, e.Shape, e.Shape, &lastShape)
-
-		var color string
-		if e.Class == ClassLamp {
-			// A Lamp's colors are its own data-fill off/on pair, not a
-			// VoltageClass — it isn't part of the electrical network.
-			color = lampColor(e)
-		} else {
-			color = voltageColor[e.Voltage]
-			if color == "" {
-				// A PowerTransformer's two windings can carry different
-				// voltages that v1's schema doesn't record per-port (see
-				// parsePowerTransformer); fall back to a visible neutral
-				// color rather than emitting an empty stroke.
-				color = "gray"
-			}
-		}
-		if e.Class == ClassBusBarSection {
-			writePolyline(w, e.Points, color, false)
+		if z := elementZOrder[e.Class]; z > 0 {
+			elevated[z] = append(elevated[z], e)
 			continue
 		}
-
-		tmpl, ok := lib.templates[e.Shape]
-		if !ok {
-			if !seenMissing[e.Shape] {
-				seenMissing[e.Shape] = true
-				missing = append(missing, e.Shape)
-			}
-			continue
-		}
-		body := applyStateLine(tmpl, e.State)
-		body = strings.NewReplacer(
-			"{color}", esc(color),
-			"{fill}", stateFill(e.State),
-			"{radius}", fmtNum(e.Radius),
-		).Replace(body)
-		fmt.Fprintf(w, "<g id=\"%s\" data-name=\"%s\" transform=\"translate(%s,%s) rotate(%d)\">\n%s\n</g>\n",
-			esc(e.ID), esc(e.Name), fmtNum(e.X), fmtNum(e.Y), e.Orient, body)
+		renderElement(w, lib, voltageColor, e, &missing, seenMissing, &lastShape)
 	}
 
 	var lastConnKind string
 	for _, c := range d.Connectors {
 		typeComment(w, connectorKindName, string(c.Kind), "", &lastConnKind)
 		writePolyline(w, c.Points, voltageColor[c.Voltage], c.Dashed)
+	}
+
+	tiers := make([]int, 0, len(elevated))
+	for z := range elevated {
+		tiers = append(tiers, z)
+	}
+	sort.Ints(tiers)
+	for _, z := range tiers {
+		var lastTierShape string
+		for _, e := range elevated[z] {
+			renderElement(w, lib, voltageColor, e, &missing, seenMissing, &lastTierShape)
+		}
 	}
 
 	for _, l := range d.Labels {

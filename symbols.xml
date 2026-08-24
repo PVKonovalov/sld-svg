@@ -163,4 +163,12 @@
 <circle cx="0" cy="0" r="{radius}" style="fill:{color};stroke:slategray;stroke-width:2" />
 ]]></template>
   </symbol>
+
+<!-- 320003: Fault Passage Indicator -->
+  <symbol shape="320003">
+    <template><![CDATA[
+<circle cx="0" cy="0" r="{radius}" style="fill:{color};stroke:lime;stroke-width:0.80" />
+<text x="0" y="0" style="fill:lime;text-anchor:middle;dominant-baseline:middle;font-size:13px;font-family:Arial" >FPI</text>
+]]></template>
+</symbol>
 </symbols>

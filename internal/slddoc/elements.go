@@ -429,6 +429,45 @@ func parseLamp(n *rawNode) (Element, error) {
 	}, nil
 }
 
+// parseFaultPassageIndicator handles shape 320003 (ИКЗ/fault passage
+// indicator): like Lamp, a standalone status-indicator circle, not a real
+// electrical device — it carries no ports. Unlike Lamp it has no data-fill
+// pair (every real corpus instance draws the same fixed dark fill/lime
+// stroke regardless of state, per element320.go's "ИКЗ" case), so only its
+// position and radius are extracted; Render supplies the fixed color. The
+// circle is a child of the top-level <g>, not the bare element itself,
+// since real instances also carry state-dependent decorative children
+// (an "FPI" text label or arrow-icon graphics) alongside it.
+func parseFaultPassageIndicator(n *rawNode) (Element, error) {
+	circles := n.childrenTagged("circle")
+	if len(circles) == 0 {
+		return Element{}, fmt.Errorf("slddoc: fault passage indicator %s: no circle", n.attr("id"))
+	}
+	c := circles[0]
+	cx, err := strconv.ParseFloat(c.attr("cx"), 64)
+	if err != nil {
+		return Element{}, fmt.Errorf("slddoc: fault passage indicator %s: %w", n.attr("id"), err)
+	}
+	cy, err := strconv.ParseFloat(c.attr("cy"), 64)
+	if err != nil {
+		return Element{}, fmt.Errorf("slddoc: fault passage indicator %s: %w", n.attr("id"), err)
+	}
+	radius, err := strconv.ParseFloat(c.attr("r"), 64)
+	if err != nil {
+		return Element{}, fmt.Errorf("slddoc: fault passage indicator %s: %w", n.attr("id"), err)
+	}
+	return Element{
+		ID:     n.attr("id"),
+		Class:  ClassFaultPassageIndicator,
+		Shape:  "320003",
+		Name:   n.attr("data-name"),
+		Layer:  resolveLayer(n.attr("data-layer")),
+		X:      cx,
+		Y:      cy,
+		Radius: radius,
+	}, nil
+}
+
 var connectorKindByType = map[string]ConnectorKind{
 	"21": KindBusbarWire,
 	"22": KindOverheadLine,

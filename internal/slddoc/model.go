@@ -69,20 +69,21 @@ type Port struct {
 type Class string
 
 const (
-	ClassBreaker            Class = "Breaker"
-	ClassDisconnector       Class = "Disconnector"
-	ClassLoadBreakSwitch    Class = "LoadBreakSwitch"
-	ClassGroundSwitch       Class = "GroundSwitch"
-	ClassGround             Class = "Ground"
-	ClassPowerTransformer   Class = "PowerTransformer"
-	ClassCurrentTransformer Class = "CurrentTransformer"
-	ClassChokeCoil          Class = "ChokeCoil"
-	ClassSurgeArrester      Class = "SurgeArrester"
-	ClassFuse               Class = "Fuse"
-	ClassCapacitor          Class = "Capacitor"
-	ClassBusBarSection      Class = "BusBarSection"
-	ClassJunctionPoint      Class = "JunctionPoint"
-	ClassLamp               Class = "Lamp"
+	ClassBreaker               Class = "Breaker"
+	ClassDisconnector          Class = "Disconnector"
+	ClassLoadBreakSwitch       Class = "LoadBreakSwitch"
+	ClassGroundSwitch          Class = "GroundSwitch"
+	ClassGround                Class = "Ground"
+	ClassPowerTransformer      Class = "PowerTransformer"
+	ClassCurrentTransformer    Class = "CurrentTransformer"
+	ClassChokeCoil             Class = "ChokeCoil"
+	ClassSurgeArrester         Class = "SurgeArrester"
+	ClassFuse                  Class = "Fuse"
+	ClassCapacitor             Class = "Capacitor"
+	ClassBusBarSection         Class = "BusBarSection"
+	ClassJunctionPoint         Class = "JunctionPoint"
+	ClassLamp                  Class = "Lamp"
+	ClassFaultPassageIndicator Class = "FaultPassageIndicator"
 )
 
 // Element is one placed piece of equipment.

@@ -65,5 +65,6 @@ kvar;kVAr
 Люди на ПС;People at S/S
 кВАР;kVAr
 МУ Включено;Local control ON
-Ключ МУ;Local control enabled
-Ключ ТУ;Telecontrol enabled
+Ключ МУ;Local control
+Ключ ТУ;Telecontrol
+ИКЗ;FPI

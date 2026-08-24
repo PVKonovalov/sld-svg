@@ -139,6 +139,57 @@ func TestRender_AnnotatesTypeGroups(t *testing.T) {
 	}
 }
 
+func TestRender_ElevatedClassesDrawnAfterConnectors(t *testing.T) {
+	lib, err := LoadSymbolLibrary(strings.NewReader(testSymbols))
+	if err != nil {
+		t.Fatal(err)
+	}
+	lib.templates["7"] = `<circle r="3" style="stroke:{color}" />`
+	lib.templates["106"] = `<circle r="{radius}" style="fill:{color}" />`
+	lib.templates["320003"] = `<circle r="{radius}" style="fill:{color}" />`
+	d := &Diagram{
+		Width: 100, Height: 100,
+		// Every elevated element is listed first in document order (as real
+		// corpus SVGs place standalone point/status symbols wherever they
+		// fall in the source), but each must still render after the
+		// connectors loop, so it paints on top of any wire it sits on
+		// instead of a later-painted wire cutting through it.
+		Elements: []Element{
+			{ID: "jp1", Class: ClassJunctionPoint, Shape: "7", X: 0, Y: 0},
+			{ID: "l1", Class: ClassLamp, Shape: "106", X: 1, Y: 1, Radius: 8},
+			{ID: "fpi1", Class: ClassFaultPassageIndicator, Shape: "320003", X: 2, Y: 2, Radius: 15},
+			{ID: "b1", Class: ClassBreaker, Shape: "41", X: 3, Y: 3},
+		},
+		Connectors: []Connector{
+			{ID: "w1", Kind: KindOverheadLine, Points: []Point{{0, 0}, {2, 2}}},
+		},
+	}
+
+	var buf bytes.Buffer
+	if err := Render(d, lib, &buf); err != nil {
+		t.Fatal(err)
+	}
+	out := buf.String()
+
+	wireIdx := strings.Index(out, `points="0,0 2,2"`)
+	breakerIdx := strings.Index(out, `id="b1"`)
+	if wireIdx == -1 || breakerIdx == -1 {
+		t.Fatalf("missing expected elements in output: %s", out)
+	}
+	if breakerIdx > wireIdx {
+		t.Errorf("ordinary breaker rendered after the wire (index %d > %d), want before, in document order: %s", breakerIdx, wireIdx, out)
+	}
+	for _, id := range []string{"jp1", "l1", "fpi1"} {
+		idx := strings.Index(out, `id="`+id+`"`)
+		if idx == -1 {
+			t.Fatalf("missing element %q in output: %s", id, out)
+		}
+		if idx < wireIdx {
+			t.Errorf("elevated element %q rendered before its wire (index %d < %d), want after so it paints on top: %s", id, idx, wireIdx, out)
+		}
+	}
+}
+
 func TestRender_ReportsMissingShape(t *testing.T) {
 	lib, err := LoadSymbolLibrary(strings.NewReader(`<symbols></symbols>`))
 	if err != nil {

@@ -49,9 +49,9 @@ its subdirectory structure, with the extension swapped as appropriate.
 
 svg-sld only understands a representative subset of xsde2svg's equipment
 catalog (busbars, generic wires, junction points, breakers, disconnectors,
-ground switches, and 2-winding power transformers). Everything else in a
-source SVG is left out of the extracted diagram; extract reports what it
-skipped.`)
+ground switches, 2-winding power transformers, lamp status indicators, and
+fault passage indicators). Everything else in a source SVG is left out of
+the extracted diagram; extract reports what it skipped.`)
 }
 
 func runExtract(args []string) error {

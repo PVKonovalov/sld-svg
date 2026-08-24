@@ -351,6 +351,34 @@ func TestParseLamp(t *testing.T) {
 	}
 }
 
+func TestParseFaultPassageIndicator(t *testing.T) {
+	// Real instances vary in their decorative children (an "FPI" text label
+	// here, arrow-icon graphics on others) but always carry exactly one
+	// circle with the same fixed fill/stroke.
+	n := parseFirst(t, `
+<g id="148795595" data-type="320003" >
+<circle cx="310" cy="550" r="15" style="fill:#12161d;stroke:lime;stroke-width:0.80" />
+<text x="310" y="550" style="fill:lime;text-anchor:middle;dominant-baseline:middle;font-size:13px;font-family:Arial" >FPI</text>
+</g>`)
+
+	el, err := parseFaultPassageIndicator(n)
+	if err != nil {
+		t.Fatal(err)
+	}
+	if el.Class != ClassFaultPassageIndicator || el.Shape != "320003" {
+		t.Errorf("unexpected element: %+v", el)
+	}
+	if el.X != 310 || el.Y != 550 {
+		t.Errorf("anchor = (%v,%v), want (310,550)", el.X, el.Y)
+	}
+	if el.Radius != 15 {
+		t.Errorf("radius = %v, want 15 (from the circle's own r attribute)", el.Radius)
+	}
+	if len(el.Ports) != 0 {
+		t.Errorf("ports = %v, want none (a fault passage indicator is a status indicator, not a wired device)", el.Ports)
+	}
+}
+
 func TestParseConnector(t *testing.T) {
 	n := parseFirst(t, `<polyline points="900,360 900,420" style="fill:none;stroke:#326400;stroke-dasharray: 14,9;stroke-width:1 " data-type="23" id="148694387" data-voltage="#326400" />`)
 
