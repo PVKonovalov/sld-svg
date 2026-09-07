@@ -1,0 +1,256 @@
+<?xml version="1.0"?>
+<!-- Hand-authored sample SLD, IEEE 9-bus test system (see Sample-test-system-the-IEEE-9-bus-grid.png).
+     Follows this project's SVG conventions: dark background (#12161d, matching
+     internal/slddoc/render.go's defaultBackground), <g id data-type data-name> grouped elements
+     with integer id="..." (per docs/SLD_SVG_ELEMENTS.md's attribute reference), data-voltage-colored
+     equipment, and plain <text> labels in Arial. Every element's data-type is a real xsde2svg catalog
+     code: 24 (Busbar), 173 (Generator), 22 (Overhead line), 28 (Object link, used for load — the
+     catalog has no dedicated load/consumer shape), 7 (Point, drawn as bare <circle data-type="7">
+     with no wrapping <g>, matching examples/sld/PS_35kV_Krasnaya.svg's own convention: fill = the
+     background color, stroke/data-voltage = the connected wire's color), 5 (Text — every equipment
+     name/bus name/MW-value caption, likewise a bare <text data-type="5">, matching the source
+     corpus's own convention of pulling captions out as standalone elements rather than nesting them
+     under the equipment they label). Point and Text are each grouped in their own single block
+     ("Point:7", "Text:5", in that order) placed after every other element, so dots and captions both
+     draw on top of the whole diagram. A shape's own baked-in pictogram text (the generator's "P V",
+     the line box's "π π") stays inside that shape's group, since it's part of the symbol's drawing,
+     not a freestanding caption — matching how the FPI symbol's own "FPI" text is baked into its
+     symbols.xml template rather than extracted as a Label. Geometry (the generator "P V" circle,
+     load triangle, pi-network line box) is drawn from scratch, since none of these codes' real
+     xsde2svg rendering matches this diagram's chosen look. -->
+<svg width="1150" height="1000" style="stroke-width: 0px; background-color: #12161d;" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g transform="translate(50,50)">
+
+<!-- Bus:24 -->
+<g id="2" data-type="24" data-name="Bus 2" data-voltage="#c9a227">
+  <polyline points="160,55 160,125" style="fill:none;stroke:#c9a227;stroke-width:4" />
+</g>
+<g id="7" data-type="24" data-name="Bus 7" data-voltage="#00bfff">
+  <polyline points="290,20 290,160" style="fill:none;stroke:#00bfff;stroke-width:4" />
+</g>
+<g id="9" data-type="24" data-name="Bus 9" data-voltage="#00bfff">
+  <polyline points="810,20 810,160" style="fill:none;stroke:#00bfff;stroke-width:4" />
+</g>
+<g id="3" data-type="24" data-name="Bus 3" data-voltage="#3ecf5e">
+  <polyline points="940,55 940,125" style="fill:none;stroke:#3ecf5e;stroke-width:4" />
+</g>
+<g id="8" data-type="24" data-name="Bus 8" data-voltage="#4169e1">
+  <polyline points="470,210 630,210" style="fill:none;stroke:#4169e1;stroke-width:4" />
+</g>
+<g id="5" data-type="24" data-name="Bus 5" data-voltage="#4169e1">
+  <polyline points="180,430 330,430" style="fill:none;stroke:#4169e1;stroke-width:4" />
+</g>
+<g id="6" data-type="24" data-name="Bus 6" data-voltage="#4169e1">
+  <polyline points="770,430 920,430" style="fill:none;stroke:#4169e1;stroke-width:4" />
+</g>
+<g id="4" data-type="24" data-name="Bus 4" data-voltage="#4169e1">
+  <polyline points="310,650 790,650" style="fill:none;stroke:#4169e1;stroke-width:4" />
+</g>
+<g id="1" data-type="24" data-name="Bus 1" data-voltage="#ff5555">
+  <polyline points="470,800 630,800" style="fill:none;stroke:#ff5555;stroke-width:4" />
+</g>
+
+<!-- Generator:173 -->
+<g id="101" data-type="173" data-name="G163" data-voltage="#7ec8ff">
+  <circle cx="70" cy="70" r="22" style="fill:#12161d;stroke:#7ec8ff;stroke-width:2" />
+  <text x="70" y="75" style="fill:#7ec8ff;text-anchor:middle;font-size:13px;font-family:Arial">P V</text>
+  <polyline points="92,70 160,70" style="fill:none;stroke:#8892a0;stroke-width:1.5" />
+</g>
+<g id="102" data-type="173" data-name="G85" data-voltage="#7ec8ff">
+  <circle cx="1030" cy="70" r="22" style="fill:#12161d;stroke:#7ec8ff;stroke-width:2" />
+  <text x="1030" y="75" style="fill:#7ec8ff;text-anchor:middle;font-size:13px;font-family:Arial">P V</text>
+  <polyline points="1008,70 940,70" style="fill:none;stroke:#8892a0;stroke-width:1.5" />
+</g>
+<g id="103" data-type="173" data-name="G72" data-voltage="#7ec8ff">
+  <circle cx="550" cy="880" r="22" style="fill:#12161d;stroke:#7ec8ff;stroke-width:2" />
+  <text x="550" y="885" style="fill:#7ec8ff;text-anchor:middle;font-size:13px;font-family:Arial">P V</text>
+  <polyline points="550,858 550,800" style="fill:none;stroke:#8892a0;stroke-width:1.5" />
+</g>
+
+<!-- Object link:28 -->
+<g id="201" data-type="28" data-name="Load 100MW" data-voltage="#c8ced8">
+  <polyline points="550,210 550,250" style="fill:none;stroke:#8892a0;stroke-width:1.5" />
+  <path d="M 537 250 L 563 250 L 550 280 Z" style="fill:none;stroke:#c8ced8;stroke-width:2" />
+</g>
+<g id="202" data-type="28" data-name="Load 125MW" data-voltage="#c8ced8">
+  <polyline points="220,430 220,470" style="fill:none;stroke:#8892a0;stroke-width:1.5" />
+  <path d="M 207 470 L 233 470 L 220 500 Z" style="fill:none;stroke:#c8ced8;stroke-width:2" />
+</g>
+<g id="203" data-type="28" data-name="Load 90MW" data-voltage="#c8ced8">
+  <polyline points="880,430 880,470" style="fill:none;stroke:#8892a0;stroke-width:1.5" />
+  <path d="M 867 470 L 893 470 L 880 500 Z" style="fill:none;stroke:#c8ced8;stroke-width:2" />
+</g>
+
+<!-- Overhead line:22 -->
+<g id="302" data-type="22" data-name="Line2" data-voltage="#8892a0">
+  <polyline points="290,40 403,40" style="fill:none;stroke:#8892a0;stroke-width:1.5" />
+  <polyline points="437,40 530,40 530,210" style="fill:none;stroke:#8892a0;stroke-width:1.5" />
+  <g transform="translate(420,40) rotate(0)">
+    <rect x="-17" y="-8" width="34" height="16" rx="3" style="fill:#1b212c;stroke:#c8ced8;stroke-width:1.5" />
+    <circle cx="-17" cy="0" r="2.5" style="fill:#c8ced8" />
+    <circle cx="17" cy="0" r="2.5" style="fill:#c8ced8" />
+    <text x="0" y="4" style="fill:#c8ced8;text-anchor:middle;font-size:11px;font-family:Arial">&#960; &#960;</text>
+  </g>
+</g>
+
+<g id="301" data-type="22" data-name="Line1" data-voltage="#8892a0">
+  <polyline points="570,210 570,40 663,40" style="fill:none;stroke:#8892a0;stroke-width:1.5" />
+  <polyline points="697,40 810,40" style="fill:none;stroke:#8892a0;stroke-width:1.5" />
+  <g transform="translate(680,40) rotate(0)">
+    <rect x="-17" y="-8" width="34" height="16" rx="3" style="fill:#1b212c;stroke:#c8ced8;stroke-width:1.5" />
+    <circle cx="-17" cy="0" r="2.5" style="fill:#c8ced8" />
+    <circle cx="17" cy="0" r="2.5" style="fill:#c8ced8" />
+    <text x="0" y="4" style="fill:#c8ced8;text-anchor:middle;font-size:11px;font-family:Arial">&#960; &#960;</text>
+  </g>
+</g>
+
+<g id="307" data-type="22" data-name="Line7" data-voltage="#8892a0">
+  <polyline points="160,105 208,105" style="fill:none;stroke:#8892a0;stroke-width:1.5" />
+  <polyline points="242,105 290,105" style="fill:none;stroke:#8892a0;stroke-width:1.5" />
+  <g transform="translate(225,105) rotate(0)">
+    <rect x="-17" y="-8" width="34" height="16" rx="3" style="fill:#1b212c;stroke:#c8ced8;stroke-width:1.5" />
+    <circle cx="-17" cy="0" r="2.5" style="fill:#c8ced8" />
+    <circle cx="17" cy="0" r="2.5" style="fill:#c8ced8" />
+    <text x="0" y="4" style="fill:#c8ced8;text-anchor:middle;font-size:11px;font-family:Arial">&#960; &#960;</text>
+  </g>
+</g>
+
+<g id="308" data-type="22" data-name="Line8" data-voltage="#8892a0">
+  <polyline points="940,105 892,105" style="fill:none;stroke:#8892a0;stroke-width:1.5" />
+  <polyline points="858,105 810,105" style="fill:none;stroke:#8892a0;stroke-width:1.5" />
+  <g transform="translate(875,105) rotate(0)">
+    <rect x="-17" y="-8" width="34" height="16" rx="3" style="fill:#1b212c;stroke:#c8ced8;stroke-width:1.5" />
+    <circle cx="-17" cy="0" r="2.5" style="fill:#c8ced8" />
+    <circle cx="17" cy="0" r="2.5" style="fill:#c8ced8" />
+    <text x="0" y="4" style="fill:#c8ced8;text-anchor:middle;font-size:11px;font-family:Arial">&#960; &#960;</text>
+  </g>
+</g>
+
+<g id="304" data-type="22" data-name="Line4" data-voltage="#8892a0">
+  <polyline points="290,140 290,268" style="fill:none;stroke:#8892a0;stroke-width:1.5" />
+  <polyline points="290,302 290,430" style="fill:none;stroke:#8892a0;stroke-width:1.5" />
+  <g transform="translate(290,285) rotate(90)">
+    <rect x="-17" y="-8" width="34" height="16" rx="3" style="fill:#1b212c;stroke:#c8ced8;stroke-width:1.5" />
+    <circle cx="-17" cy="0" r="2.5" style="fill:#c8ced8" />
+    <circle cx="17" cy="0" r="2.5" style="fill:#c8ced8" />
+    <text x="0" y="4" style="fill:#c8ced8;text-anchor:middle;font-size:11px;font-family:Arial">&#960; &#960;</text>
+  </g>
+</g>
+
+<g id="303" data-type="22" data-name="Line3" data-voltage="#8892a0">
+  <polyline points="810,140 810,268" style="fill:none;stroke:#8892a0;stroke-width:1.5" />
+  <polyline points="810,302 810,430" style="fill:none;stroke:#8892a0;stroke-width:1.5" />
+  <g transform="translate(810,285) rotate(90)">
+    <rect x="-17" y="-8" width="34" height="16" rx="3" style="fill:#1b212c;stroke:#c8ced8;stroke-width:1.5" />
+    <circle cx="-17" cy="0" r="2.5" style="fill:#c8ced8" />
+    <circle cx="17" cy="0" r="2.5" style="fill:#c8ced8" />
+    <text x="0" y="4" style="fill:#c8ced8;text-anchor:middle;font-size:11px;font-family:Arial">&#960; &#960;</text>
+  </g>
+</g>
+
+<g id="305" data-type="22" data-name="Line5" data-voltage="#8892a0">
+  <polyline points="310,430 310,523" style="fill:none;stroke:#8892a0;stroke-width:1.5" />
+  <polyline points="310,557 310,650" style="fill:none;stroke:#8892a0;stroke-width:1.5" />
+  <g transform="translate(310,540) rotate(90)">
+    <rect x="-17" y="-8" width="34" height="16" rx="3" style="fill:#1b212c;stroke:#c8ced8;stroke-width:1.5" />
+    <circle cx="-17" cy="0" r="2.5" style="fill:#c8ced8" />
+    <circle cx="17" cy="0" r="2.5" style="fill:#c8ced8" />
+    <text x="0" y="4" style="fill:#c8ced8;text-anchor:middle;font-size:11px;font-family:Arial">&#960; &#960;</text>
+  </g>
+</g>
+
+<g id="306" data-type="22" data-name="Line6" data-voltage="#8892a0">
+  <polyline points="790,430 790,523" style="fill:none;stroke:#8892a0;stroke-width:1.5" />
+  <polyline points="790,557 790,650" style="fill:none;stroke:#8892a0;stroke-width:1.5" />
+  <g transform="translate(790,540) rotate(90)">
+    <rect x="-17" y="-8" width="34" height="16" rx="3" style="fill:#1b212c;stroke:#c8ced8;stroke-width:1.5" />
+    <circle cx="-17" cy="0" r="2.5" style="fill:#c8ced8" />
+    <circle cx="17" cy="0" r="2.5" style="fill:#c8ced8" />
+    <text x="0" y="4" style="fill:#c8ced8;text-anchor:middle;font-size:11px;font-family:Arial">&#960; &#960;</text>
+  </g>
+</g>
+
+<g id="309" data-type="22" data-name="Line9" data-voltage="#8892a0">
+  <polyline points="550,650 550,708" style="fill:none;stroke:#8892a0;stroke-width:1.5" />
+  <polyline points="550,742 550,800" style="fill:none;stroke:#8892a0;stroke-width:1.5" />
+  <g transform="translate(550,725) rotate(90)">
+    <rect x="-17" y="-8" width="34" height="16" rx="3" style="fill:#1b212c;stroke:#c8ced8;stroke-width:1.5" />
+    <circle cx="-17" cy="0" r="2.5" style="fill:#c8ced8" />
+    <circle cx="17" cy="0" r="2.5" style="fill:#c8ced8" />
+    <text x="0" y="4" style="fill:#c8ced8;text-anchor:middle;font-size:11px;font-family:Arial">&#960; &#960;</text>
+  </g>
+</g>
+
+<!-- Legend -->
+<g id="501" data-type="legend" data-name="Legend">
+  <rect x="850" y="690" width="220" height="190" rx="4" style="fill:#161b24;stroke:#3a4150;stroke-width:1" />
+  <circle cx="895" cy="720" r="12" style="fill:#12161d;stroke:#7ec8ff;stroke-width:1.5" />
+  <text x="895" y="724" style="fill:#7ec8ff;text-anchor:middle;font-size:9px;font-family:Arial">P V</text>
+  <text x="930" y="724" style="fill:#e8e8e8;text-anchor:start;font-size:13px;font-family:Arial">Generator</text>
+  <path d="M 883 758 L 907 758 L 895 776 Z" style="fill:none;stroke:#c8ced8;stroke-width:1.5" />
+  <text x="930" y="770" style="fill:#e8e8e8;text-anchor:start;font-size:13px;font-family:Arial">Load</text>
+  <rect x="878" y="800" width="34" height="16" rx="3" style="fill:#1b212c;stroke:#c8ced8;stroke-width:1.5" />
+  <circle cx="878" cy="808" r="2.5" style="fill:#c8ced8" />
+  <circle cx="912" cy="808" r="2.5" style="fill:#c8ced8" />
+  <text x="895" y="812" style="fill:#c8ced8;text-anchor:middle;font-size:9px;font-family:Arial">&#960; &#960;</text>
+  <text x="930" y="812" style="fill:#e8e8e8;text-anchor:start;font-size:13px;font-family:Arial">Transmission line</text>
+  <polyline points="878,848 912,848" style="fill:none;stroke:#4169e1;stroke-width:4" />
+  <circle cx="882" cy="848" r="2.5" style="fill:#8892a0" />
+  <circle cx="908" cy="848" r="2.5" style="fill:#8892a0" />
+  <text x="930" y="852" style="fill:#e8e8e8;text-anchor:start;font-size:13px;font-family:Arial">Bus</text>
+</g>
+
+<!-- Point:7 -->
+<circle cx="92" cy="70" r="3" style="fill:#12161d;stroke:#8892a0;stroke-width:1" data-type="7" id="701" data-voltage="#8892a0" />
+<circle cx="160" cy="70" r="3" style="fill:#12161d;stroke:#8892a0;stroke-width:1" data-type="7" id="702" data-voltage="#8892a0" />
+<circle cx="1008" cy="70" r="3" style="fill:#12161d;stroke:#8892a0;stroke-width:1" data-type="7" id="703" data-voltage="#8892a0" />
+<circle cx="940" cy="70" r="3" style="fill:#12161d;stroke:#8892a0;stroke-width:1" data-type="7" id="704" data-voltage="#8892a0" />
+<circle cx="550" cy="858" r="3" style="fill:#12161d;stroke:#8892a0;stroke-width:1" data-type="7" id="705" data-voltage="#8892a0" />
+<circle cx="550" cy="800" r="3" style="fill:#12161d;stroke:#8892a0;stroke-width:1" data-type="7" id="706" data-voltage="#8892a0" />
+<circle cx="290" cy="40" r="3" style="fill:#12161d;stroke:#8892a0;stroke-width:1" data-type="7" id="707" data-voltage="#8892a0" />
+<circle cx="530" cy="210" r="3" style="fill:#12161d;stroke:#8892a0;stroke-width:1" data-type="7" id="708" data-voltage="#8892a0" />
+<circle cx="810" cy="40" r="3" style="fill:#12161d;stroke:#8892a0;stroke-width:1" data-type="7" id="709" data-voltage="#8892a0" />
+<circle cx="570" cy="210" r="3" style="fill:#12161d;stroke:#8892a0;stroke-width:1" data-type="7" id="710" data-voltage="#8892a0" />
+<circle cx="160" cy="105" r="3" style="fill:#12161d;stroke:#8892a0;stroke-width:1" data-type="7" id="711" data-voltage="#8892a0" />
+<circle cx="290" cy="105" r="3" style="fill:#12161d;stroke:#8892a0;stroke-width:1" data-type="7" id="712" data-voltage="#8892a0" />
+<circle cx="940" cy="105" r="3" style="fill:#12161d;stroke:#8892a0;stroke-width:1" data-type="7" id="713" data-voltage="#8892a0" />
+<circle cx="810" cy="105" r="3" style="fill:#12161d;stroke:#8892a0;stroke-width:1" data-type="7" id="714" data-voltage="#8892a0" />
+<circle cx="290" cy="140" r="3" style="fill:#12161d;stroke:#8892a0;stroke-width:1" data-type="7" id="715" data-voltage="#8892a0" />
+<circle cx="290" cy="430" r="3" style="fill:#12161d;stroke:#8892a0;stroke-width:1" data-type="7" id="716" data-voltage="#8892a0" />
+<circle cx="810" cy="140" r="3" style="fill:#12161d;stroke:#8892a0;stroke-width:1" data-type="7" id="717" data-voltage="#8892a0" />
+<circle cx="810" cy="430" r="3" style="fill:#12161d;stroke:#8892a0;stroke-width:1" data-type="7" id="718" data-voltage="#8892a0" />
+<circle cx="310" cy="430" r="3" style="fill:#12161d;stroke:#8892a0;stroke-width:1" data-type="7" id="719" data-voltage="#8892a0" />
+<circle cx="310" cy="650" r="3" style="fill:#12161d;stroke:#8892a0;stroke-width:1" data-type="7" id="720" data-voltage="#8892a0" />
+<circle cx="790" cy="430" r="3" style="fill:#12161d;stroke:#8892a0;stroke-width:1" data-type="7" id="721" data-voltage="#8892a0" />
+<circle cx="790" cy="650" r="3" style="fill:#12161d;stroke:#8892a0;stroke-width:1" data-type="7" id="722" data-voltage="#8892a0" />
+<circle cx="550" cy="650" r="3" style="fill:#12161d;stroke:#8892a0;stroke-width:1" data-type="7" id="723" data-voltage="#8892a0" />
+<circle cx="550" cy="210" r="3" style="fill:#12161d;stroke:#8892a0;stroke-width:1" data-type="7" id="724" data-voltage="#8892a0" />
+<circle cx="220" cy="430" r="3" style="fill:#12161d;stroke:#8892a0;stroke-width:1" data-type="7" id="725" data-voltage="#8892a0" />
+<circle cx="880" cy="430" r="3" style="fill:#12161d;stroke:#8892a0;stroke-width:1" data-type="7" id="726" data-voltage="#8892a0" />
+<!-- Text:5 -->
+<text x="135" y="148" style="fill:#8fd0ff;text-anchor:middle;font-size:13px;font-family:Arial" data-type="5" id="801">Bus 2</text>
+<text x="300" y="15" style="fill:#8fd0ff;text-anchor:start;font-size:13px;font-family:Arial" data-type="5" id="802">Bus 7</text>
+<text x="820" y="15" style="fill:#8fd0ff;text-anchor:start;font-size:13px;font-family:Arial" data-type="5" id="803">Bus 9</text>
+<text x="965" y="148" style="fill:#8fd0ff;text-anchor:middle;font-size:13px;font-family:Arial" data-type="5" id="804">Bus 3</text>
+<text x="640" y="215" style="fill:#8fd0ff;text-anchor:start;font-size:13px;font-family:Arial" data-type="5" id="805">Bus 8</text>
+<text x="150" y="425" style="fill:#8fd0ff;text-anchor:end;font-size:13px;font-family:Arial" data-type="5" id="806">Bus 5</text>
+<text x="930" y="425" style="fill:#8fd0ff;text-anchor:start;font-size:13px;font-family:Arial" data-type="5" id="807">Bus 6</text>
+<text x="800" y="645" style="fill:#8fd0ff;text-anchor:start;font-size:13px;font-family:Arial" data-type="5" id="808">Bus 4</text>
+<text x="460" y="795" style="fill:#8fd0ff;text-anchor:end;font-size:13px;font-family:Arial" data-type="5" id="809">Bus 1</text>
+<text x="10" y="45" style="fill:#e8e8e8;text-anchor:start;font-size:14px;font-family:Arial" data-type="5" id="810">163 MW</text>
+<text x="1000" y="45" style="fill:#e8e8e8;text-anchor:end;font-size:14px;font-family:Arial" data-type="5" id="811">85 MW</text>
+<text x="580" y="885" style="fill:#e8e8e8;text-anchor:start;font-size:14px;font-family:Arial" data-type="5" id="812">72 MW</text>
+<text x="565" y="290" style="fill:#e8e8e8;text-anchor:start;font-size:14px;font-family:Arial" data-type="5" id="813">100 MW</text>
+<text x="150" y="490" style="fill:#e8e8e8;text-anchor:end;font-size:14px;font-family:Arial" data-type="5" id="814">125 MW</text>
+<text x="900" y="490" style="fill:#e8e8e8;text-anchor:start;font-size:14px;font-family:Arial" data-type="5" id="815">90 MW</text>
+<text x="400" y="25" style="fill:#c8ced8;text-anchor:start;font-size:12px;font-family:Arial" data-type="5" id="816">Line2</text>
+<text x="665" y="25" style="fill:#c8ced8;text-anchor:start;font-size:12px;font-family:Arial" data-type="5" id="817">Line1</text>
+<text x="195" y="128" style="fill:#c8ced8;text-anchor:start;font-size:12px;font-family:Arial" data-type="5" id="818">Line7</text>
+<text x="845" y="128" style="fill:#c8ced8;text-anchor:start;font-size:12px;font-family:Arial" data-type="5" id="819">Line8</text>
+<text x="300" y="290" style="fill:#c8ced8;text-anchor:start;font-size:12px;font-family:Arial" data-type="5" id="820">Line4</text>
+<text x="760" y="290" style="fill:#c8ced8;text-anchor:start;font-size:12px;font-family:Arial" data-type="5" id="821">Line3</text>
+<text x="320" y="545" style="fill:#c8ced8;text-anchor:start;font-size:12px;font-family:Arial" data-type="5" id="822">Line5</text>
+<text x="740" y="545" style="fill:#c8ced8;text-anchor:start;font-size:12px;font-family:Arial" data-type="5" id="823">Line6</text>
+<text x="490" y="730" style="fill:#c8ced8;text-anchor:start;font-size:12px;font-family:Arial" data-type="5" id="824">Line9</text>
+</g>
+</svg>
