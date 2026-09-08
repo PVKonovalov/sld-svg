@@ -1,0 +1,419 @@
+<?xml version="1.0"?>
+<!-- Hand-authored sample SLD, WSCC 9-bus test system (see WSCC9.png) — the same underlying topology
+     as IEEE9bus.svg (see that file's own header for the general conventions this one follows: dark
+     #12161d background, <g id data-type data-name data-voltage> grouped elements with integer ids,
+     Point:7/Text:5 drawn last so dots and captions sit on top). Every id below is the SAME id used
+     for the same physical element in IEEE9bus.svg. Two structural differences from that file, per
+     WSCC9.png: (1) the three generator-to-network links (Bus2-Bus7, Bus3-Bus9, Bus1-Bus4 — ids 307,
+     308, 309) are 2-winding Power transformers (data-type="47", named T2/T3/T1 per WSCC convention)
+     instead of Overhead lines, drawn from scratch (two overlapping circles) rather than symbols.xml's
+     full-scale template, the same simplified-pictogram approach IEEE9bus.svg already uses for its
+     other custom shapes; (2) every red square in WSCC9.png is a circuit breaker (data-type="41"): one
+     inline on each generator's own wire (new elements, ids 1001-1003), one at each end of the six pure
+     transmission lines (ids 1004-1015), one at each end of the three transformers (ids 1016-1021), and
+     one on each load's own bus tap (ids 1022-1024) — 24 breakers total, each drawn with the real
+     xsde2svg shape-41 geometry (body + state blade + fixed leg stubs, per the corpus sample at
+     examples/sld/Examples.svg:430, not a flat placeholder square), closed (data-state="1",
+     lawngreen fill per its own data-fill="0:red,1:lawngreen,2:yellow" map). The leg stubs always run
+     parallel to the wire the breaker sits on; the state blade runs parallel to the legs too since
+     every breaker here is closed, per docs/SLD_SVG_ELEMENTS.md's Pattern A (it would run perpendicular
+     if open). Every breaker replaces what was a plain
+     Point:7 dot at that same coordinate in IEEE9bus.svg. WSCC9.png also carries a power-flow solution
+     (MW/Mvar per generator and load, a pu voltage magnitude per bus) that IEEE9bus.svg doesn't show;
+     those are Digital device2 (data-type="134") live-readout elements per docs/SLD_SVG_ELEMENTS.md — a
+     bare <text data-type="134"> with a <tspan> unit and a data-unit attribute, matching the real
+     corpus's own convention (see docs' Analog readout section) — turquoise/bold to read as a live
+     value, distinct from the plain Text:5 captions. The bottom generator's own MW value changed
+     (72 -> 334) so its element name changed too (G72 -> G334, same id 103); the two side-branch loads'
+     MW values changed likewise (Load 125MW -> Load 166MW id 202, Load 90MW -> Load 165MW id 203).
+     Every element's stroke/data-voltage follows the two voltage levels either side of the step-up
+     transformers, per the real per-element data-voltage convention (see docs' Attribute reference and
+     the transformer sample at examples/sld/Examples.svg:762): "#00A0F0" from each generator up
+     to and including its transformer's HV winding (G163/G85/G334, their wires, Bus2/Bus3/Bus1, and the
+     three breakers closest to those buses), "#962896" for the transformer's MV winding onward — the
+     rest of the network (Bus4/5/6/7/8/9, all six Overhead lines, every other breaker, and all three
+     loads). Each transformer's two windings are two separately-colored circles (no single data-voltage
+     on the transformer's own outer <g>, matching the cited sample exactly), one per side. Every
+     Overhead line is a single plain <polyline> (no pi-network box/dots/glyph in the middle). Every
+     breaker also carries its own Text:5 label (its data-name), placed to the right of a vertical
+     breaker or above a horizontal one, each with at least 4px of clearance from every other element —
+     computed by a placement script (search outward from the ideal spot until clear) and confirmed by
+     an independent pairwise bounding-box check across every label, breaker, bus, generator/transformer
+     circle, and load triangle in the file. Each of the 12 breakers flanking a pure Overhead line
+     (ids 1004-1015) has two distinct terminals, not one wire drawn straight through it: the long run
+     toward the other breaker stays part of that Overhead line:22, while the short run out to the
+     breaker's own bus is a separate bare Buswork:21 polyline (no wrapping <g>, no data-name, per
+     examples/sld/Examples.svg:155's own convention for this shape) — same voltage color either
+     side, so the wire still reads as one continuous line, just modeled as two distinct pieces of
+     equipment meeting at the switch. The six breakers between a transformer's own winding and its
+     adjacent bus (ids 1016-1021) get the identical treatment: each transformer's own lead (inside its
+     <g data-type="47">) now stops right at the breaker instead of running straight through it to the
+     bus, and a new bare Buswork:21 polyline (ids 363-368) covers the short remaining run from the
+     breaker out to the bus — verified by commenting a breaker out and confirming a real visual gap
+     opens up where it sat, instead of the wire staying intact underneath it. The same fix also applies
+     to all 3 generators (each one's own wire, inside its <g data-type="173">, now stops at its breaker
+     instead of continuing to the bus) and all 3 loads (each one's own wire, inside its
+     <g data-type="28">, now starts at its breaker instead of starting at the bus), with 6 more
+     Buswork:21 polylines (ids 369-374) covering the remaining bus-side runs — every one of the 24
+     breakers in this file now has a real gap on both sides if removed, checked programmatically by
+     confirming each breaker's own leg-tip coordinate has a matching wire endpoint on the correct side. -->
+
+<svg width="1150" height="1000" style="stroke-width: 0px; background-color: #12161d;" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <g transform="translate(50,50)">
+
+    <!-- Bus:24 -->
+    <g id="2" data-type="24" data-name="Bus 2" data-voltage="#00A0F0">
+      <polyline points="160,55 160,125" style="fill:none;stroke:#00A0F0;stroke-width:4" />
+    </g>
+    <g id="7" data-type="24" data-name="Bus 7" data-voltage="#962896">
+      <polyline points="290,20 290,183" style="fill:none;stroke:#962896;stroke-width:4" />
+    </g>
+    <g id="9" data-type="24" data-name="Bus 9" data-voltage="#962896">
+      <polyline points="810,20 810,183" style="fill:none;stroke:#962896;stroke-width:4" />
+    </g>
+    <g id="3" data-type="24" data-name="Bus 3" data-voltage="#00A0F0">
+      <polyline points="940,55 940,125" style="fill:none;stroke:#00A0F0;stroke-width:4" />
+    </g>
+    <g id="8" data-type="24" data-name="Bus 8" data-voltage="#962896">
+      <polyline points="470,210 630,210" style="fill:none;stroke:#962896;stroke-width:4" />
+    </g>
+    <g id="5" data-type="24" data-name="Bus 5" data-voltage="#962896">
+      <polyline points="180,430 330,430" style="fill:none;stroke:#962896;stroke-width:4" />
+    </g>
+    <g id="6" data-type="24" data-name="Bus 6" data-voltage="#962896">
+      <polyline points="770,430 920,430" style="fill:none;stroke:#962896;stroke-width:4" />
+    </g>
+    <g id="4" data-type="24" data-name="Bus 4" data-voltage="#962896">
+      <polyline points="290,650 810,650" style="fill:none;stroke:#962896;stroke-width:4" />
+    </g>
+    <g id="1" data-type="24" data-name="Bus 1" data-voltage="#00A0F0">
+      <polyline points="470,800 630,800" style="fill:none;stroke:#00A0F0;stroke-width:4" />
+    </g>
+
+    <!-- Generator:173 -->
+    <g id="101" data-type="173" data-name="G163" data-voltage="#00A0F0">
+      <circle cx="70" cy="70" r="22" style="fill:#12161d;stroke:#00A0F0;stroke-width:2" />
+      <text x="70" y="75" style="fill:#00A0F0;text-anchor:middle;font-size:13px;font-family:Arial">P V</text>
+      <polyline points="92,70 111,70" style="fill:none;stroke:#00A0F0;stroke-width:1.5" />
+    </g>
+    <g id="102" data-type="173" data-name="G85" data-voltage="#00A0F0">
+      <circle cx="1030" cy="70" r="22" style="fill:#12161d;stroke:#00A0F0;stroke-width:2" />
+      <text x="1030" y="75" style="fill:#00A0F0;text-anchor:middle;font-size:13px;font-family:Arial">P V</text>
+      <polyline points="1008,70 989,70" style="fill:none;stroke:#00A0F0;stroke-width:1.5" />
+    </g>
+    <g id="103" data-type="173" data-name="G334" data-voltage="#00A0F0">
+      <circle cx="550" cy="880" r="22" style="fill:#12161d;stroke:#00A0F0;stroke-width:2" />
+      <text x="550" y="885" style="fill:#00A0F0;text-anchor:middle;font-size:13px;font-family:Arial">P V</text>
+      <polyline points="550,858 550,844" style="fill:none;stroke:#00A0F0;stroke-width:1.5" />
+    </g>
+
+    <!-- Object link:28 -->
+    <g id="201" data-type="28" data-name="Load 100MW" data-voltage="#962896">
+      <polyline points="550,240 550,250" style="fill:none;stroke:#962896;stroke-width:1.5" />
+      <path d="M 537 250 L 563 250 L 550 280 Z" style="fill:none;stroke:#962896;stroke-width:2" />
+    </g>
+    <g id="202" data-type="28" data-name="Load 166MW" data-voltage="#962896">
+      <polyline points="220,460 220,470" style="fill:none;stroke:#962896;stroke-width:1.5" />
+      <path d="M 207 470 L 233 470 L 220 500 Z" style="fill:none;stroke:#962896;stroke-width:2" />
+    </g>
+    <g id="203" data-type="28" data-name="Load 165MW" data-voltage="#962896">
+      <polyline points="880,460 880,470" style="fill:none;stroke:#962896;stroke-width:1.5" />
+      <path d="M 867 470 L 893 470 L 880 500 Z" style="fill:none;stroke:#962896;stroke-width:2" />
+    </g>
+
+    <!-- Overhead line:22 -->
+    <g id="302" data-type="22" data-name="Line2" data-voltage="#962896">
+      <polyline points="320,40 530,40 530,180" style="fill:none;stroke:#962896;stroke-width:1.5" />
+    </g>
+
+    <g id="301" data-type="22" data-name="Line1" data-voltage="#962896">
+      <polyline points="570,180 570,40 780,40" style="fill:none;stroke:#962896;stroke-width:1.5" />
+    </g>
+
+    <g id="304" data-type="22" data-name="Line4" data-voltage="#962896">
+      <polyline points="290,213 290,400" style="fill:none;stroke:#962896;stroke-width:1.5" />
+    </g>
+
+    <g id="303" data-type="22" data-name="Line3" data-voltage="#962896">
+      <polyline points="810,213 810,400" style="fill:none;stroke:#962896;stroke-width:1.5" />
+    </g>
+
+    <g id="305" data-type="22" data-name="Line5" data-voltage="#962896">
+      <polyline points="310,460 310,620" style="fill:none;stroke:#962896;stroke-width:1.5" />
+    </g>
+
+    <g id="306" data-type="22" data-name="Line6" data-voltage="#962896">
+      <polyline points="790,460 790,620" style="fill:none;stroke:#962896;stroke-width:1.5" />
+    </g>
+
+    <!-- Buswork:21 -->
+    <polyline points="160,70 141,70" style="fill:none;stroke:#00A0F0;stroke-width:1.5" data-type="21" id="369" data-voltage="#00A0F0" />
+    <polyline points="940,70 959,70" style="fill:none;stroke:#00A0F0;stroke-width:1.5" data-type="21" id="370" data-voltage="#00A0F0" />
+    <polyline points="550,814 550,800" style="fill:none;stroke:#00A0F0;stroke-width:1.5" data-type="21" id="371" data-voltage="#00A0F0" />
+
+    <!-- Power transformer:47 -->
+    <g id="307" data-type="47" data-name="T2">
+      <path d="M 190 105 H 198" style="fill:none;stroke:#00A0F0;stroke-width:1.5" data-voltage="#00A0F0" />
+      <circle cx="213" cy="105" r="15" style="fill:none;stroke:#00A0F0;stroke-width:2" data-voltage="#00A0F0" />
+      <circle cx="237" cy="105" r="15" style="fill:none;stroke:#962896;stroke-width:2" data-voltage="#962896" />
+      <path d="M 252 105 H 260" style="fill:none;stroke:#962896;stroke-width:1.5" data-voltage="#962896" />
+    </g>
+    <g id="308" data-type="47" data-name="T3">
+      <path d="M 910 105 H 902" style="fill:none;stroke:#00A0F0;stroke-width:1.5" data-voltage="#00A0F0" />
+      <circle cx="887" cy="105" r="15" style="fill:none;stroke:#00A0F0;stroke-width:2" data-voltage="#00A0F0" />
+      <circle cx="863" cy="105" r="15" style="fill:none;stroke:#962896;stroke-width:2" data-voltage="#962896" />
+      <path d="M 848 105 H 840" style="fill:none;stroke:#962896;stroke-width:1.5" data-voltage="#962896" />
+    </g>
+    <g id="309" data-type="47" data-name="T1" transform="rotate(90,550,725)">
+      <path d="M 505 725 H 523" style="fill:none;stroke:#962896;stroke-width:1.5" data-voltage="#962896" />
+      <circle cx="538" cy="725" r="15" style="fill:none;stroke:#962896;stroke-width:2" data-voltage="#962896" />
+      <circle cx="562" cy="725" r="15" style="fill:none;stroke:#00A0F0;stroke-width:2" data-voltage="#00A0F0" />
+      <path d="M 577 725 H 595" style="fill:none;stroke:#00A0F0;stroke-width:1.5" data-voltage="#00A0F0" />
+    </g>
+
+    <!-- Breaker:41 -->
+    <g id="1001" data-voltage="#00A0F0" data-type="41" data-name="CB-G163">
+      <g>
+        <path d="M 115.5 59.5 h 21 v 21 h -21 z" data-fill="0:red,1:lawngreen,2:yellow" style="fill:lawngreen;stroke:#00A0F0;stroke-width:1" />
+        <path d="M 118.5 70 h 15" data-state="1" style="stroke:#00A0F0;stroke-width:1" />
+        <path d="M 111 70 h 4.5 M 141 70 h -4.5" style="stroke:#00A0F0;stroke-width:1" />
+      </g>
+    </g>
+    <g id="1002" data-voltage="#00A0F0" data-type="41" data-name="CB-G85">
+      <g>
+        <path d="M 963.5 59.5 h 21 v 21 h -21 z" data-fill="0:red,1:lawngreen,2:yellow" style="fill:lawngreen;stroke:#00A0F0;stroke-width:1" />
+        <path d="M 966.5 70 h 15" data-state="1" style="stroke:#00A0F0;stroke-width:1" />
+        <path d="M 959 70 h 4.5 M 989 70 h -4.5" style="stroke:#00A0F0;stroke-width:1" />
+      </g>
+    </g>
+    <g id="1003" data-voltage="#00A0F0" data-type="41" data-name="CB-G334">
+      <g>
+        <path d="M 539.5 818.5 h 21 v 21 h -21 z" data-fill="0:red,1:lawngreen,2:yellow" style="fill:lawngreen;stroke:#00A0F0;stroke-width:1" />
+        <path d="M 550 821.5 v 15" data-state="1" style="stroke:#00A0F0;stroke-width:1" />
+        <path d="M 550 814 v 4.5 M 550 844 v -4.5" style="stroke:#00A0F0;stroke-width:1" />
+      </g>
+    </g>
+<g id="1004" data-voltage="#962896" data-type="41" data-name="CB-Line2-Bus7">
+      <g>
+        <path d="M 294.5 29.5 h 21 v 21 h -21 z" data-fill="0:red,1:lawngreen,2:yellow" style="fill:lawngreen;stroke:#962896;stroke-width:1" />
+        <path d="M 297.5 40 h 15" data-state="1" style="stroke:#962896;stroke-width:1" />
+        <path d="M 290 40 h 4.5 M 320 40 h -4.5" style="stroke:#962896;stroke-width:1" />
+      </g>
+    </g>
+<g id="1005" data-voltage="#962896" data-type="41" data-name="CB-Line2-Bus8">
+      <g>
+        <path d="M 519.5 184.5 h 21 v 21 h -21 z" data-fill="0:red,1:lawngreen,2:yellow" style="fill:lawngreen;stroke:#962896;stroke-width:1" />
+        <path d="M 530 187.5 v 15" data-state="1" style="stroke:#962896;stroke-width:1" />
+        <path d="M 530 180 v 4.5 M 530 210 v -4.5" style="stroke:#962896;stroke-width:1" />
+      </g>
+    </g>
+<g id="1006" data-voltage="#962896" data-type="41" data-name="CB-Line1-Bus9">
+      <g>
+        <path d="M 784.5 29.5 h 21 v 21 h -21 z" data-fill="0:red,1:lawngreen,2:yellow" style="fill:lawngreen;stroke:#962896;stroke-width:1" />
+        <path d="M 787.5 40 h 15" data-state="1" style="stroke:#962896;stroke-width:1" />
+        <path d="M 780 40 h 4.5 M 810 40 h -4.5" style="stroke:#962896;stroke-width:1" />
+      </g>
+    </g>
+<g id="1007" data-voltage="#962896" data-type="41" data-name="CB-Line1-Bus8">
+      <g>
+        <path d="M 559.5 184.5 h 21 v 21 h -21 z" data-fill="0:red,1:lawngreen,2:yellow" style="fill:lawngreen;stroke:#962896;stroke-width:1" />
+        <path d="M 570 187.5 v 15" data-state="1" style="stroke:#962896;stroke-width:1" />
+        <path d="M 570 180 v 4.5 M 570 210 v -4.5" style="stroke:#962896;stroke-width:1" />
+      </g>
+    </g>
+    <g id="1008" data-voltage="#962896" data-type="41" data-name="CB-Line4-Bus7">
+      <g>
+        <path d="M 279.5 187.5 h 21 v 21 h -21 z" data-fill="0:red,1:lawngreen,2:yellow" style="fill:lawngreen;stroke:#962896;stroke-width:1" />
+        <path d="M 290 190.5 v 15" data-state="1" style="stroke:#962896;stroke-width:1" />
+        <path d="M 290 183 v 4.5 M 290 213 v -4.5" style="stroke:#962896;stroke-width:1" />
+      </g>
+    </g>
+<g id="1009" data-voltage="#962896" data-type="41" data-name="CB-Line4-Bus5">
+      <g>
+        <path d="M 279.5 404.5 h 21 v 21 h -21 z" data-fill="0:red,1:lawngreen,2:yellow" style="fill:lawngreen;stroke:#962896;stroke-width:1" />
+        <path d="M 290 407.5 v 15" data-state="1" style="stroke:#962896;stroke-width:1" />
+        <path d="M 290 400 v 4.5 M 290 430 v -4.5" style="stroke:#962896;stroke-width:1" />
+      </g>
+    </g>
+    <g id="1010" data-voltage="#962896" data-type="41" data-name="CB-Line3-Bus9">
+      <g>
+        <path d="M 799.5 187.5 h 21 v 21 h -21 z" data-fill="0:red,1:lawngreen,2:yellow" style="fill:lawngreen;stroke:#962896;stroke-width:1" />
+        <path d="M 810 190.5 v 15" data-state="1" style="stroke:#962896;stroke-width:1" />
+        <path d="M 810 183 v 4.5 M 810 213 v -4.5" style="stroke:#962896;stroke-width:1" />
+      </g>
+    </g>
+<g id="1011" data-voltage="#962896" data-type="41" data-name="CB-Line3-Bus6">
+      <g>
+        <path d="M 799.5 404.5 h 21 v 21 h -21 z" data-fill="0:red,1:lawngreen,2:yellow" style="fill:lawngreen;stroke:#962896;stroke-width:1" />
+        <path d="M 810 407.5 v 15" data-state="1" style="stroke:#962896;stroke-width:1" />
+        <path d="M 810 400 v 4.5 M 810 430 v -4.5" style="stroke:#962896;stroke-width:1" />
+      </g>
+    </g>
+<g id="1012" data-voltage="#962896" data-type="41" data-name="CB-Line5-Bus5">
+      <g>
+        <path d="M 299.5 434.5 h 21 v 21 h -21 z" data-fill="0:red,1:lawngreen,2:yellow" style="fill:lawngreen;stroke:#962896;stroke-width:1" />
+        <path d="M 310 437.5 v 15" data-state="1" style="stroke:#962896;stroke-width:1" />
+        <path d="M 310 430 v 4.5 M 310 460 v -4.5" style="stroke:#962896;stroke-width:1" />
+      </g>
+    </g>
+<g id="1013" data-voltage="#962896" data-type="41" data-name="CB-Line5-Bus4">
+      <g>
+        <path d="M 299.5 624.5 h 21 v 21 h -21 z" data-fill="0:red,1:lawngreen,2:yellow" style="fill:lawngreen;stroke:#962896;stroke-width:1" />
+        <path d="M 310 627.5 v 15" data-state="1" style="stroke:#962896;stroke-width:1" />
+        <path d="M 310 620 v 4.5 M 310 650 v -4.5" style="stroke:#962896;stroke-width:1" />
+      </g>
+    </g>
+<g id="1014" data-voltage="#962896" data-type="41" data-name="CB-Line6-Bus6">
+      <g>
+        <path d="M 779.5 434.5 h 21 v 21 h -21 z" data-fill="0:red,1:lawngreen,2:yellow" style="fill:lawngreen;stroke:#962896;stroke-width:1" />
+        <path d="M 790 437.5 v 15" data-state="1" style="stroke:#962896;stroke-width:1" />
+        <path d="M 790 430 v 4.5 M 790 460 v -4.5" style="stroke:#962896;stroke-width:1" />
+      </g>
+    </g>
+<g id="1015" data-voltage="#962896" data-type="41" data-name="CB-Line6-Bus4">
+      <g>
+        <path d="M 779.5 624.5 h 21 v 21 h -21 z" data-fill="0:red,1:lawngreen,2:yellow" style="fill:lawngreen;stroke:#962896;stroke-width:1" />
+        <path d="M 790 627.5 v 15" data-state="1" style="stroke:#962896;stroke-width:1" />
+        <path d="M 790 620 v 4.5 M 790 650 v -4.5" style="stroke:#962896;stroke-width:1" />
+      </g>
+    </g>
+<g id="1016" data-voltage="#00A0F0" data-type="41" data-name="CB-T2-Bus2">
+      <g>
+        <path d="M 164.5 94.5 h 21 v 21 h -21 z" data-fill="0:red,1:lawngreen,2:yellow" style="fill:lawngreen;stroke:#00A0F0;stroke-width:1" />
+        <path d="M 167.5 105 h 15" data-state="1" style="stroke:#00A0F0;stroke-width:1" />
+        <path d="M 160 105 h 4.5 M 190 105 h -4.5" style="stroke:#00A0F0;stroke-width:1" />
+      </g>
+    </g>
+<g id="1017" data-voltage="#962896" data-type="41" data-name="CB-T2-Bus7">
+      <g>
+        <path d="M 264.5 94.5 h 21 v 21 h -21 z" data-fill="0:red,1:lawngreen,2:yellow" style="fill:lawngreen;stroke:#962896;stroke-width:1" />
+        <path d="M 267.5 105 h 15" data-state="1" style="stroke:#962896;stroke-width:1" />
+        <path d="M 260 105 h 4.5 M 290 105 h -4.5" style="stroke:#962896;stroke-width:1" />
+      </g>
+    </g>
+<g id="1018" data-voltage="#00A0F0" data-type="41" data-name="CB-T3-Bus3">
+      <g>
+        <path d="M 914.5 94.5 h 21 v 21 h -21 z" data-fill="0:red,1:lawngreen,2:yellow" style="fill:lawngreen;stroke:#00A0F0;stroke-width:1" />
+        <path d="M 917.5 105 h 15" data-state="1" style="stroke:#00A0F0;stroke-width:1" />
+        <path d="M 910 105 h 4.5 M 940 105 h -4.5" style="stroke:#00A0F0;stroke-width:1" />
+      </g>
+    </g>
+<g id="1019" data-voltage="#962896" data-type="41" data-name="CB-T3-Bus9">
+      <g>
+        <path d="M 814.5 94.5 h 21 v 21 h -21 z" data-fill="0:red,1:lawngreen,2:yellow" style="fill:lawngreen;stroke:#962896;stroke-width:1" />
+        <path d="M 817.5 105 h 15" data-state="1" style="stroke:#962896;stroke-width:1" />
+        <path d="M 810 105 h 4.5 M 840 105 h -4.5" style="stroke:#962896;stroke-width:1" />
+      </g>
+    </g>
+<g id="1020" data-voltage="#962896" data-type="41" data-name="CB-T1-Bus4">
+      <g>
+        <path d="M 539.5 654.5 h 21 v 21 h -21 z" data-fill="0:red,1:lawngreen,2:yellow" style="fill:lawngreen;stroke:#962896;stroke-width:1" />
+        <path d="M 550 657.5 v 15" data-state="1" style="stroke:#962896;stroke-width:1" />
+        <path d="M 550 650 v 4.5 M 550 680 v -4.5" style="stroke:#962896;stroke-width:1" />
+      </g>
+    </g>
+<g id="1021" data-voltage="#00A0F0" data-type="41" data-name="CB-T1-Bus1">
+      <g>
+        <path d="M 539.5 774.5 h 21 v 21 h -21 z" data-fill="0:red,1:lawngreen,2:yellow" style="fill:lawngreen;stroke:#00A0F0;stroke-width:1" />
+        <path d="M 550 777.5 v 15" data-state="1" style="stroke:#00A0F0;stroke-width:1" />
+        <path d="M 550 770 v 4.5 M 550 800 v -4.5" style="stroke:#00A0F0;stroke-width:1" />
+      </g>
+    </g>
+<g id="1022" data-voltage="#962896" data-type="41" data-name="CB-Load100">
+      <g>
+        <path d="M 539.5 214.5 h 21 v 21 h -21 z" data-fill="0:red,1:lawngreen,2:yellow" style="fill:lawngreen;stroke:#962896;stroke-width:1" />
+        <path d="M 550 217.5 v 15" data-state="1" style="stroke:#962896;stroke-width:1" />
+        <path d="M 550 210 v 4.5 M 550 240 v -4.5" style="stroke:#962896;stroke-width:1" />
+      </g>
+    </g>
+<g id="1023" data-voltage="#962896" data-type="41" data-name="CB-Load166">
+      <g>
+        <path d="M 209.5 434.5 h 21 v 21 h -21 z" data-fill="0:red,1:lawngreen,2:yellow" style="fill:lawngreen;stroke:#962896;stroke-width:1" />
+        <path d="M 220 437.5 v 15" data-state="1" style="stroke:#962896;stroke-width:1" />
+        <path d="M 220 430 v 4.5 M 220 460 v -4.5" style="stroke:#962896;stroke-width:1" />
+      </g>
+    </g>
+<g id="1024" data-voltage="#962896" data-type="41" data-name="CB-Load165">
+      <g>
+        <path d="M 869.5 434.5 h 21 v 21 h -21 z" data-fill="0:red,1:lawngreen,2:yellow" style="fill:lawngreen;stroke:#962896;stroke-width:1" />
+        <path d="M 880 437.5 v 15" data-state="1" style="stroke:#962896;stroke-width:1" />
+        <path d="M 880 430 v 4.5 M 880 460 v -4.5" style="stroke:#962896;stroke-width:1" />
+      </g>
+    </g>
+
+    <!-- Point:7 -->
+    <circle cx="92" cy="70" r="3" style="fill:#12161d;stroke:#00A0F0;stroke-width:1" data-type="7" id="701" data-voltage="#00A0F0" />
+    <circle cx="160" cy="70" r="3" style="fill:#12161d;stroke:#00A0F0;stroke-width:1" data-type="7" id="702" data-voltage="#00A0F0" />
+    <circle cx="1008" cy="70" r="3" style="fill:#12161d;stroke:#00A0F0;stroke-width:1" data-type="7" id="703" data-voltage="#00A0F0" />
+    <circle cx="940" cy="70" r="3" style="fill:#12161d;stroke:#00A0F0;stroke-width:1" data-type="7" id="704" data-voltage="#00A0F0" />
+    <circle cx="550" cy="858" r="3" style="fill:#12161d;stroke:#00A0F0;stroke-width:1" data-type="7" id="705" data-voltage="#00A0F0" />
+
+    <!-- Text:5 -->
+    <text x="135" y="148" style="fill:#8fd0ff;text-anchor:middle;font-size:13px;font-family:Arial" data-type="5" id="801">Bus 2</text>
+    <text x="306.25" y="144.17" style="fill:#8fd0ff;text-anchor:start;font-size:13px;font-family:Arial" data-type="5" id="802">Bus 7</text>
+    <text x="820" y="15" style="fill:#8fd0ff;text-anchor:start;font-size:13px;font-family:Arial" data-type="5" id="803">Bus 9</text>
+    <text x="972.64" y="116.06" style="fill:#8fd0ff;text-anchor:middle;font-size:13px;font-family:Arial" data-type="5" id="804">Bus 3</text>
+    <text x="640" y="215" style="fill:#8fd0ff;text-anchor:start;font-size:13px;font-family:Arial" data-type="5" id="805">Bus 8</text>
+    <text x="220.14" y="416.67" style="fill:#8fd0ff;text-anchor:end;font-size:13px;font-family:Arial" data-type="5" id="806">Bus 5</text>
+    <text x="930" y="425" style="fill:#8fd0ff;text-anchor:start;font-size:13px;font-family:Arial" data-type="5" id="807">Bus 6</text>
+    <text x="680.97" y="635.97" style="fill:#8fd0ff;text-anchor:start;font-size:13px;font-family:Arial" data-type="5" id="808">Bus 4</text>
+    <text x="460" y="795" style="fill:#8fd0ff;text-anchor:end;font-size:13px;font-family:Arial" data-type="5" id="809">Bus 1</text>
+    <text x="411.81" y="24.3" style="fill:#c8ced8;text-anchor:start;font-size:12px;font-family:Arial" data-type="5" id="816">Line2</text>
+    <text x="665" y="25" style="fill:#c8ced8;text-anchor:start;font-size:12px;font-family:Arial" data-type="5" id="817">Line1</text>
+    <text x="216.53" y="141.19" style="fill:#c8ced8;text-anchor:start;font-size:12px;font-family:Arial" data-type="5" id="818">T2</text>
+    <text x="866.53" y="134.94" style="fill:#c8ced8;text-anchor:start;font-size:12px;font-family:Arial" data-type="5" id="819">T3</text>
+    <text x="300" y="290" style="fill:#c8ced8;text-anchor:start;font-size:12px;font-family:Arial" data-type="5" id="820">Line4</text>
+    <text x="822.5" y="290" style="fill:#c8ced8;text-anchor:start;font-size:12px;font-family:Arial" data-type="5" id="821">Line3</text>
+    <text x="320" y="545" style="fill:#c8ced8;text-anchor:start;font-size:12px;font-family:Arial" data-type="5" id="822">Line5</text>
+    <text x="803.19" y="543.61" style="fill:#c8ced8;text-anchor:start;font-size:12px;font-family:Arial" data-type="5" id="823">Line6</text>
+    <text x="578.89" y="728.61" style="fill:#c8ced8;text-anchor:start;font-size:12px;font-family:Arial" data-type="5" id="824">T1</text>
+    <text x="126" y="52.14" style="fill:#c8ced8;text-anchor:middle;font-size:12px;font-family:Arial" data-type="5" id="825">CB-G163</text>
+    <text x="972.47" y="45.2" style="fill:#c8ced8;text-anchor:middle;font-size:12px;font-family:Arial" data-type="5" id="826">CB-G85</text>
+    <text x="564.5" y="833" style="fill:#c8ced8;text-anchor:start;font-size:12px;font-family:Arial" data-type="5" id="827">CB-G334</text>
+    <text x="318.89" y="5.47" style="fill:#c8ced8;text-anchor:middle;font-size:12px;font-family:Arial" data-type="5" id="828">CB-Line2-Bus7</text>
+    <text x="427.83" y="182.86" style="fill:#c8ced8;text-anchor:start;font-size:12px;font-family:Arial" data-type="5" id="829">CB-Line2-Bus8</text>
+    <text x="755.56" y="15.2" style="fill:#c8ced8;text-anchor:middle;font-size:12px;font-family:Arial" data-type="5" id="830">CB-Line1-Bus9</text>
+    <text x="590.06" y="180.72" style="fill:#c8ced8;text-anchor:start;font-size:12px;font-family:Arial" data-type="5" id="831">CB-Line1-Bus8</text>
+    <text x="314.22" y="202.69" style="fill:#c8ced8;text-anchor:start;font-size:12px;font-family:Arial" data-type="5" id="832">CB-Line4-Bus7</text>
+    <text x="324.64" y="416.69" style="fill:#c8ced8;text-anchor:start;font-size:12px;font-family:Arial" data-type="5" id="833">CB-Line4-Bus5</text>
+    <text x="837.69" y="202" style="fill:#c8ced8;text-anchor:start;font-size:12px;font-family:Arial" data-type="5" id="834">CB-Line3-Bus9</text>
+    <text x="834.92" y="416" style="fill:#c8ced8;text-anchor:start;font-size:12px;font-family:Arial" data-type="5" id="835">CB-Line3-Bus6</text>
+    <text x="341.17" y="453.39" style="fill:#c8ced8;text-anchor:start;font-size:12px;font-family:Arial" data-type="5" id="836">CB-Line5-Bus5</text>
+    <text x="341.86" y="634" style="fill:#c8ced8;text-anchor:start;font-size:12px;font-family:Arial" data-type="5" id="837">CB-Line5-Bus4</text>
+    <text x="681.21" y="457.01" style="fill:#c8ced8;text-anchor:start;font-size:12px;font-family:Arial" data-type="5" id="838">CB-Line6-Bus6</text>
+    <text x="826.72" y="633.36" style="fill:#c8ced8;text-anchor:start;font-size:12px;font-family:Arial" data-type="5" id="839">CB-Line6-Bus4</text>
+    <text x="200" y="83.14" style="fill:#c8ced8;text-anchor:middle;font-size:12px;font-family:Arial" data-type="5" id="840">CB-T2-Bus2</text>
+    <text x="337.64" y="109.36" style="fill:#c8ced8;text-anchor:middle;font-size:12px;font-family:Arial" data-type="5" id="841">CB-T2-Bus7</text>
+    <text x="900" y="83.14" style="fill:#c8ced8;text-anchor:middle;font-size:12px;font-family:Arial" data-type="5" id="842">CB-T3-Bus3</text>
+    <text x="760.28" y="110.06" style="fill:#c8ced8;text-anchor:middle;font-size:12px;font-family:Arial" data-type="5" id="843">CB-T3-Bus9</text>
+    <text x="564.5" y="672" style="fill:#c8ced8;text-anchor:start;font-size:12px;font-family:Arial" data-type="5" id="844">CB-T1-Bus4</text>
+    <text x="574.92" y="786" style="fill:#c8ced8;text-anchor:start;font-size:12px;font-family:Arial" data-type="5" id="845">CB-T1-Bus1</text>
+    <text x="564.5" y="232" style="fill:#c8ced8;text-anchor:start;font-size:12px;font-family:Arial" data-type="5" id="846">CB-Load100</text>
+    <text x="126.17" y="454.64" style="fill:#c8ced8;text-anchor:start;font-size:12px;font-family:Arial" data-type="5" id="847">CB-Load166</text>
+    <text x="910.47" y="454.69" style="fill:#c8ced8;text-anchor:start;font-size:12px;font-family:Arial" data-type="5" id="848">CB-Load165</text>
+
+    <!-- Digital device2:134 -->
+    <text x="10" y="24" style="fill:#2dd4bf;text-anchor:start;font-size:14px;font-family:Arial;font-weight:bold" data-type="134" id="810" data-unit="MW">163 <tspan style="fill:#2dd4bf;font-size:14px;font-family:Arial;font-weight:bold">MW</tspan></text>
+    <text x="10" y="42" style="fill:#2dd4bf;text-anchor:start;font-size:14px;font-family:Arial;font-weight:bold" data-type="134" id="1101" data-unit="Mvar">384 <tspan style="fill:#2dd4bf;font-size:14px;font-family:Arial;font-weight:bold">Mvar</tspan></text>
+    <text x="1069.44" y="10.8" style="fill:#2dd4bf;text-anchor:end;font-size:14px;font-family:Arial;font-weight:bold" data-type="134" id="811" data-unit="MW">85 <tspan style="fill:#2dd4bf;font-size:14px;font-family:Arial;font-weight:bold">MW</tspan></text>
+    <text x="1071.53" y="35.06" style="fill:#2dd4bf;text-anchor:end;font-size:14px;font-family:Arial;font-weight:bold" data-type="134" id="1102" data-unit="Mvar">227 <tspan style="fill:#2dd4bf;font-size:14px;font-family:Arial;font-weight:bold">Mvar</tspan></text>
+    <text x="580" y="885" style="fill:#2dd4bf;text-anchor:start;font-size:14px;font-family:Arial;font-weight:bold" data-type="134" id="812" data-unit="MW">334 <tspan style="fill:#2dd4bf;font-size:14px;font-family:Arial;font-weight:bold">MW</tspan></text>
+    <text x="580" y="903" style="fill:#2dd4bf;text-anchor:start;font-size:14px;font-family:Arial;font-weight:bold" data-type="134" id="1103" data-unit="Mvar">909 <tspan style="fill:#2dd4bf;font-size:14px;font-family:Arial;font-weight:bold">Mvar</tspan></text>
+    <text x="565" y="290" style="fill:#2dd4bf;text-anchor:start;font-size:14px;font-family:Arial;font-weight:bold" data-type="134" id="813" data-unit="MW">100 <tspan style="fill:#2dd4bf;font-size:14px;font-family:Arial;font-weight:bold">MW</tspan></text>
+    <text x="565" y="308" style="fill:#2dd4bf;text-anchor:start;font-size:14px;font-family:Arial;font-weight:bold" data-type="134" id="1104" data-unit="Mvar">35 <tspan style="fill:#2dd4bf;font-size:14px;font-family:Arial;font-weight:bold">Mvar</tspan></text>
+    <text x="245.14" y="526.11" style="fill:#2dd4bf;text-anchor:end;font-size:14px;font-family:Arial;font-weight:bold" data-type="134" id="814" data-unit="MW">166 <tspan style="fill:#2dd4bf;font-size:14px;font-family:Arial;font-weight:bold">MW</tspan></text>
+    <text x="243.06" y="551.75" style="fill:#2dd4bf;text-anchor:end;font-size:14px;font-family:Arial;font-weight:bold" data-type="134" id="1105" data-unit="Mvar">5 <tspan style="fill:#2dd4bf;font-size:14px;font-family:Arial;font-weight:bold">Mvar</tspan></text>
+    <text x="900" y="490" style="fill:#2dd4bf;text-anchor:start;font-size:14px;font-family:Arial;font-weight:bold" data-type="134" id="815" data-unit="MW">165 <tspan style="fill:#2dd4bf;font-size:14px;font-family:Arial;font-weight:bold">MW</tspan></text>
+    <text x="900" y="508" style="fill:#2dd4bf;text-anchor:start;font-size:14px;font-family:Arial;font-weight:bold" data-type="134" id="1106" data-unit="Mvar">28 <tspan style="fill:#2dd4bf;font-size:14px;font-family:Arial;font-weight:bold">Mvar</tspan></text>
+    <text x="135" y="166" style="fill:#2dd4bf;text-anchor:middle;font-size:12px;font-family:Arial;font-weight:bold" data-type="134" id="1107" data-unit="pu">1.025 <tspan style="fill:#2dd4bf;font-size:12px;font-family:Arial;font-weight:bold">pu</tspan></text>
+    <text x="300" y="178" style="fill:#2dd4bf;text-anchor:start;font-size:12px;font-family:Arial;font-weight:bold" data-type="134" id="1108" data-unit="pu">0.797 <tspan style="fill:#2dd4bf;font-size:12px;font-family:Arial;font-weight:bold">pu</tspan></text>
+    <text x="820" y="178" style="fill:#2dd4bf;text-anchor:start;font-size:12px;font-family:Arial;font-weight:bold" data-type="134" id="1109" data-unit="pu">0.897 <tspan style="fill:#2dd4bf;font-size:12px;font-family:Arial;font-weight:bold">pu</tspan></text>
+    <text x="978.89" y="141.69" style="fill:#2dd4bf;text-anchor:middle;font-size:12px;font-family:Arial;font-weight:bold" data-type="134" id="1110" data-unit="pu">1.025 <tspan style="fill:#2dd4bf;font-size:12px;font-family:Arial;font-weight:bold">pu</tspan></text>
+    <text x="640" y="233" style="fill:#2dd4bf;text-anchor:start;font-size:12px;font-family:Arial;font-weight:bold" data-type="134" id="1111" data-unit="pu">0.816 <tspan style="fill:#2dd4bf;font-size:12px;font-family:Arial;font-weight:bold">pu</tspan></text>
+    <text x="231.25" y="389.64" style="fill:#2dd4bf;text-anchor:end;font-size:12px;font-family:Arial;font-weight:bold" data-type="134" id="1112" data-unit="pu">0.139 <tspan style="fill:#2dd4bf;font-size:12px;font-family:Arial;font-weight:bold">pu</tspan></text>
+    <text x="930" y="407" style="fill:#2dd4bf;text-anchor:start;font-size:12px;font-family:Arial;font-weight:bold" data-type="134" id="1113" data-unit="pu">0.592 <tspan style="fill:#2dd4bf;font-size:12px;font-family:Arial;font-weight:bold">pu</tspan></text>
+    <text x="680.28" y="676.19" style="fill:#2dd4bf;text-anchor:start;font-size:12px;font-family:Arial;font-weight:bold" data-type="134" id="1114" data-unit="pu">0.568 <tspan style="fill:#2dd4bf;font-size:12px;font-family:Arial;font-weight:bold">pu</tspan></text>
+    <text x="460" y="818" style="fill:#2dd4bf;text-anchor:end;font-size:12px;font-family:Arial;font-weight:bold" data-type="134" id="1115" data-unit="pu">1.040 <tspan style="fill:#2dd4bf;font-size:12px;font-family:Arial;font-weight:bold">pu</tspan></text>
+
+  </g>
+</svg>
