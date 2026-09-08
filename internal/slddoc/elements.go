@@ -399,7 +399,7 @@ func parseJunctionPoint(n *rawNode) (Element, error) {
 // state indicator uses). Its radius (r) is likewise recorded rather than
 // assumed constant: real instances draw meaningfully different sizes for
 // different roles, e.g. r=11 standalone "Индикатор" panel lights vs. r=5
-// lamps clustered in triplets next to a breaker (see PS_110kV_Valdai.svg).
+// lamps clustered in triplets next to a breaker (see Examples.svg).
 func parseLamp(n *rawNode) (Element, error) {
 	cx, err := strconv.ParseFloat(n.attr("cx"), 64)
 	if err != nil {

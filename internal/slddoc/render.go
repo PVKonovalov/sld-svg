@@ -81,7 +81,7 @@ func lampColor(e Element) string {
 // shapeName gives the English equipment name Render annotates a run of
 // same-Shape elements with, mirroring the source SVG's own
 // "<!-- <russian_name>:<code> -->" comment convention (one per contiguous
-// block of same-data-type elements — see e.g. PS_110kV_Valdai.svg). Kept
+// block of same-data-type elements — see e.g. Examples.svg). Kept
 // per-shape rather than per-Class since the source itself distinguishes,
 // e.g., a fixed breaker (41: "выключатель") from a withdrawable one (43:
 // "выключатель_выдвижной") despite both being ClassBreaker.
