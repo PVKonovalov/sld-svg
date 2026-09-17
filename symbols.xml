@@ -89,10 +89,28 @@
 ]]></template>
   </symbol>
 
+  <!-- 173: Generator. Anchor is the top terminal itself, matching
+       parseOnePortDevice's own convention (elements.go), not the circle's
+       own center (which is where the real source's sde.Origin sits). -->
+  <symbol shape="173">
+    <template><![CDATA[
+<path d="M 0 0 v 9 m -16 16 a 16 16 0 0 1 32 0 a 16 16 0 0 1 -32 0 M -9 25 c 3 -3 6 -3 9 0 s 6 3 9 0" style="fill:none;stroke:{color};stroke-width:2" />
+]]></template>
+  </symbol>
+
   <!-- 7: Junction point (explicit dot) -->
   <symbol shape="7">
     <template><![CDATA[
 <circle cx="0" cy="0" r="3" style="fill:none;stroke:{color};stroke-width:1" />
+]]></template>
+  </symbol>
+
+  <!-- 14: Non-intersection (wire jump) — drawn where two crossing wires
+       visually hop over each other without connecting. Two real
+       electrical ports, one on each side (±10). -->
+  <symbol shape="14">
+    <template><![CDATA[
+<path d="M 10 0 L 3 0 A 3 3 0 0 0 -3 0 L -10 0" style="fill:none;stroke:{color};stroke-width:1" />
 ]]></template>
   </symbol>
 
@@ -102,6 +120,17 @@
 <path d="M 0 -10 v 2 m 0 16 v 2 m -8 -2 h 16 m -16 -16 h 16" style="fill:none;stroke:{color};stroke-width:1" />
 <path d="M 0 -8 l 8 8 l -8 8 l -8 -8 l 8 -8" style="fill:{fill};stroke:{color};stroke-width:1" />
 <path d="{state:M 0 -5 v 10|M -5 0 h 10|M -3.5 -3.5 l 7 7}" style="fill:none;stroke:{color};stroke-width:1" />
+]]></template>
+  </symbol>
+
+  <!-- 76: Starter. Unlike every other switching device here, its own
+       {state:...} indicator is the entire moving part on its own, between
+       two fixed top/bottom bars — no {fill}/data-fill legend of its own,
+       the real source never gave it one. -->
+  <symbol shape="76">
+    <template><![CDATA[
+<path d="M -5 -10 h 10 m 0 20 h -10" style="fill:none;stroke:{color};stroke-width:1" />
+<path d="{state:M 0 -8 v 16|M 8 0 h -16|M -5.7 -5.7 l 11.4 11.4}" style="fill:none;stroke:{color};stroke-width:1" />
 ]]></template>
   </symbol>
 
@@ -157,6 +186,25 @@
 ]]></template>
   </symbol>
 
+  <!-- 29: Surge arrester (a distinct real-world variant from 35 above — a
+       body box with a diagonal discharge mark, rather than a bowtie). -->
+  <symbol shape="29">
+    <template><![CDATA[
+<path d="M 0 -20 v 10 h 5 v 20 h -5 v 10 v -10 h -5 v -20 h 5 z M -10 18 v -6 l 20 -24" style="fill:none;stroke:{color};stroke-width:1" />
+]]></template>
+  </symbol>
+
+  <!-- 168: Surge arrester, grounded variant (another distinct real-world
+       variant from 35/29 — a body box with its own diagonal discharge
+       mark, plus the same three-decreasing-width earth fan 31/54/397 use).
+       Anchor is the top terminal itself, matching parseOnePortDevice's own
+       convention, not a centered anchor like 29/35. -->
+  <symbol shape="168">
+    <template><![CDATA[
+<path d="M 0 0 v 8 m -6 0 h 12 v 26 h -12 z m 6 26 v 13 M -11 39 v -5 l 22 -26 M -8 47 h 16 m -13 3 h 10 m -7 3 h 4" style="fill:none;stroke:{color};stroke-width:1" />
+]]></template>
+  </symbol>
+
   <!-- 203: Fuse -->
   <symbol shape="203">
     <template><![CDATA[
@@ -164,10 +212,35 @@
 ]]></template>
   </symbol>
 
+  <!-- 154: Fuse (withdrawable). Same withdrawable convention as 43/49
+       above: the two real terminals sit at the far chevron tips (±31),
+       not the fuse body itself (±22). This schema's render.go doesn't
+       distinguish Service from Test positions (same simplification as
+       43/49), so there's no {positionAttr}/{positionOffset} plumbing in
+       this simpler symbols.xml the way base.xml has — the movable body is
+       drawn at its own default (untranslated) position always. -->
+  <symbol shape="154">
+    <template><![CDATA[
+<path d="M 0 -22 v 12 h 5 v 20 h -5 v -20 h -5 v 20 h 5 v 12" style="fill:none;stroke:{color};stroke-width:1" />
+<path d="M 0 -22 l -4 4 m 4 -4 l 4 4 M 0 22 l -4 -4 m 4 4 l 4 -4" style="fill:none;stroke:{color};stroke-width:1" />
+<path d="M 0 -31 l -4 4 m 4 -4 l 4 4 M 0 31 l -4 -4 m 4 4 l 4 -4" style="fill:none;stroke:{color};stroke-width:1" />
+]]></template>
+  </symbol>
+
   <!-- 388: Capacitor -->
   <symbol shape="388">
     <template><![CDATA[
 <path d="M 0 -10 v 5 m -12 0 h 24 m -24 10 h 24 m -12 0 v 5" style="fill:none;stroke:{color};stroke-width:1" />
+]]></template>
+  </symbol>
+
+  <!-- 172: Capacitor bank, the default (non-"БСК_1_" CustomView) geometry
+       — this schema has no per-instance CustomView field to pick the
+       other layout. Anchor is the top terminal itself, matching
+       parseOnePortDevice's own convention. -->
+  <symbol shape="172">
+    <template><![CDATA[
+<path d="M 0 0 l 0 8 l -14 24 m 14 -24 l 14 24 h -28 z M 0 27 h 5 m -5 0 h -5 M 0 31 h 5 m -5 0 h -5" style="fill:none;stroke:{color};stroke-width:1" />
 ]]></template>
   </symbol>
 
