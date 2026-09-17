@@ -11,8 +11,17 @@ import (
 	"path/filepath"
 	"strings"
 
-	"sld-svg/internal/slddoc"
+	"github.com/PVKonovalov/slddoc"
 )
+
+// defaultStateColors preserves this tool's own previous fixed switching-device
+// fill convention (open/closed/other), from before Render took a
+// caller-supplied legend.
+var defaultStateColors = []slddoc.StateColor{
+	{State: 0, Color: "red"},
+	{State: 1, Color: "lawngreen"},
+	{State: 2, Color: "yellow"},
+}
 
 func main() {
 	if len(os.Args) < 2 {
@@ -204,7 +213,7 @@ func renderOne(xmlPath, outSVGPath string, lib *slddoc.SymbolLibrary) error {
 	}
 	defer out.Close()
 
-	renderErr := slddoc.Render(d, lib, out)
+	renderErr := slddoc.Render(d, lib, out, slddoc.Static, nil, defaultStateColors...)
 	fmt.Printf("%s -> %s: %d elements, %d connectors\n", xmlPath, outSVGPath, len(d.Elements), len(d.Connectors))
 	return renderErr
 }

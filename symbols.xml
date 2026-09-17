@@ -120,6 +120,27 @@
 ]]></template>
   </symbol>
 
+  <!-- 37: Reactor. Anchor is the midpoint of its two ports, matching
+       parseTwoPortDevice's own convention (elements.go); confirmed against
+       a real corpus instance's own drawn path
+       (examples/sld/Examples.svg, id 2275). -->
+  <symbol shape="37">
+    <template><![CDATA[
+<path d="M 0 -20 v 9 a 11 11 0 1 1 -11 11 h 11 v 20" style="fill:none;stroke:{color};stroke-width:1" />
+]]></template>
+  </symbol>
+
+  <!-- 397: Reactor (shunt), grounded form only (this schema has no
+       per-instance FReactorShuntType/mirroring field). Anchor is the top
+       terminal itself, matching parseReactorShunt's own convention
+       (elements.go: the real source's combined path starts drawing there),
+       not a centered anchor like 37 above. -->
+  <symbol shape="397">
+    <template><![CDATA[
+<path d="M 0 0 v 9 a 11 11 0 1 0 11 11 h -11 v 11 M 0 40 v -11 m -8 11 h 16 m -2 4 h -12 m 2 4 h 8" style="fill:none;stroke:{color};stroke-width:1" />
+]]></template>
+  </symbol>
+
   <!-- 34: Current transformer -->
   <symbol shape="34">
     <template><![CDATA[
