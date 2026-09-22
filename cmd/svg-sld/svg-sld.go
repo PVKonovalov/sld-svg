@@ -213,7 +213,7 @@ func renderOne(xmlPath, outSVGPath string, lib *slddoc.SymbolLibrary) error {
 	}
 	defer out.Close()
 
-	renderErr := slddoc.Render(d, lib, out, slddoc.Static, nil, defaultStateColors...)
+	renderErr := slddoc.Render(d, lib, out, slddoc.Static, "", nil, defaultStateColors...)
 	fmt.Printf("%s -> %s: %d elements, %d connectors\n", xmlPath, outSVGPath, len(d.Elements), len(d.Connectors))
 	return renderErr
 }
