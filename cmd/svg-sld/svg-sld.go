@@ -50,8 +50,8 @@ func main() {
 
 func usage() {
 	fmt.Fprintln(os.Stderr, `Usage:
-  svg-sld extract -in <svg-file-or-dir> -out <xml-file-or-dir> [-voltage-hints <csv>]
-  svg-sld render  -in <xml-file-or-dir> -symbols <symbols.xml> -out <svg-file-or-dir>
+  svg-sld extract -in <svg-file-or-dir> -out <xsld-file-or-dir> [-voltage-hints <csv>]
+  svg-sld render  -in <xsld-file-or-dir> -symbols <symbols.xml> -out <svg-file-or-dir>
 
 A directory -in is walked recursively; the corresponding -out path mirrors
 its subdirectory structure, with the extension swapped as appropriate.
@@ -66,7 +66,7 @@ the extracted diagram; extract reports what it skipped.`)
 func runExtract(args []string) error {
 	fs := flag.NewFlagSet("extract", flag.ExitOnError)
 	inPath := fs.String("in", "", "SVG file or directory to scan (required)")
-	outPath := fs.String("out", "", "Output .xml file, or directory when -in is a directory (required)")
+	outPath := fs.String("out", "", "Output .xsld file, or directory when -in is a directory (required)")
 	hintsPath := fs.String("voltage-hints", "", "Optional hexColor;name CSV of known voltage-class colors, see voltage-hints.csv")
 	fs.Parse(args)
 
@@ -105,7 +105,7 @@ func runExtract(args []string) error {
 		if err != nil {
 			return err
 		}
-		if err := extractOne(f, filepath.Join(*outPath, swapExt(rel, ".xml")), hints); err != nil {
+		if err := extractOne(f, filepath.Join(*outPath, swapExt(rel, ".xsld")), hints); err != nil {
 			return fmt.Errorf("%s: %w", f, err)
 		}
 	}
@@ -149,7 +149,7 @@ func extractOne(svgPath, outXMLPath string, hints map[string]string) error {
 
 func runRender(args []string) error {
 	fs := flag.NewFlagSet("render", flag.ExitOnError)
-	inPath := fs.String("in", "", "Diagram .xml file or directory to render (required)")
+	inPath := fs.String("in", "", "Diagram .xsld file or directory to render (required)")
 	symbolsPath := fs.String("symbols", "", "Symbol library .xml file (required), see symbols.xml")
 	outPath := fs.String("out", "", "Output .svg file, or directory when -in is a directory (required)")
 	fs.Parse(args)
@@ -177,7 +177,7 @@ func runRender(args []string) error {
 		return renderOne(*inPath, *outPath, lib)
 	}
 
-	files, err := walkFiles(*inPath, ".xml")
+	files, err := walkFiles(*inPath, ".xsld")
 	if err != nil {
 		return err
 	}

@@ -85,22 +85,24 @@ go run ./cmd/svg-text inject -in examples/sld -translations strings -out transla
 
 ## svg-sld
 
-`svg-sld` extracts a diagram's placed elements, their coordinates, and the electrical topology connecting them out of an SLD SVG into a standalone `.xml` document, and can render such a document back into a fresh SVG using a symbol library.
+`svg-sld` extracts a diagram's placed elements, their coordinates, and the electrical topology connecting them out of an SLD SVG into a standalone `.xsld` document (XML inside), and can render such a document back into a fresh SVG using a symbol library.
 
 It only understands a subset of the equipment xsde2svg can draw — busbars, generic wires, junction points, breakers (fixed and withdrawable), load-break switches, disconnectors (fixed and withdrawable), ground switches, ground terminals, choke coils, current transformers, surge arresters, fuses, capacitors, and 2-winding power transformers. Anything else in the source SVG is left out of the extracted diagram; `extract` reports what it skipped rather than guessing.
 
 ### Extract a diagram
 
 ```
-go run ./cmd/svg-sld extract -in examples/sld/substation.svg -out diagrams/substation.xml -voltage-hints voltage-hints.csv
+go run ./cmd/svg-sld extract -in examples/sld/substation.svg -out diagrams/substation.xsld -voltage-hints voltage-hints.csv
 ```
 
-Whole directory (recurses, mirroring structure, `.svg` swapped for `.xml`):
+Whole directory (recurses, mirroring structure, `.svg` swapped for `.xsld`):
 ```
 go run ./cmd/svg-sld extract -in examples/sld -out diagrams -voltage-hints voltage-hints.csv
 ```
 
 `-voltage-hints` is optional; it pre-fills a diagram's `<voltageClasses>` table with the real voltage-level name (`"10кВ"`, `"6кВ"`, ...) for colors already confirmed elsewhere in the corpus — see [`voltage-hints.csv`](voltage-hints.csv) at the repo root. Without it, a class still gets extracted, just named after its own color as a placeholder to fill in by hand.
+
+The full output format is described in [`slddoc/FORMAT.md`](https://github.com/PVKonovalov/slddoc/blob/main/FORMAT.md).
 
 Example output (trimmed):
 ```xml
@@ -150,7 +152,7 @@ Example output (trimmed):
 ### Render a diagram back into SVG
 
 ```
-go run ./cmd/svg-sld render -in diagrams/substation.xml -symbols symbols.xml -out rendered/substation.svg
+go run ./cmd/svg-sld render -in diagrams/substation.xsld -symbols symbols.xml -out rendered/substation.svg
 ```
 
 Whole directory:
