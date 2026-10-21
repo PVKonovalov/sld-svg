@@ -1,0 +1,3534 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<diagram width="2260" height="2104" source="RTUHVDC_cim-4.xml" lastId="1324">
+  <layers>
+    <layer id="0" name="Base"/>
+  </layers>
+  <voltageClasses>
+    <class id="1" name="11kV" color="#00A0F0"/>
+  </voltageClasses>
+  <nodes>
+    <node id="289" x="1202" y="404"/>
+    <node id="290" x="1442" y="394"/>
+    <node id="291" x="1492" y="394"/>
+    <node id="292" x="1172" y="394"/>
+    <node id="293" x="852" y="415"/>
+    <node id="294" x="803" y="292"/>
+    <node id="295" x="763" y="292"/>
+    <node id="296" x="927" y="339"/>
+    <node id="297" x="927" y="239"/>
+    <node id="298" x="855" y="382"/>
+    <node id="299" x="573" y="292"/>
+    <node id="300" x="613" y="292"/>
+    <node id="301" x="361" y="386"/>
+    <node id="302" x="361" y="406"/>
+    <node id="303" x="322" y="354"/>
+    <node id="304" x="442" y="544"/>
+    <node id="305" x="471" y="476"/>
+    <node id="306" x="491" y="476"/>
+    <node id="307" x="532" y="524"/>
+    <node id="308" x="612" y="524"/>
+    <node id="309" x="641" y="476"/>
+    <node id="310" x="661" y="476"/>
+    <node id="311" x="902" y="524"/>
+    <node id="312" x="1717" y="339"/>
+    <node id="313" x="1717" y="239"/>
+    <node id="314" x="1765" y="392"/>
+    <node id="315" x="1769" y="444"/>
+    <node id="316" x="1833" y="292"/>
+    <node id="317" x="1793" y="292"/>
+    <node id="318" x="1933" y="292"/>
+    <node id="319" x="1893" y="292"/>
+    <node id="320" x="1843" y="322"/>
+    <node id="321" x="1843" y="342"/>
+    <node id="322" x="1842" y="415"/>
+    <node id="323" x="1873" y="325"/>
+    <node id="324" x="1873" y="345"/>
+    <node id="325" x="1873" y="355"/>
+    <node id="326" x="1873" y="375"/>
+    <node id="327" x="1872" y="415"/>
+    <node id="328" x="1843" y="365"/>
+    <node id="329" x="1843" y="385"/>
+    <node id="330" x="1332" y="365"/>
+    <node id="331" x="1932" y="364"/>
+    <node id="332" x="1959" y="424"/>
+    <node id="333" x="1959" y="444"/>
+    <node id="334" x="1769" y="404"/>
+    <node id="335" x="1769" y="424"/>
+    <node id="336" x="1959" y="524"/>
+    <node id="337" x="1959" y="544"/>
+    <node id="338" x="1932" y="504"/>
+    <node id="339" x="1881" y="476"/>
+    <node id="340" x="1901" y="476"/>
+    <node id="341" x="1832" y="514"/>
+    <node id="342" x="1762" y="514"/>
+    <node id="343" x="1711" y="476"/>
+    <node id="344" x="1731" y="476"/>
+    <node id="345" x="1682" y="514"/>
+    <node id="346" x="1629" y="504"/>
+    <node id="347" x="1629" y="524"/>
+    <node id="348" x="1489" y="504"/>
+    <node id="349" x="1489" y="524"/>
+    <node id="350" x="1522" y="524"/>
+    <node id="351" x="1490" y="622"/>
+    <node id="352" x="1490" y="642"/>
+    <node id="353" x="1389" y="504"/>
+    <node id="354" x="1389" y="524"/>
+    <node id="355" x="1412" y="524"/>
+    <node id="356" x="1422" y="594"/>
+    <node id="357" x="1390" y="622"/>
+    <node id="358" x="1390" y="642"/>
+    <node id="359" x="1342" y="544"/>
+    <node id="360" x="1342" y="614"/>
+    <node id="361" x="1262" y="544"/>
+    <node id="362" x="1240" y="622"/>
+    <node id="363" x="1240" y="642"/>
+    <node id="364" x="1319" y="504"/>
+    <node id="365" x="1319" y="524"/>
+    <node id="366" x="1320" y="632"/>
+    <node id="367" x="1320" y="652"/>
+    <node id="368" x="1239" y="504"/>
+    <node id="369" x="1239" y="524"/>
+    <node id="370" x="1141" y="476"/>
+    <node id="371" x="1161" y="476"/>
+    <node id="372" x="1051" y="476"/>
+    <node id="373" x="1071" y="476"/>
+    <node id="374" x="1492" y="562"/>
+    <node id="375" x="1492" y="582"/>
+    <node id="376" x="1392" y="552"/>
+    <node id="377" x="1392" y="572"/>
+    <node id="378" x="1322" y="572"/>
+    <node id="379" x="1322" y="592"/>
+    <node id="380" x="1242" y="562"/>
+    <node id="381" x="1242" y="582"/>
+    <node id="382" x="1112" y="504"/>
+    <node id="383" x="1392" y="815"/>
+    <node id="384" x="1492" y="815"/>
+    <node id="385" x="1631" y="606"/>
+    <node id="386" x="1631" y="626"/>
+    <node id="387" x="1962" y="582"/>
+    <node id="388" x="1962" y="602"/>
+    <node id="389" x="1912" y="564"/>
+    <node id="390" x="1961" y="696"/>
+    <node id="391" x="1961" y="716"/>
+    <node id="392" x="1912" y="654"/>
+    <node id="393" x="1912" y="764"/>
+    <node id="394" x="1795" y="830"/>
+    <node id="395" x="902" y="592"/>
+    <node id="396" x="902" y="612"/>
+    <node id="397" x="900" y="632"/>
+    <node id="398" x="900" y="652"/>
+    <node id="399" x="902" y="835"/>
+    <node id="400" x="992" y="534"/>
+    <node id="401" x="992" y="592"/>
+    <node id="402" x="992" y="612"/>
+    <node id="403" x="990" y="642"/>
+    <node id="404" x="990" y="662"/>
+    <node id="405" x="992" y="835"/>
+    <node id="406" x="672" y="544"/>
+    <node id="407" x="361" y="506"/>
+    <node id="408" x="361" y="526"/>
+    <node id="409" x="362" y="602"/>
+    <node id="410" x="362" y="622"/>
+    <node id="411" x="1022" y="584"/>
+    <node id="412" x="1022" y="634"/>
+    <node id="413" x="932" y="574"/>
+    <node id="414" x="932" y="624"/>
+    <node id="415" x="822" y="504"/>
+    <node id="416" x="762" y="504"/>
+    <node id="417" x="822" y="562"/>
+    <node id="418" x="822" y="582"/>
+    <node id="419" x="762" y="562"/>
+    <node id="420" x="762" y="582"/>
+    <node id="421" x="763" y="625"/>
+    <node id="422" x="763" y="645"/>
+    <node id="423" x="823" y="625"/>
+    <node id="424" x="823" y="645"/>
+    <node id="425" x="852" y="614"/>
+    <node id="426" x="792" y="614"/>
+    <node id="427" x="852" y="534"/>
+    <node id="428" x="782" y="554"/>
+    <node id="429" x="762" y="845"/>
+    <node id="430" x="822" y="845"/>
+    <node id="431" x="702" y="612"/>
+    <node id="432" x="702" y="632"/>
+    <node id="433" x="701" y="536"/>
+    <node id="434" x="701" y="556"/>
+    <node id="435" x="732" y="664"/>
+    <node id="436" x="722" y="584"/>
+    <node id="437" x="361" y="716"/>
+    <node id="438" x="361" y="736"/>
+    <node id="439" x="701" y="706"/>
+    <node id="440" x="701" y="726"/>
+    <node id="441" x="565" y="850"/>
+    <node id="442" x="302" y="564"/>
+    <node id="443" x="332" y="684"/>
+    <node id="444" x="332" y="794"/>
+    <node id="445" x="262" y="844"/>
+    <node id="446" x="202" y="854"/>
+    <node id="447" x="1272" y="624"/>
+    <node id="448" x="1240" y="720"/>
+    <node id="449" x="1240" y="740"/>
+    <node id="450" x="1242" y="825"/>
+    <node id="451" x="1320" y="720"/>
+    <node id="452" x="1320" y="740"/>
+    <node id="453" x="1322" y="825"/>
+    <node id="454" x="1390" y="720"/>
+    <node id="455" x="1390" y="740"/>
+    <node id="456" x="1490" y="720"/>
+    <node id="457" x="1490" y="740"/>
+    <node id="458" x="990" y="730"/>
+    <node id="459" x="990" y="750"/>
+    <node id="460" x="900" y="730"/>
+    <node id="461" x="900" y="750"/>
+    <node id="462" x="820" y="740"/>
+    <node id="463" x="820" y="760"/>
+    <node id="464" x="760" y="740"/>
+    <node id="465" x="760" y="760"/>
+    <node id="466" x="2111" y="1086"/>
+    <node id="467" x="2111" y="1106"/>
+    <node id="468" x="2072" y="1054"/>
+    <node id="469" x="2112" y="1152"/>
+    <node id="470" x="2112" y="1172"/>
+    <node id="471" x="2072" y="1124"/>
+    <node id="472" x="1995" y="1040"/>
+    <node id="473" x="1881" y="1106"/>
+    <node id="474" x="1881" y="1086"/>
+    <node id="475" x="1882" y="1162"/>
+    <node id="476" x="1882" y="1182"/>
+    <node id="477" x="1881" y="1256"/>
+    <node id="478" x="1881" y="1236"/>
+    <node id="479" x="1922" y="1124"/>
+    <node id="480" x="1922" y="1214"/>
+    <node id="481" x="2111" y="1236"/>
+    <node id="482" x="2111" y="1256"/>
+    <node id="483" x="2111" y="1596"/>
+    <node id="484" x="2111" y="1616"/>
+    <node id="485" x="1722" y="1152"/>
+    <node id="486" x="1722" y="1172"/>
+    <node id="487" x="1721" y="1246"/>
+    <node id="488" x="1721" y="1266"/>
+    <node id="489" x="1721" y="1046"/>
+    <node id="490" x="1721" y="1066"/>
+    <node id="491" x="1702" y="1214"/>
+    <node id="492" x="1692" y="1114"/>
+    <node id="493" x="1521" y="1086"/>
+    <node id="494" x="1521" y="1066"/>
+    <node id="495" x="1521" y="1256"/>
+    <node id="496" x="1521" y="1236"/>
+    <node id="497" x="1522" y="1142"/>
+    <node id="498" x="1522" y="1162"/>
+    <node id="499" x="1562" y="1114"/>
+    <node id="500" x="1562" y="1204"/>
+    <node id="501" x="2072" y="1214"/>
+    <node id="502" x="1992" y="1352"/>
+    <node id="503" x="2012" y="1352"/>
+    <node id="504" x="2051" y="1356"/>
+    <node id="505" x="2071" y="1356"/>
+    <node id="506" x="1921" y="1356"/>
+    <node id="507" x="1941" y="1356"/>
+    <node id="508" x="2022" y="1404"/>
+    <node id="509" x="2082" y="1404"/>
+    <node id="510" x="1952" y="1404"/>
+    <node id="511" x="1881" y="1496"/>
+    <node id="512" x="1881" y="1516"/>
+    <node id="513" x="1602" y="1372"/>
+    <node id="514" x="1622" y="1372"/>
+    <node id="515" x="1661" y="1376"/>
+    <node id="516" x="1681" y="1376"/>
+    <node id="517" x="1541" y="1376"/>
+    <node id="518" x="1561" y="1376"/>
+    <node id="519" x="1721" y="1486"/>
+    <node id="520" x="1721" y="1506"/>
+    <node id="521" x="1532" y="1404"/>
+    <node id="522" x="1642" y="1414"/>
+    <node id="523" x="1582" y="1409"/>
+    <node id="524" x="1431" y="1346"/>
+    <node id="525" x="1431" y="1366"/>
+    <node id="526" x="1351" y="1346"/>
+    <node id="527" x="1351" y="1366"/>
+    <node id="528" x="1201" y="1346"/>
+    <node id="529" x="1201" y="1366"/>
+    <node id="530" x="1432" y="1292"/>
+    <node id="531" x="1432" y="1312"/>
+    <node id="532" x="1352" y="1292"/>
+    <node id="533" x="1352" y="1312"/>
+    <node id="534" x="1433" y="1235"/>
+    <node id="535" x="1433" y="1255"/>
+    <node id="536" x="1353" y="1235"/>
+    <node id="537" x="1353" y="1255"/>
+    <node id="538" x="1350" y="1160"/>
+    <node id="539" x="1350" y="1180"/>
+    <node id="540" x="1430" y="1160"/>
+    <node id="541" x="1430" y="1180"/>
+    <node id="542" x="1432" y="1095"/>
+    <node id="543" x="1352" y="1095"/>
+    <node id="544" x="1271" y="1346"/>
+    <node id="545" x="1271" y="1366"/>
+    <node id="546" x="1272" y="1292"/>
+    <node id="547" x="1272" y="1312"/>
+    <node id="548" x="1273" y="1235"/>
+    <node id="549" x="1273" y="1255"/>
+    <node id="550" x="1270" y="1160"/>
+    <node id="551" x="1270" y="1180"/>
+    <node id="552" x="1272" y="1095"/>
+    <node id="553" x="1202" y="1292"/>
+    <node id="554" x="1202" y="1312"/>
+    <node id="555" x="1203" y="1235"/>
+    <node id="556" x="1203" y="1255"/>
+    <node id="557" x="1200" y="1160"/>
+    <node id="558" x="1200" y="1180"/>
+    <node id="559" x="1202" y="1095"/>
+    <node id="560" x="1452" y="1324"/>
+    <node id="561" x="1452" y="1274"/>
+    <node id="562" x="1382" y="1274"/>
+    <node id="563" x="1382" y="1334"/>
+    <node id="564" x="1302" y="1274"/>
+    <node id="565" x="1302" y="1334"/>
+    <node id="566" x="1222" y="1276"/>
+    <node id="567" x="1222" y="1334"/>
+    <node id="568" x="311" y="1076"/>
+    <node id="569" x="311" y="1096"/>
+    <node id="570" x="312" y="1172"/>
+    <node id="571" x="312" y="1192"/>
+    <node id="572" x="311" y="1266"/>
+    <node id="573" x="311" y="1286"/>
+    <node id="574" x="252" y="1134"/>
+    <node id="575" x="252" y="1224"/>
+    <node id="576" x="311" y="1616"/>
+    <node id="577" x="311" y="1636"/>
+    <node id="578" x="252" y="1034"/>
+    <node id="579" x="681" y="1086"/>
+    <node id="580" x="681" y="1106"/>
+    <node id="581" x="545" y="1060"/>
+    <node id="582" x="682" y="1182"/>
+    <node id="583" x="682" y="1202"/>
+    <node id="584" x="681" y="1266"/>
+    <node id="585" x="681" y="1286"/>
+    <node id="586" x="391" y="1356"/>
+    <node id="587" x="411" y="1356"/>
+    <node id="588" x="462" y="1352"/>
+    <node id="589" x="482" y="1352"/>
+    <node id="590" x="541" y="1356"/>
+    <node id="591" x="561" y="1356"/>
+    <node id="592" x="751" y="1326"/>
+    <node id="593" x="751" y="1346"/>
+    <node id="594" x="811" y="1326"/>
+    <node id="595" x="811" y="1346"/>
+    <node id="596" x="871" y="1326"/>
+    <node id="597" x="871" y="1346"/>
+    <node id="598" x="681" y="1266"/>
+    <node id="599" x="681" y="1286"/>
+    <node id="600" x="931" y="1326"/>
+    <node id="601" x="931" y="1346"/>
+    <node id="602" x="752" y="1262"/>
+    <node id="603" x="752" y="1282"/>
+    <node id="604" x="812" y="1262"/>
+    <node id="605" x="812" y="1282"/>
+    <node id="606" x="872" y="1262"/>
+    <node id="607" x="872" y="1282"/>
+    <node id="608" x="932" y="1262"/>
+    <node id="609" x="932" y="1282"/>
+    <node id="610" x="652" y="1244"/>
+    <node id="611" x="362" y="1414"/>
+    <node id="612" x="432" y="1414"/>
+    <node id="613" x="512" y="1414"/>
+    <node id="614" x="582" y="1414"/>
+    <node id="615" x="753" y="1215"/>
+    <node id="616" x="753" y="1235"/>
+    <node id="617" x="813" y="1215"/>
+    <node id="618" x="813" y="1235"/>
+    <node id="619" x="873" y="1215"/>
+    <node id="620" x="873" y="1235"/>
+    <node id="621" x="933" y="1215"/>
+    <node id="622" x="933" y="1235"/>
+    <node id="623" x="750" y="1140"/>
+    <node id="624" x="750" y="1160"/>
+    <node id="625" x="810" y="1140"/>
+    <node id="626" x="810" y="1160"/>
+    <node id="627" x="870" y="1140"/>
+    <node id="628" x="870" y="1160"/>
+    <node id="629" x="930" y="1140"/>
+    <node id="630" x="930" y="1160"/>
+    <node id="631" x="752" y="1085"/>
+    <node id="632" x="812" y="1085"/>
+    <node id="633" x="872" y="1085"/>
+    <node id="634" x="932" y="1085"/>
+    <node id="635" x="772" y="1244"/>
+    <node id="636" x="772" y="1304"/>
+    <node id="637" x="832" y="1244"/>
+    <node id="638" x="832" y="1306"/>
+    <node id="639" x="892" y="1244"/>
+    <node id="640" x="892" y="1304"/>
+    <node id="641" x="952" y="1244"/>
+    <node id="642" x="952" y="1304"/>
+    <node id="643" x="723" y="1842"/>
+    <node id="644" x="683" y="1842"/>
+    <node id="645" x="503" y="1842"/>
+    <node id="646" x="543" y="1842"/>
+    <node id="647" x="262" y="1714"/>
+    <node id="648" x="827" y="1889"/>
+    <node id="649" x="827" y="1789"/>
+    <node id="650" x="1607" y="1899"/>
+    <node id="651" x="1607" y="1799"/>
+    <node id="652" x="1943" y="1852"/>
+    <node id="653" x="1903" y="1852"/>
+    <node id="654" x="1733" y="1852"/>
+    <node id="655" x="1773" y="1852"/>
+    <node id="656" x="2057" y="1704"/>
+    <node id="657" x="752" y="1955"/>
+    <node id="658" x="643" y="1875"/>
+    <node id="659" x="643" y="1895"/>
+    <node id="660" x="643" y="1905"/>
+    <node id="661" x="643" y="1925"/>
+    <node id="662" x="642" y="1965"/>
+    <node id="663" x="755" y="1922"/>
+    <node id="664" x="573" y="1875"/>
+    <node id="665" x="573" y="1895"/>
+    <node id="666" x="573" y="1915"/>
+    <node id="667" x="573" y="1935"/>
+    <node id="668" x="572" y="1965"/>
+    <node id="669" x="1992" y="1975"/>
+    <node id="670" x="1883" y="1895"/>
+    <node id="671" x="1883" y="1915"/>
+    <node id="672" x="1883" y="1925"/>
+    <node id="673" x="1883" y="1945"/>
+    <node id="674" x="1882" y="1995"/>
+    <node id="675" x="1995" y="1942"/>
+    <node id="676" x="1813" y="1895"/>
+    <node id="677" x="1813" y="1915"/>
+    <node id="678" x="1813" y="1935"/>
+    <node id="679" x="1813" y="1955"/>
+    <node id="680" x="1812" y="1985"/>
+    <node id="681" x="882" y="1714"/>
+    <node id="682" x="932" y="1714"/>
+    <node id="683" x="1382" y="1704"/>
+    <node id="684" x="1452" y="1704"/>
+    <node id="685" x="1849" y="1504"/>
+    <node id="686" x="1849" y="1524"/>
+    <node id="687" x="1853" y="1568"/>
+    <node id="688" x="1853" y="1608"/>
+    <node id="689" x="1853" y="1628"/>
+    <node id="690" x="1853" y="1668"/>
+    <node id="691" x="1852" y="1675"/>
+    <node id="692" x="1832" y="1534"/>
+    <node id="693" x="1752" y="1592"/>
+    <node id="694" x="1772" y="1592"/>
+    <node id="695" x="1691" y="1496"/>
+    <node id="696" x="1691" y="1516"/>
+    <node id="697" x="1693" y="1558"/>
+    <node id="698" x="1693" y="1598"/>
+    <node id="699" x="1693" y="1618"/>
+    <node id="700" x="1693" y="1658"/>
+    <node id="701" x="1692" y="1675"/>
+    <node id="702" x="1652" y="1534"/>
+    <node id="703" x="1182" y="1885"/>
+    <node id="704" x="592" y="472"/>
+    <node id="705" x="572" y="472"/>
+    <node id="706" x="1802" y="472"/>
+    <node id="707" x="1782" y="472"/>
+    <node id="708" x="1632" y="582"/>
+    <node id="709" x="1632" y="562"/>
+    <node id="710" x="1252" y="260"/>
+    <node id="711" x="1402" y="260"/>
+    <node id="712" x="1252" y="312"/>
+    <node id="713" x="1402" y="312"/>
+    <node id="714" x="1510" y="342"/>
+    <node id="715" x="1520" y="227"/>
+    <node id="716" x="1150" y="222"/>
+    <node id="717" x="1150" y="337"/>
+    <node id="718" x="950" y="222"/>
+    <node id="719" x="950" y="337"/>
+    <node id="720" x="1710" y="342"/>
+    <node id="721" x="1710" y="227"/>
+    <node id="722" x="1631" y="932"/>
+    <node id="723" x="1961" y="932"/>
+    <node id="724" x="701" y="1012"/>
+    <node id="725" x="361" y="972"/>
+    <node id="726" x="565" y="972"/>
+    <node id="727" x="2120" y="977"/>
+    <node id="728" x="1995" y="977"/>
+    <node id="729" x="1795" y="932"/>
+    <node id="730" x="1881" y="932"/>
+    <node id="731" x="1820" y="932"/>
+    <node id="732" x="1820" y="977"/>
+    <node id="733" x="1721" y="977"/>
+    <node id="734" x="1520" y="932"/>
+    <node id="735" x="311" y="1012"/>
+    <node id="736" x="681" y="972"/>
+    <node id="737" x="545" y="1012"/>
+    <node id="738" x="840" y="1767"/>
+    <node id="739" x="840" y="1907"/>
+    <node id="740" x="1072" y="1820"/>
+    <node id="741" x="1030" y="1767"/>
+    <node id="742" x="1072" y="1872"/>
+    <node id="743" x="1030" y="1907"/>
+    <node id="744" x="1570" y="1912"/>
+    <node id="745" x="1550" y="1767"/>
+    <node id="746" x="1282" y="1820"/>
+    <node id="747" x="1360" y="1767"/>
+    <node id="748" x="1282" y="1872"/>
+    <node id="749" x="1370" y="1912"/>
+    <node id="750" x="882" y="1767"/>
+    <node id="751" x="932" y="1907"/>
+    <node id="752" x="1452" y="1767"/>
+    <node id="753" x="262" y="972"/>
+    <node id="754" x="210" y="1012"/>
+  </nodes>
+  <elements>
+    <element id="2" class="BusBarSection" shape="24" name="Busbar (H)" voltage="1" layer="0" x="1520" y="227">
+      <port name="1" node="715"/>
+      <port name="2" node="721"/>
+      <geometry>
+        <point x="1520" y="227"/>
+        <point x="1710" y="227"/>
+      </geometry>
+    </element>
+    <element id="3" class="BusBarSection" shape="24" name="Busbar (H)" voltage="1" layer="0" x="950" y="222">
+      <port name="1" node="716"/>
+      <port name="2" node="718"/>
+      <geometry>
+        <point x="950" y="222"/>
+        <point x="1150" y="222"/>
+      </geometry>
+    </element>
+    <element id="4" class="BusBarSection" shape="24" name="Busbar (H)" voltage="1" layer="0" x="1510" y="342">
+      <port name="1" node="714"/>
+      <port name="2" node="720"/>
+      <geometry>
+        <point x="1510" y="342"/>
+        <point x="1710" y="342"/>
+      </geometry>
+    </element>
+    <element id="5" class="BusBarSection" shape="24" name="Busbar (H)" voltage="1" layer="0" x="950" y="337">
+      <port name="1" node="717"/>
+      <port name="2" node="719"/>
+      <geometry>
+        <point x="950" y="337"/>
+        <point x="1150" y="337"/>
+      </geometry>
+    </element>
+    <element id="6" class="GroundSwitch" shape="54" name="Earth Switch (V)" voltage="1" layer="0" x="1202" y="414" orient="180" state="0">
+      <port name="1" node="289"/>
+    </element>
+    <element id="7" class="GroundSwitch" shape="54" name="Earth Switch (V)" voltage="1" layer="0" x="1442" y="404" orient="180" state="0">
+      <port name="1" node="290"/>
+    </element>
+    <element id="8" class="GroundSwitch" shape="54" name="Earth Switch (V)" voltage="1" layer="0" x="1492" y="404" orient="180" state="0">
+      <port name="1" node="291"/>
+    </element>
+    <element id="9" class="GroundSwitch" shape="54" name="Earth Switch (V)" voltage="1" layer="0" x="1172" y="404" orient="180" state="0">
+      <port name="1" node="292"/>
+    </element>
+    <element id="10" class="Ground" shape="31" name="Earth Ground" voltage="1" layer="0" x="852" y="425">
+      <port name="1" node="293"/>
+    </element>
+    <element id="11" class="Reactor" shape="37" name="Inductor (V)" voltage="1" layer="0" x="783" y="292" orient="90">
+      <port name="1" node="294"/>
+      <port name="2" node="295"/>
+    </element>
+    <element id="12" class="PowerTransformer" shape="47" name="Converter Transformer" voltage="1" layer="0" x="927" y="289" orient="90">
+      <port name="1" node="296"/>
+      <port name="2" node="297"/>
+      <windings>
+        <winding voltage="1"/>
+        <winding voltage="1"/>
+      </windings>
+    </element>
+    <element id="13" class="VoltageTransformer" shape="55" name="CVT (V)" voltage="1" layer="0" x="855" y="382" orient="180">
+      <port name="1" node="298"/>
+    </element>
+    <element id="14" class="Reactor" shape="37" name="Inductor (V)" voltage="1" layer="0" x="593" y="292" orient="-90">
+      <port name="1" node="299"/>
+      <port name="2" node="300"/>
+    </element>
+    <element id="15" class="Disconnector" shape="162" name="Switch" voltage="1" layer="0" x="361" y="396" state="0">
+      <port name="1" node="301"/>
+      <port name="2" node="302"/>
+    </element>
+    <element id="16" class="GroundSwitch" shape="54" name="Earth Switch (V)" voltage="1" layer="0" x="312" y="354" orient="-90" state="0">
+      <port name="1" node="303"/>
+    </element>
+    <element id="17" class="GroundSwitch" shape="54" name="Earth Switch (V)" voltage="1" layer="0" x="442" y="554" orient="180" state="0">
+      <port name="1" node="304"/>
+    </element>
+    <element id="18" class="Disconnector" shape="162" name="Switch" voltage="1" layer="0" x="481" y="476" orient="-90" state="0">
+      <port name="1" node="305"/>
+      <port name="2" node="306"/>
+    </element>
+    <element id="19" class="GroundSwitch" shape="54" name="Earth Switch (V)" voltage="1" layer="0" x="532" y="534" orient="180" state="0">
+      <port name="1" node="307"/>
+    </element>
+    <element id="20" class="GroundSwitch" shape="54" name="Earth Switch (V)" voltage="1" layer="0" x="612" y="534" orient="180" state="0">
+      <port name="1" node="308"/>
+    </element>
+    <element id="21" class="Disconnector" shape="162" name="Switch" voltage="1" layer="0" x="651" y="476" orient="-90" state="0">
+      <port name="1" node="309"/>
+      <port name="2" node="310"/>
+    </element>
+    <element id="22" class="GroundSwitch" shape="54" name="Earth Switch (V)" voltage="1" layer="0" x="902" y="534" orient="180" state="0">
+      <port name="1" node="311"/>
+    </element>
+    <element id="23" class="PowerTransformer" shape="47" name="Converter Transformer" voltage="1" layer="0" x="1717" y="289" orient="90">
+      <port name="1" node="312"/>
+      <port name="2" node="313"/>
+      <windings>
+        <winding voltage="1"/>
+        <winding voltage="1"/>
+      </windings>
+    </element>
+    <element id="24" class="VoltageTransformer" shape="55" name="CVT (V)" voltage="1" layer="0" x="1765" y="392" orient="180">
+      <port name="1" node="314"/>
+    </element>
+    <element id="25" class="Ground" shape="31" name="Earth Ground" voltage="1" layer="0" x="1769" y="454">
+      <port name="1" node="315"/>
+    </element>
+    <element id="26" class="Reactor" shape="37" name="Inductor (V)" voltage="1" layer="0" x="1813" y="292" orient="90">
+      <port name="1" node="316"/>
+      <port name="2" node="317"/>
+    </element>
+    <element id="27" class="Reactor" shape="37" name="Inductor (V)" voltage="1" layer="0" x="1913" y="292" orient="90">
+      <port name="1" node="318"/>
+      <port name="2" node="319"/>
+    </element>
+    <element id="28" class="Capacitor" shape="388" name="Capacitor (V)" voltage="1" layer="0" x="1843" y="332">
+      <port name="1" node="320"/>
+      <port name="2" node="321"/>
+    </element>
+    <element id="29" class="Ground" shape="31" name="Earth Ground" voltage="1" layer="0" x="1842" y="425">
+      <port name="1" node="322"/>
+    </element>
+    <element id="30" class="Capacitor" shape="388" name="Capacitor (V)" voltage="1" layer="0" x="1873" y="335">
+      <port name="1" node="323"/>
+      <port name="2" node="324"/>
+    </element>
+    <element id="31" class="Capacitor" shape="388" name="Capacitor (V)" voltage="1" layer="0" x="1873" y="365">
+      <port name="1" node="325"/>
+      <port name="2" node="326"/>
+    </element>
+    <element id="32" class="Ground" shape="31" name="Earth Ground" voltage="1" layer="0" x="1872" y="425">
+      <port name="1" node="327"/>
+    </element>
+    <element id="33" class="Capacitor" shape="388" name="Capacitor (V)" voltage="1" layer="0" x="1843" y="375">
+      <port name="1" node="328"/>
+      <port name="2" node="329"/>
+    </element>
+    <element id="34" class="Ground" shape="31" name="Earth Ground" voltage="1" layer="0" x="1332" y="375">
+      <port name="1" node="330"/>
+    </element>
+    <element id="35" class="GroundSwitch" shape="54" name="Earth Switch (V)" voltage="1" layer="0" x="1922" y="364" orient="-90" state="0">
+      <port name="1" node="331"/>
+    </element>
+    <element id="36" class="Disconnector" shape="162" name="Switch" voltage="1" layer="0" x="1959" y="434" state="0">
+      <port name="1" node="332"/>
+      <port name="2" node="333"/>
+    </element>
+    <element id="37" class="Disconnector" shape="162" name="Switch" voltage="1" layer="0" x="1769" y="414" state="0">
+      <port name="1" node="334"/>
+      <port name="2" node="335"/>
+    </element>
+    <element id="38" class="Disconnector" shape="162" name="Switch" voltage="1" layer="0" x="1959" y="534" state="0">
+      <port name="1" node="336"/>
+      <port name="2" node="337"/>
+    </element>
+    <element id="39" class="GroundSwitch" shape="54" name="Earth Switch (V)" voltage="1" layer="0" x="1932" y="514" orient="180" state="0">
+      <port name="1" node="338"/>
+    </element>
+    <element id="40" class="Disconnector" shape="162" name="Switch" voltage="1" layer="0" x="1891" y="476" orient="-90" state="0">
+      <port name="1" node="339"/>
+      <port name="2" node="340"/>
+    </element>
+    <element id="41" class="GroundSwitch" shape="54" name="Earth Switch (V)" voltage="1" layer="0" x="1832" y="524" orient="180" state="0">
+      <port name="1" node="341"/>
+    </element>
+    <element id="42" class="GroundSwitch" shape="54" name="Earth Switch (V)" voltage="1" layer="0" x="1762" y="524" orient="180" state="0">
+      <port name="1" node="342"/>
+    </element>
+    <element id="43" class="Disconnector" shape="162" name="Switch" voltage="1" layer="0" x="1721" y="476" orient="-90" state="0">
+      <port name="1" node="343"/>
+      <port name="2" node="344"/>
+    </element>
+    <element id="44" class="GroundSwitch" shape="54" name="Earth Switch (V)" voltage="1" layer="0" x="1682" y="524" orient="180" state="0">
+      <port name="1" node="345"/>
+    </element>
+    <element id="45" class="Disconnector" shape="162" name="Switch" voltage="1" layer="0" x="1629" y="514" state="0">
+      <port name="1" node="346"/>
+      <port name="2" node="347"/>
+    </element>
+    <element id="46" class="Disconnector" shape="162" name="Switch" voltage="1" layer="0" x="1489" y="514" state="0">
+      <port name="1" node="348"/>
+      <port name="2" node="349"/>
+    </element>
+    <element id="47" class="GroundSwitch" shape="54" name="Earth Switch (V)" voltage="1" layer="0" x="1532" y="524" orient="90" state="0">
+      <port name="1" node="350"/>
+    </element>
+    <element id="48" class="Capacitor" shape="388" name="Capacitor (V)" voltage="1" layer="0" x="1490" y="632">
+      <port name="1" node="351"/>
+      <port name="2" node="352"/>
+    </element>
+    <element id="49" class="Disconnector" shape="162" name="Switch" voltage="1" layer="0" x="1389" y="514" state="0">
+      <port name="1" node="353"/>
+      <port name="2" node="354"/>
+    </element>
+    <element id="50" class="GroundSwitch" shape="54" name="Earth Switch (V)" voltage="1" layer="0" x="1422" y="524" orient="90" state="0">
+      <port name="1" node="355"/>
+    </element>
+    <element id="51" class="GroundSwitch" shape="54" name="Earth Switch (V)" voltage="1" layer="0" x="1432" y="594" orient="90" state="0">
+      <port name="1" node="356"/>
+    </element>
+    <element id="52" class="Capacitor" shape="388" name="Capacitor (V)" voltage="1" layer="0" x="1390" y="632">
+      <port name="1" node="357"/>
+      <port name="2" node="358"/>
+    </element>
+    <element id="53" class="GroundSwitch" shape="54" name="Earth Switch (V)" voltage="1" layer="0" x="1352" y="544" orient="90" state="0">
+      <port name="1" node="359"/>
+    </element>
+    <element id="54" class="GroundSwitch" shape="54" name="Earth Switch (V)" voltage="1" layer="0" x="1352" y="614" orient="90" state="0">
+      <port name="1" node="360"/>
+    </element>
+    <element id="55" class="GroundSwitch" shape="54" name="Earth Switch (V)" voltage="1" layer="0" x="1272" y="544" orient="90" state="0">
+      <port name="1" node="361"/>
+    </element>
+    <element id="56" class="Capacitor" shape="388" name="Capacitor (V)" voltage="1" layer="0" x="1240" y="632">
+      <port name="1" node="362"/>
+      <port name="2" node="363"/>
+    </element>
+    <element id="57" class="Disconnector" shape="162" name="Switch" voltage="1" layer="0" x="1319" y="514" state="0">
+      <port name="1" node="364"/>
+      <port name="2" node="365"/>
+    </element>
+    <element id="58" class="Capacitor" shape="388" name="Capacitor (V)" voltage="1" layer="0" x="1320" y="642">
+      <port name="1" node="366"/>
+      <port name="2" node="367"/>
+    </element>
+    <element id="59" class="Disconnector" shape="162" name="Switch" voltage="1" layer="0" x="1239" y="514" state="0">
+      <port name="1" node="368"/>
+      <port name="2" node="369"/>
+    </element>
+    <element id="60" class="Disconnector" shape="162" name="Switch" voltage="1" layer="0" x="1151" y="476" orient="-90" state="0">
+      <port name="1" node="370"/>
+      <port name="2" node="371"/>
+    </element>
+    <element id="61" class="Disconnector" shape="162" name="Switch" voltage="1" layer="0" x="1061" y="476" orient="-90" state="0">
+      <port name="1" node="372"/>
+      <port name="2" node="373"/>
+    </element>
+    <element id="62" class="Breaker" shape="41" name="Circuit Breaker" voltage="1" layer="0" x="1492" y="572" state="1">
+      <port name="1" node="374"/>
+      <port name="2" node="375"/>
+    </element>
+    <element id="63" class="Breaker" shape="41" name="Circuit Breaker" voltage="1" layer="0" x="1392" y="562" state="1">
+      <port name="1" node="376"/>
+      <port name="2" node="377"/>
+    </element>
+    <element id="64" class="Breaker" shape="41" name="Circuit Breaker" voltage="1" layer="0" x="1322" y="582" state="1">
+      <port name="1" node="378"/>
+      <port name="2" node="379"/>
+    </element>
+    <element id="65" class="Breaker" shape="41" name="Circuit Breaker" voltage="1" layer="0" x="1242" y="572" state="1">
+      <port name="1" node="380"/>
+      <port name="2" node="381"/>
+    </element>
+    <element id="66" class="GroundSwitch" shape="54" name="Earth Switch (V)" voltage="1" layer="0" x="1112" y="514" orient="180" state="0">
+      <port name="1" node="382"/>
+    </element>
+    <element id="67" class="Ground" shape="31" name="Earth Ground" voltage="1" layer="0" x="1392" y="825">
+      <port name="1" node="383"/>
+    </element>
+    <element id="68" class="Ground" shape="31" name="Earth Ground" voltage="1" layer="0" x="1492" y="825">
+      <port name="1" node="384"/>
+    </element>
+    <element id="69" class="Disconnector" shape="162" name="Switch" voltage="1" layer="0" x="1631" y="616" state="0">
+      <port name="1" node="385"/>
+      <port name="2" node="386"/>
+    </element>
+    <element id="70" class="BusBarSection" shape="24" name="Busbar (H)" voltage="1" layer="0" x="1520" y="932">
+      <port name="1" node="722"/>
+      <port name="2" node="723"/>
+      <port name="3" node="729"/>
+      <port name="4" node="730"/>
+      <port name="5" node="731"/>
+      <port name="6" node="734"/>
+      <geometry>
+        <point x="1520" y="932"/>
+        <point x="2070" y="932"/>
+      </geometry>
+    </element>
+    <element id="71" class="Breaker" shape="41" name="Circuit Breaker" voltage="1" layer="0" x="1962" y="592" state="1">
+      <port name="1" node="387"/>
+      <port name="2" node="388"/>
+    </element>
+    <element id="72" class="GroundSwitch" shape="54" name="Earth Switch (V)" voltage="1" layer="0" x="1902" y="564" orient="-90" state="0">
+      <port name="1" node="389"/>
+    </element>
+    <element id="73" class="Disconnector" shape="162" name="Switch" voltage="1" layer="0" x="1961" y="706" state="0">
+      <port name="1" node="390"/>
+      <port name="2" node="391"/>
+    </element>
+    <element id="74" class="GroundSwitch" shape="54" name="Earth Switch (V)" voltage="1" layer="0" x="1902" y="654" orient="-90" state="0">
+      <port name="1" node="392"/>
+    </element>
+    <element id="75" class="GroundSwitch" shape="54" name="Earth Switch (V)" voltage="1" layer="0" x="1902" y="764" orient="-90" state="0">
+      <port name="1" node="393"/>
+    </element>
+    <element id="76" class="VoltageTransformer" shape="55" name="CVT (V)" voltage="1" layer="0" x="1795" y="830">
+      <port name="1" node="394"/>
+    </element>
+    <element id="77" class="Breaker" shape="41" name="Circuit Breaker" voltage="1" layer="0" x="902" y="602" state="1">
+      <port name="1" node="395"/>
+      <port name="2" node="396"/>
+    </element>
+    <element id="78" class="Capacitor" shape="388" name="Capacitor (V)" voltage="1" layer="0" x="900" y="642">
+      <port name="1" node="397"/>
+      <port name="2" node="398"/>
+    </element>
+    <element id="79" class="Ground" shape="31" name="Earth Ground" voltage="1" layer="0" x="902" y="845">
+      <port name="1" node="399"/>
+    </element>
+    <element id="80" class="GroundSwitch" shape="54" name="Earth Switch (V)" voltage="1" layer="0" x="992" y="544" orient="180" state="0">
+      <port name="1" node="400"/>
+    </element>
+    <element id="81" class="Breaker" shape="41" name="Circuit Breaker" voltage="1" layer="0" x="992" y="602" state="1">
+      <port name="1" node="401"/>
+      <port name="2" node="402"/>
+    </element>
+    <element id="82" class="Capacitor" shape="388" name="Capacitor (V)" voltage="1" layer="0" x="990" y="652">
+      <port name="1" node="403"/>
+      <port name="2" node="404"/>
+    </element>
+    <element id="83" class="Ground" shape="31" name="Earth Ground" voltage="1" layer="0" x="992" y="845">
+      <port name="1" node="405"/>
+    </element>
+    <element id="84" class="GroundSwitch" shape="54" name="Earth Switch (V)" voltage="1" layer="0" x="672" y="554" orient="180" state="0">
+      <port name="1" node="406"/>
+    </element>
+    <element id="85" class="Disconnector" shape="162" name="Switch" voltage="1" layer="0" x="361" y="516" state="0">
+      <port name="1" node="407"/>
+      <port name="2" node="408"/>
+    </element>
+    <element id="86" class="Breaker" shape="41" name="Circuit Breaker" voltage="1" layer="0" x="362" y="612" state="1">
+      <port name="1" node="409"/>
+      <port name="2" node="410"/>
+    </element>
+    <element id="87" class="GroundSwitch" shape="54" name="Earth Switch (V)" voltage="1" layer="0" x="1032" y="584" orient="90" state="0">
+      <port name="1" node="411"/>
+    </element>
+    <element id="88" class="GroundSwitch" shape="54" name="Earth Switch (V)" voltage="1" layer="0" x="1032" y="634" orient="90" state="0">
+      <port name="1" node="412"/>
+    </element>
+    <element id="89" class="GroundSwitch" shape="54" name="Earth Switch (V)" voltage="1" layer="0" x="942" y="574" orient="90" state="0">
+      <port name="1" node="413"/>
+    </element>
+    <element id="90" class="GroundSwitch" shape="54" name="Earth Switch (V)" voltage="1" layer="0" x="942" y="624" orient="90" state="0">
+      <port name="1" node="414"/>
+    </element>
+    <element id="91" class="GroundSwitch" shape="54" name="Earth Switch (V)" voltage="1" layer="0" x="822" y="514" orient="180" state="0">
+      <port name="1" node="415"/>
+    </element>
+    <element id="92" class="GroundSwitch" shape="54" name="Earth Switch (V)" voltage="1" layer="0" x="762" y="514" orient="180" state="0">
+      <port name="1" node="416"/>
+    </element>
+    <element id="93" class="Breaker" shape="41" name="Circuit Breaker" voltage="1" layer="0" x="822" y="572" state="1">
+      <port name="1" node="417"/>
+      <port name="2" node="418"/>
+    </element>
+    <element id="94" class="Breaker" shape="41" name="Circuit Breaker" voltage="1" layer="0" x="762" y="572" state="1">
+      <port name="1" node="419"/>
+      <port name="2" node="420"/>
+    </element>
+    <element id="95" class="Capacitor" shape="388" name="Capacitor (V)" voltage="1" layer="0" x="763" y="635">
+      <port name="1" node="421"/>
+      <port name="2" node="422"/>
+    </element>
+    <element id="96" class="Capacitor" shape="388" name="Capacitor (V)" voltage="1" layer="0" x="823" y="635">
+      <port name="1" node="423"/>
+      <port name="2" node="424"/>
+    </element>
+    <element id="97" class="GroundSwitch" shape="54" name="Earth Switch (V)" voltage="1" layer="0" x="862" y="614" orient="90" state="0">
+      <port name="1" node="425"/>
+    </element>
+    <element id="98" class="GroundSwitch" shape="54" name="Earth Switch (V)" voltage="1" layer="0" x="802" y="614" orient="90" state="0">
+      <port name="1" node="426"/>
+    </element>
+    <element id="99" class="GroundSwitch" shape="54" name="Earth Switch (V)" voltage="1" layer="0" x="862" y="534" orient="90" state="0">
+      <port name="1" node="427"/>
+    </element>
+    <element id="100" class="GroundSwitch" shape="54" name="Earth Switch (V)" voltage="1" layer="0" x="792" y="554" orient="90" state="0">
+      <port name="1" node="428"/>
+    </element>
+    <element id="101" class="Ground" shape="31" name="Earth Ground" voltage="1" layer="0" x="762" y="855">
+      <port name="1" node="429"/>
+    </element>
+    <element id="102" class="Ground" shape="31" name="Earth Ground" voltage="1" layer="0" x="822" y="855">
+      <port name="1" node="430"/>
+    </element>
+    <element id="103" class="Breaker" shape="41" name="Circuit Breaker" voltage="1" layer="0" x="702" y="622" state="1">
+      <port name="1" node="431"/>
+      <port name="2" node="432"/>
+    </element>
+    <element id="104" class="Disconnector" shape="162" name="Switch" voltage="1" layer="0" x="701" y="546" state="0">
+      <port name="1" node="433"/>
+      <port name="2" node="434"/>
+    </element>
+    <element id="105" class="GroundSwitch" shape="54" name="Earth Switch (V)" voltage="1" layer="0" x="742" y="664" orient="90" state="0">
+      <port name="1" node="435"/>
+    </element>
+    <element id="106" class="GroundSwitch" shape="54" name="Earth Switch (V)" voltage="1" layer="0" x="732" y="584" orient="90" state="0">
+      <port name="1" node="436"/>
+    </element>
+    <element id="107" class="BusBarSection" shape="24" name="Busbar (H)" voltage="1" layer="0" x="90" y="972">
+      <port name="1" node="725"/>
+      <port name="2" node="726"/>
+      <port name="3" node="736"/>
+      <port name="4" node="753"/>
+      <geometry>
+        <point x="90" y="972"/>
+        <point x="830" y="972"/>
+      </geometry>
+    </element>
+    <element id="108" class="BusBarSection" shape="24" name="Busbar (H)" voltage="1" layer="0" x="210" y="1012">
+      <port name="1" node="724"/>
+      <port name="2" node="735"/>
+      <port name="3" node="737"/>
+      <port name="4" node="754"/>
+      <geometry>
+        <point x="210" y="1012"/>
+        <point x="1000" y="1012"/>
+      </geometry>
+    </element>
+    <element id="109" class="Disconnector" shape="162" name="Switch" voltage="1" layer="0" x="361" y="726" state="0">
+      <port name="1" node="437"/>
+      <port name="2" node="438"/>
+    </element>
+    <element id="110" class="Disconnector" shape="162" name="Switch" voltage="1" layer="0" x="701" y="716" state="0">
+      <port name="1" node="439"/>
+      <port name="2" node="440"/>
+    </element>
+    <element id="111" class="VoltageTransformer" shape="55" name="CVT (V)" voltage="1" layer="0" x="565" y="850">
+      <port name="1" node="441"/>
+    </element>
+    <element id="112" class="GroundSwitch" shape="54" name="Earth Switch (V)" voltage="1" layer="0" x="292" y="564" orient="-90" state="0">
+      <port name="1" node="442"/>
+    </element>
+    <element id="113" class="GroundSwitch" shape="54" name="Earth Switch (V)" voltage="1" layer="0" x="322" y="684" orient="-90" state="0">
+      <port name="1" node="443"/>
+    </element>
+    <element id="114" class="GroundSwitch" shape="54" name="Earth Switch (V)" voltage="1" layer="0" x="322" y="794" orient="-90" state="0">
+      <port name="1" node="444"/>
+    </element>
+    <element id="115" class="GroundSwitch" shape="54" name="Earth Switch (V)" voltage="1" layer="0" x="272" y="844" orient="90" state="0">
+      <port name="1" node="445"/>
+    </element>
+    <element id="116" class="GroundSwitch" shape="54" name="Earth Switch (V)" voltage="1" layer="0" x="212" y="854" orient="90" state="0">
+      <port name="1" node="446"/>
+    </element>
+    <element id="117" class="GroundSwitch" shape="54" name="Earth Switch (V)" voltage="1" layer="0" x="1282" y="624" orient="90" state="0">
+      <port name="1" node="447"/>
+    </element>
+    <element id="118" class="Capacitor" shape="388" name="Filter Bank" voltage="1" layer="0" x="1240" y="730">
+      <port name="1" node="448"/>
+      <port name="2" node="449"/>
+    </element>
+    <element id="119" class="Ground" shape="31" name="Earth Ground" voltage="1" layer="0" x="1242" y="835">
+      <port name="1" node="450"/>
+    </element>
+    <element id="120" class="Capacitor" shape="388" name="Filter Bank" voltage="1" layer="0" x="1320" y="730">
+      <port name="1" node="451"/>
+      <port name="2" node="452"/>
+    </element>
+    <element id="121" class="Ground" shape="31" name="Earth Ground" voltage="1" layer="0" x="1322" y="835">
+      <port name="1" node="453"/>
+    </element>
+    <element id="122" class="Capacitor" shape="388" name="Filter Bank" voltage="1" layer="0" x="1390" y="730">
+      <port name="1" node="454"/>
+      <port name="2" node="455"/>
+    </element>
+    <element id="123" class="Capacitor" shape="388" name="Filter Bank" voltage="1" layer="0" x="1490" y="730">
+      <port name="1" node="456"/>
+      <port name="2" node="457"/>
+    </element>
+    <element id="124" class="Capacitor" shape="388" name="Filter Bank" voltage="1" layer="0" x="990" y="740">
+      <port name="1" node="458"/>
+      <port name="2" node="459"/>
+    </element>
+    <element id="125" class="Capacitor" shape="388" name="Filter Bank" voltage="1" layer="0" x="900" y="740">
+      <port name="1" node="460"/>
+      <port name="2" node="461"/>
+    </element>
+    <element id="126" class="Capacitor" shape="388" name="Filter Bank" voltage="1" layer="0" x="820" y="750">
+      <port name="1" node="462"/>
+      <port name="2" node="463"/>
+    </element>
+    <element id="127" class="Capacitor" shape="388" name="Filter Bank" voltage="1" layer="0" x="760" y="750">
+      <port name="1" node="464"/>
+      <port name="2" node="465"/>
+    </element>
+    <element id="128" class="BusBarSection" shape="24" name="Busbar (H)" voltage="1" layer="0" x="1520" y="977">
+      <port name="1" node="727"/>
+      <port name="2" node="728"/>
+      <port name="3" node="732"/>
+      <port name="4" node="733"/>
+      <geometry>
+        <point x="1520" y="977"/>
+        <point x="2120" y="977"/>
+      </geometry>
+    </element>
+    <element id="129" class="Disconnector" shape="162" name="Switch" voltage="1" layer="0" x="2111" y="1096" state="0">
+      <port name="1" node="466"/>
+      <port name="2" node="467"/>
+    </element>
+    <element id="130" class="GroundSwitch" shape="54" name="Earth Switch (V)" voltage="1" layer="0" x="2062" y="1054" orient="-90" state="0">
+      <port name="1" node="468"/>
+    </element>
+    <element id="131" class="Breaker" shape="41" name="Circuit Breaker" voltage="1" layer="0" x="2112" y="1162" state="1">
+      <port name="1" node="469"/>
+      <port name="2" node="470"/>
+    </element>
+    <element id="132" class="GroundSwitch" shape="54" name="Earth Switch (V)" voltage="1" layer="0" x="2062" y="1124" orient="-90" state="0">
+      <port name="1" node="471"/>
+    </element>
+    <element id="133" class="VoltageTransformer" shape="55" name="CVT (V)" voltage="1" layer="0" x="1995" y="1040">
+      <port name="1" node="472"/>
+    </element>
+    <element id="134" class="Disconnector" shape="162" name="Switch" voltage="1" layer="0" x="1881" y="1096" orient="180" state="0">
+      <port name="1" node="473"/>
+      <port name="2" node="474"/>
+    </element>
+    <element id="135" class="Breaker" shape="41" name="Circuit Breaker" voltage="1" layer="0" x="1882" y="1172" state="1">
+      <port name="1" node="475"/>
+      <port name="2" node="476"/>
+    </element>
+    <element id="136" class="Disconnector" shape="162" name="Switch" voltage="1" layer="0" x="1881" y="1246" orient="180" state="0">
+      <port name="1" node="477"/>
+      <port name="2" node="478"/>
+    </element>
+    <element id="137" class="GroundSwitch" shape="54" name="Earth Switch (V)" voltage="1" layer="0" x="1932" y="1124" orient="90" state="0">
+      <port name="1" node="479"/>
+    </element>
+    <element id="138" class="GroundSwitch" shape="54" name="Earth Switch (V)" voltage="1" layer="0" x="1932" y="1214" orient="90" state="0">
+      <port name="1" node="480"/>
+    </element>
+    <element id="139" class="Disconnector" shape="162" name="Switch" voltage="1" layer="0" x="2111" y="1246" state="0">
+      <port name="1" node="481"/>
+      <port name="2" node="482"/>
+    </element>
+    <element id="140" class="Disconnector" shape="162" name="Switch" voltage="1" layer="0" x="2111" y="1606" state="0">
+      <port name="1" node="483"/>
+      <port name="2" node="484"/>
+    </element>
+    <element id="141" class="Breaker" shape="41" name="Circuit Breaker" voltage="1" layer="0" x="1722" y="1162" state="1">
+      <port name="1" node="485"/>
+      <port name="2" node="486"/>
+    </element>
+    <element id="142" class="Disconnector" shape="162" name="Switch" voltage="1" layer="0" x="1721" y="1256" state="0">
+      <port name="1" node="487"/>
+      <port name="2" node="488"/>
+    </element>
+    <element id="143" class="Disconnector" shape="162" name="Switch" voltage="1" layer="0" x="1721" y="1056" state="0">
+      <port name="1" node="489"/>
+      <port name="2" node="490"/>
+    </element>
+    <element id="144" class="GroundSwitch" shape="54" name="Earth Switch (V)" voltage="1" layer="0" x="1692" y="1214" orient="-90" state="0">
+      <port name="1" node="491"/>
+    </element>
+    <element id="145" class="GroundSwitch" shape="54" name="Earth Switch (V)" voltage="1" layer="0" x="1682" y="1114" orient="-90" state="0">
+      <port name="1" node="492"/>
+    </element>
+    <element id="146" class="Disconnector" shape="162" name="Switch" voltage="1" layer="0" x="1521" y="1076" orient="180" state="0">
+      <port name="1" node="493"/>
+      <port name="2" node="494"/>
+    </element>
+    <element id="147" class="Disconnector" shape="162" name="Switch" voltage="1" layer="0" x="1521" y="1246" orient="180" state="0">
+      <port name="1" node="495"/>
+      <port name="2" node="496"/>
+    </element>
+    <element id="148" class="Breaker" shape="41" name="Circuit Breaker" voltage="1" layer="0" x="1522" y="1152" state="1">
+      <port name="1" node="497"/>
+      <port name="2" node="498"/>
+    </element>
+    <element id="149" class="GroundSwitch" shape="54" name="Earth Switch (V)" voltage="1" layer="0" x="1572" y="1114" orient="90" state="0">
+      <port name="1" node="499"/>
+    </element>
+    <element id="150" class="GroundSwitch" shape="54" name="Earth Switch (V)" voltage="1" layer="0" x="1572" y="1204" orient="90" state="0">
+      <port name="1" node="500"/>
+    </element>
+    <element id="151" class="GroundSwitch" shape="54" name="Earth Switch (V)" voltage="1" layer="0" x="2062" y="1214" orient="-90" state="0">
+      <port name="1" node="501"/>
+    </element>
+    <element id="152" class="Breaker" shape="41" name="Circuit Breaker" voltage="1" layer="0" x="2002" y="1352" orient="-90" state="1">
+      <port name="1" node="502"/>
+      <port name="2" node="503"/>
+    </element>
+    <element id="153" class="Disconnector" shape="162" name="Switch" voltage="1" layer="0" x="2061" y="1356" orient="-90" state="0">
+      <port name="1" node="504"/>
+      <port name="2" node="505"/>
+    </element>
+    <element id="154" class="Disconnector" shape="162" name="Switch" voltage="1" layer="0" x="1931" y="1356" orient="-90" state="0">
+      <port name="1" node="506"/>
+      <port name="2" node="507"/>
+    </element>
+    <element id="155" class="GroundSwitch" shape="54" name="Earth Switch (V)" voltage="1" layer="0" x="2022" y="1414" orient="180" state="0">
+      <port name="1" node="508"/>
+    </element>
+    <element id="156" class="GroundSwitch" shape="54" name="Earth Switch (V)" voltage="1" layer="0" x="2082" y="1414" orient="180" state="0">
+      <port name="1" node="509"/>
+    </element>
+    <element id="157" class="GroundSwitch" shape="54" name="Earth Switch (V)" voltage="1" layer="0" x="1952" y="1414" orient="180" state="0">
+      <port name="1" node="510"/>
+    </element>
+    <element id="158" class="Disconnector" shape="162" name="Switch" voltage="1" layer="0" x="1881" y="1506" state="0">
+      <port name="1" node="511"/>
+      <port name="2" node="512"/>
+    </element>
+    <element id="159" class="Breaker" shape="41" name="Circuit Breaker" voltage="1" layer="0" x="1612" y="1372" orient="-90" state="1">
+      <port name="1" node="513"/>
+      <port name="2" node="514"/>
+    </element>
+    <element id="160" class="Disconnector" shape="162" name="Switch" voltage="1" layer="0" x="1671" y="1376" orient="-90" state="0">
+      <port name="1" node="515"/>
+      <port name="2" node="516"/>
+    </element>
+    <element id="161" class="Disconnector" shape="162" name="Switch" voltage="1" layer="0" x="1551" y="1376" orient="-90" state="0">
+      <port name="1" node="517"/>
+      <port name="2" node="518"/>
+    </element>
+    <element id="162" class="Disconnector" shape="162" name="Switch" voltage="1" layer="0" x="1721" y="1496" state="0">
+      <port name="1" node="519"/>
+      <port name="2" node="520"/>
+    </element>
+    <element id="163" class="GroundSwitch" shape="54" name="Earth Switch (V)" voltage="1" layer="0" x="1532" y="1414" orient="180" state="0">
+      <port name="1" node="521"/>
+    </element>
+    <element id="164" class="GroundSwitch" shape="54" name="Earth Switch (V)" voltage="1" layer="0" x="1642" y="1424" orient="180" state="0">
+      <port name="1" node="522"/>
+    </element>
+    <element id="165" class="GroundSwitch" shape="54" name="Earth Switch (V)" voltage="1" layer="0" x="1582" y="1419" orient="180" state="0">
+      <port name="1" node="523"/>
+    </element>
+    <element id="166" class="Disconnector" shape="162" name="Switch" voltage="1" layer="0" x="1431" y="1356" state="0">
+      <port name="1" node="524"/>
+      <port name="2" node="525"/>
+    </element>
+    <element id="167" class="Disconnector" shape="162" name="Switch" voltage="1" layer="0" x="1351" y="1356" state="0">
+      <port name="1" node="526"/>
+      <port name="2" node="527"/>
+    </element>
+    <element id="168" class="Disconnector" shape="162" name="Switch" voltage="1" layer="0" x="1201" y="1356" state="0">
+      <port name="1" node="528"/>
+      <port name="2" node="529"/>
+    </element>
+    <element id="169" class="Breaker" shape="41" name="Circuit Breaker" voltage="1" layer="0" x="1432" y="1302" state="1">
+      <port name="1" node="530"/>
+      <port name="2" node="531"/>
+    </element>
+    <element id="170" class="Breaker" shape="41" name="Circuit Breaker" voltage="1" layer="0" x="1352" y="1302" state="1">
+      <port name="1" node="532"/>
+      <port name="2" node="533"/>
+    </element>
+    <element id="171" class="Capacitor" shape="388" name="Capacitor (V)" voltage="1" layer="0" x="1433" y="1245">
+      <port name="1" node="534"/>
+      <port name="2" node="535"/>
+    </element>
+    <element id="172" class="Capacitor" shape="388" name="Capacitor (V)" voltage="1" layer="0" x="1353" y="1245">
+      <port name="1" node="536"/>
+      <port name="2" node="537"/>
+    </element>
+    <element id="173" class="Capacitor" shape="388" name="Filter Bank" voltage="1" layer="0" x="1350" y="1170">
+      <port name="1" node="538"/>
+      <port name="2" node="539"/>
+    </element>
+    <element id="174" class="Capacitor" shape="388" name="Filter Bank" voltage="1" layer="0" x="1430" y="1170">
+      <port name="1" node="540"/>
+      <port name="2" node="541"/>
+    </element>
+    <element id="175" class="Ground" shape="31" name="Earth Ground" voltage="1" layer="0" x="1432" y="1085" orient="180">
+      <port name="1" node="542"/>
+    </element>
+    <element id="176" class="Ground" shape="31" name="Earth Ground" voltage="1" layer="0" x="1352" y="1085" orient="180">
+      <port name="1" node="543"/>
+    </element>
+    <element id="177" class="Disconnector" shape="162" name="Switch" voltage="1" layer="0" x="1271" y="1356" state="0">
+      <port name="1" node="544"/>
+      <port name="2" node="545"/>
+    </element>
+    <element id="178" class="Breaker" shape="41" name="Circuit Breaker" voltage="1" layer="0" x="1272" y="1302" state="1">
+      <port name="1" node="546"/>
+      <port name="2" node="547"/>
+    </element>
+    <element id="179" class="Capacitor" shape="388" name="Capacitor (V)" voltage="1" layer="0" x="1273" y="1245">
+      <port name="1" node="548"/>
+      <port name="2" node="549"/>
+    </element>
+    <element id="180" class="Capacitor" shape="388" name="Filter Bank" voltage="1" layer="0" x="1270" y="1170">
+      <port name="1" node="550"/>
+      <port name="2" node="551"/>
+    </element>
+    <element id="181" class="Ground" shape="31" name="Earth Ground" voltage="1" layer="0" x="1272" y="1085" orient="180">
+      <port name="1" node="552"/>
+    </element>
+    <element id="182" class="Breaker" shape="41" name="Circuit Breaker" voltage="1" layer="0" x="1202" y="1302" state="1">
+      <port name="1" node="553"/>
+      <port name="2" node="554"/>
+    </element>
+    <element id="183" class="Capacitor" shape="388" name="Capacitor (V)" voltage="1" layer="0" x="1203" y="1245">
+      <port name="1" node="555"/>
+      <port name="2" node="556"/>
+    </element>
+    <element id="184" class="Capacitor" shape="388" name="Filter Bank" voltage="1" layer="0" x="1200" y="1170">
+      <port name="1" node="557"/>
+      <port name="2" node="558"/>
+    </element>
+    <element id="185" class="Ground" shape="31" name="Earth Ground" voltage="1" layer="0" x="1202" y="1085" orient="180">
+      <port name="1" node="559"/>
+    </element>
+    <element id="186" class="GroundSwitch" shape="54" name="Earth Switch (V)" voltage="1" layer="0" x="1462" y="1324" orient="90" state="0">
+      <port name="1" node="560"/>
+    </element>
+    <element id="187" class="GroundSwitch" shape="54" name="Earth Switch (V)" voltage="1" layer="0" x="1462" y="1274" orient="90" state="0">
+      <port name="1" node="561"/>
+    </element>
+    <element id="188" class="GroundSwitch" shape="54" name="Earth Switch (V)" voltage="1" layer="0" x="1392" y="1274" orient="90" state="0">
+      <port name="1" node="562"/>
+    </element>
+    <element id="189" class="GroundSwitch" shape="54" name="Earth Switch (V)" voltage="1" layer="0" x="1392" y="1334" orient="90" state="0">
+      <port name="1" node="563"/>
+    </element>
+    <element id="190" class="GroundSwitch" shape="54" name="Earth Switch (V)" voltage="1" layer="0" x="1312" y="1274" orient="90" state="0">
+      <port name="1" node="564"/>
+    </element>
+    <element id="191" class="GroundSwitch" shape="54" name="Earth Switch (V)" voltage="1" layer="0" x="1312" y="1334" orient="90" state="0">
+      <port name="1" node="565"/>
+    </element>
+    <element id="192" class="GroundSwitch" shape="54" name="Earth Switch (V)" voltage="1" layer="0" x="1232" y="1276" orient="90" state="0">
+      <port name="1" node="566"/>
+    </element>
+    <element id="193" class="GroundSwitch" shape="54" name="Earth Switch (V)" voltage="1" layer="0" x="1232" y="1334" orient="90" state="0">
+      <port name="1" node="567"/>
+    </element>
+    <element id="194" class="Disconnector" shape="162" name="Switch" voltage="1" layer="0" x="311" y="1086" state="0">
+      <port name="1" node="568"/>
+      <port name="2" node="569"/>
+    </element>
+    <element id="195" class="Breaker" shape="41" name="Circuit Breaker" voltage="1" layer="0" x="312" y="1182" state="1">
+      <port name="1" node="570"/>
+      <port name="2" node="571"/>
+    </element>
+    <element id="196" class="Disconnector" shape="162" name="Switch" voltage="1" layer="0" x="311" y="1276" state="0">
+      <port name="1" node="572"/>
+      <port name="2" node="573"/>
+    </element>
+    <element id="197" class="GroundSwitch" shape="54" name="Earth Switch (V)" voltage="1" layer="0" x="242" y="1134" orient="-90" state="0">
+      <port name="1" node="574"/>
+    </element>
+    <element id="198" class="GroundSwitch" shape="54" name="Earth Switch (V)" voltage="1" layer="0" x="242" y="1224" orient="-90" state="0">
+      <port name="1" node="575"/>
+    </element>
+    <element id="199" class="Disconnector" shape="162" name="Switch" voltage="1" layer="0" x="311" y="1626" state="0">
+      <port name="1" node="576"/>
+      <port name="2" node="577"/>
+    </element>
+    <element id="200" class="GroundSwitch" shape="54" name="Earth Switch (V)" voltage="1" layer="0" x="242" y="1034" orient="-90" state="0">
+      <port name="1" node="578"/>
+    </element>
+    <element id="201" class="Disconnector" shape="162" name="Switch" voltage="1" layer="0" x="681" y="1096" state="0">
+      <port name="1" node="579"/>
+      <port name="2" node="580"/>
+    </element>
+    <element id="202" class="VoltageTransformer" shape="55" name="CVT (V)" voltage="1" layer="0" x="545" y="1060">
+      <port name="1" node="581"/>
+    </element>
+    <element id="203" class="Breaker" shape="41" name="Circuit Breaker" voltage="1" layer="0" x="682" y="1192" state="1">
+      <port name="1" node="582"/>
+      <port name="2" node="583"/>
+    </element>
+    <element id="204" class="Disconnector" shape="162" name="Switch" voltage="1" layer="0" x="681" y="1276" state="0">
+      <port name="1" node="584"/>
+      <port name="2" node="585"/>
+    </element>
+    <element id="205" class="Disconnector" shape="162" name="Switch" voltage="1" layer="0" x="401" y="1356" orient="-90" state="0">
+      <port name="1" node="586"/>
+      <port name="2" node="587"/>
+    </element>
+    <element id="206" class="Breaker" shape="41" name="Circuit Breaker" voltage="1" layer="0" x="472" y="1352" orient="-90" state="1">
+      <port name="1" node="588"/>
+      <port name="2" node="589"/>
+    </element>
+    <element id="207" class="Disconnector" shape="162" name="Switch" voltage="1" layer="0" x="551" y="1356" orient="-90" state="0">
+      <port name="1" node="590"/>
+      <port name="2" node="591"/>
+    </element>
+    <element id="208" class="Disconnector" shape="162" name="Switch" voltage="1" layer="0" x="751" y="1336" state="0">
+      <port name="1" node="592"/>
+      <port name="2" node="593"/>
+    </element>
+    <element id="209" class="Disconnector" shape="162" name="Switch" voltage="1" layer="0" x="811" y="1336" state="0">
+      <port name="1" node="594"/>
+      <port name="2" node="595"/>
+    </element>
+    <element id="210" class="Disconnector" shape="162" name="Switch" voltage="1" layer="0" x="871" y="1336" state="0">
+      <port name="1" node="596"/>
+      <port name="2" node="597"/>
+    </element>
+    <element id="211" class="Disconnector" shape="162" name="Switch" voltage="1" layer="0" x="681" y="1276" state="0">
+      <port name="1" node="598"/>
+      <port name="2" node="599"/>
+    </element>
+    <element id="212" class="Disconnector" shape="162" name="Switch" voltage="1" layer="0" x="931" y="1336" state="0">
+      <port name="1" node="600"/>
+      <port name="2" node="601"/>
+    </element>
+    <element id="213" class="Breaker" shape="41" name="Circuit Breaker" voltage="1" layer="0" x="752" y="1272" state="1">
+      <port name="1" node="602"/>
+      <port name="2" node="603"/>
+    </element>
+    <element id="214" class="Breaker" shape="41" name="Circuit Breaker" voltage="1" layer="0" x="812" y="1272" state="1">
+      <port name="1" node="604"/>
+      <port name="2" node="605"/>
+    </element>
+    <element id="215" class="Breaker" shape="41" name="Circuit Breaker" voltage="1" layer="0" x="872" y="1272" state="1">
+      <port name="1" node="606"/>
+      <port name="2" node="607"/>
+    </element>
+    <element id="216" class="Breaker" shape="41" name="Circuit Breaker" voltage="1" layer="0" x="932" y="1272" state="1">
+      <port name="1" node="608"/>
+      <port name="2" node="609"/>
+    </element>
+    <element id="217" class="GroundSwitch" shape="54" name="Earth Switch (V)" voltage="1" layer="0" x="642" y="1244" orient="-90" state="0">
+      <port name="1" node="610"/>
+    </element>
+    <element id="218" class="GroundSwitch" shape="54" name="Earth Switch (V)" voltage="1" layer="0" x="362" y="1424" orient="180" state="0">
+      <port name="1" node="611"/>
+    </element>
+    <element id="219" class="GroundSwitch" shape="54" name="Earth Switch (V)" voltage="1" layer="0" x="432" y="1424" orient="180" state="0">
+      <port name="1" node="612"/>
+    </element>
+    <element id="220" class="GroundSwitch" shape="54" name="Earth Switch (V)" voltage="1" layer="0" x="512" y="1424" orient="180" state="0">
+      <port name="1" node="613"/>
+    </element>
+    <element id="221" class="GroundSwitch" shape="54" name="Earth Switch (V)" voltage="1" layer="0" x="582" y="1424" orient="180" state="0">
+      <port name="1" node="614"/>
+    </element>
+    <element id="222" class="Capacitor" shape="388" name="Capacitor (V)" voltage="1" layer="0" x="753" y="1225">
+      <port name="1" node="615"/>
+      <port name="2" node="616"/>
+    </element>
+    <element id="223" class="Capacitor" shape="388" name="Capacitor (V)" voltage="1" layer="0" x="813" y="1225">
+      <port name="1" node="617"/>
+      <port name="2" node="618"/>
+    </element>
+    <element id="224" class="Capacitor" shape="388" name="Capacitor (V)" voltage="1" layer="0" x="873" y="1225">
+      <port name="1" node="619"/>
+      <port name="2" node="620"/>
+    </element>
+    <element id="225" class="Capacitor" shape="388" name="Capacitor (V)" voltage="1" layer="0" x="933" y="1225">
+      <port name="1" node="621"/>
+      <port name="2" node="622"/>
+    </element>
+    <element id="226" class="Capacitor" shape="388" name="Filter Bank" voltage="1" layer="0" x="750" y="1150">
+      <port name="1" node="623"/>
+      <port name="2" node="624"/>
+    </element>
+    <element id="227" class="Capacitor" shape="388" name="Filter Bank" voltage="1" layer="0" x="810" y="1150">
+      <port name="1" node="625"/>
+      <port name="2" node="626"/>
+    </element>
+    <element id="228" class="Capacitor" shape="388" name="Filter Bank" voltage="1" layer="0" x="870" y="1150">
+      <port name="1" node="627"/>
+      <port name="2" node="628"/>
+    </element>
+    <element id="229" class="Capacitor" shape="388" name="Filter Bank" voltage="1" layer="0" x="930" y="1150">
+      <port name="1" node="629"/>
+      <port name="2" node="630"/>
+    </element>
+    <element id="230" class="Ground" shape="31" name="Earth Ground" voltage="1" layer="0" x="752" y="1075" orient="180">
+      <port name="1" node="631"/>
+    </element>
+    <element id="231" class="Ground" shape="31" name="Earth Ground" voltage="1" layer="0" x="812" y="1075" orient="180">
+      <port name="1" node="632"/>
+    </element>
+    <element id="232" class="Ground" shape="31" name="Earth Ground" voltage="1" layer="0" x="872" y="1075" orient="180">
+      <port name="1" node="633"/>
+    </element>
+    <element id="233" class="Ground" shape="31" name="Earth Ground" voltage="1" layer="0" x="932" y="1075" orient="180">
+      <port name="1" node="634"/>
+    </element>
+    <element id="234" class="GroundSwitch" shape="54" name="Earth Switch (V)" voltage="1" layer="0" x="782" y="1244" orient="90" state="0">
+      <port name="1" node="635"/>
+    </element>
+    <element id="235" class="GroundSwitch" shape="54" name="Earth Switch (V)" voltage="1" layer="0" x="782" y="1304" orient="90" state="0">
+      <port name="1" node="636"/>
+    </element>
+    <element id="236" class="GroundSwitch" shape="54" name="Earth Switch (V)" voltage="1" layer="0" x="842" y="1244" orient="90" state="0">
+      <port name="1" node="637"/>
+    </element>
+    <element id="237" class="GroundSwitch" shape="54" name="Earth Switch (V)" voltage="1" layer="0" x="842" y="1306" orient="90" state="0">
+      <port name="1" node="638"/>
+    </element>
+    <element id="238" class="GroundSwitch" shape="54" name="Earth Switch (V)" voltage="1" layer="0" x="902" y="1244" orient="90" state="0">
+      <port name="1" node="639"/>
+    </element>
+    <element id="239" class="GroundSwitch" shape="54" name="Earth Switch (V)" voltage="1" layer="0" x="902" y="1304" orient="90" state="0">
+      <port name="1" node="640"/>
+    </element>
+    <element id="240" class="GroundSwitch" shape="54" name="Earth Switch (V)" voltage="1" layer="0" x="962" y="1244" orient="90" state="0">
+      <port name="1" node="641"/>
+    </element>
+    <element id="241" class="GroundSwitch" shape="54" name="Earth Switch (V)" voltage="1" layer="0" x="962" y="1304" orient="90" state="0">
+      <port name="1" node="642"/>
+    </element>
+    <element id="242" class="Reactor" shape="37" name="Inductor (V)" voltage="1" layer="0" x="703" y="1842" orient="90">
+      <port name="1" node="643"/>
+      <port name="2" node="644"/>
+    </element>
+    <element id="243" class="Reactor" shape="37" name="Inductor (V)" voltage="1" layer="0" x="523" y="1842" orient="-90">
+      <port name="1" node="645"/>
+      <port name="2" node="646"/>
+    </element>
+    <element id="244" class="GroundSwitch" shape="54" name="Earth Switch (V)" voltage="1" layer="0" x="252" y="1714" orient="-90" state="0">
+      <port name="1" node="647"/>
+    </element>
+    <element id="245" class="PowerTransformer" shape="47" name="Converter Transformer" voltage="1" layer="0" x="827" y="1839" orient="90">
+      <port name="1" node="648"/>
+      <port name="2" node="649"/>
+      <windings>
+        <winding voltage="1"/>
+        <winding voltage="1"/>
+      </windings>
+    </element>
+    <element id="246" class="BusBarSection" shape="24" name="Busbar (H)" voltage="1" layer="0" x="840" y="1767">
+      <port name="1" node="738"/>
+      <port name="2" node="741"/>
+      <port name="3" node="750"/>
+      <geometry>
+        <point x="840" y="1767"/>
+        <point x="1030" y="1767"/>
+      </geometry>
+    </element>
+    <element id="247" class="BusBarSection" shape="24" name="Busbar (H)" voltage="1" layer="0" x="840" y="1907">
+      <port name="1" node="739"/>
+      <port name="2" node="743"/>
+      <port name="3" node="751"/>
+      <geometry>
+        <point x="840" y="1907"/>
+        <point x="1030" y="1907"/>
+      </geometry>
+    </element>
+    <element id="248" class="BusBarSection" shape="24" name="Busbar (H)" voltage="1" layer="0" x="1360" y="1767">
+      <port name="1" node="745"/>
+      <port name="2" node="747"/>
+      <port name="3" node="752"/>
+      <geometry>
+        <point x="1360" y="1767"/>
+        <point x="1550" y="1767"/>
+      </geometry>
+    </element>
+    <element id="249" class="BusBarSection" shape="24" name="Busbar (H)" voltage="1" layer="0" x="1370" y="1912">
+      <port name="1" node="744"/>
+      <port name="2" node="749"/>
+      <geometry>
+        <point x="1370" y="1912"/>
+        <point x="1570" y="1912"/>
+      </geometry>
+    </element>
+    <element id="250" class="PowerTransformer" shape="47" name="Converter Transformer" voltage="1" layer="0" x="1607" y="1849" orient="90">
+      <port name="1" node="650"/>
+      <port name="2" node="651"/>
+      <windings>
+        <winding voltage="1"/>
+        <winding voltage="1"/>
+      </windings>
+    </element>
+    <element id="251" class="Reactor" shape="37" name="Inductor (V)" voltage="1" layer="0" x="1923" y="1852" orient="90">
+      <port name="1" node="652"/>
+      <port name="2" node="653"/>
+    </element>
+    <element id="252" class="Reactor" shape="37" name="Inductor (V)" voltage="1" layer="0" x="1753" y="1852" orient="-90">
+      <port name="1" node="654"/>
+      <port name="2" node="655"/>
+    </element>
+    <element id="253" class="GroundSwitch" shape="54" name="Earth Switch (V)" voltage="1" layer="0" x="2047" y="1704" orient="-90" state="0">
+      <port name="1" node="656"/>
+    </element>
+    <element id="254" class="Ground" shape="31" name="Earth Ground" voltage="1" layer="0" x="752" y="1965">
+      <port name="1" node="657"/>
+    </element>
+    <element id="255" class="Capacitor" shape="388" name="Capacitor (V)" voltage="1" layer="0" x="643" y="1885">
+      <port name="1" node="658"/>
+      <port name="2" node="659"/>
+    </element>
+    <element id="256" class="Capacitor" shape="388" name="Capacitor (V)" voltage="1" layer="0" x="643" y="1915">
+      <port name="1" node="660"/>
+      <port name="2" node="661"/>
+    </element>
+    <element id="257" class="Ground" shape="31" name="Earth Ground" voltage="1" layer="0" x="642" y="1975">
+      <port name="1" node="662"/>
+    </element>
+    <element id="258" class="VoltageTransformer" shape="55" name="CVT (V)" voltage="1" layer="0" x="755" y="1922" orient="180">
+      <port name="1" node="663"/>
+    </element>
+    <element id="259" class="Capacitor" shape="388" name="Capacitor (V)" voltage="1" layer="0" x="573" y="1885">
+      <port name="1" node="664"/>
+      <port name="2" node="665"/>
+    </element>
+    <element id="260" class="Capacitor" shape="388" name="Capacitor (V)" voltage="1" layer="0" x="573" y="1925">
+      <port name="1" node="666"/>
+      <port name="2" node="667"/>
+    </element>
+    <element id="261" class="Ground" shape="31" name="Earth Ground" voltage="1" layer="0" x="572" y="1975">
+      <port name="1" node="668"/>
+    </element>
+    <element id="262" class="Ground" shape="31" name="Earth Ground" voltage="1" layer="0" x="1992" y="1985">
+      <port name="1" node="669"/>
+    </element>
+    <element id="263" class="Capacitor" shape="388" name="Capacitor (V)" voltage="1" layer="0" x="1883" y="1905">
+      <port name="1" node="670"/>
+      <port name="2" node="671"/>
+    </element>
+    <element id="264" class="Capacitor" shape="388" name="Capacitor (V)" voltage="1" layer="0" x="1883" y="1935">
+      <port name="1" node="672"/>
+      <port name="2" node="673"/>
+    </element>
+    <element id="265" class="Ground" shape="31" name="Earth Ground" voltage="1" layer="0" x="1882" y="2005">
+      <port name="1" node="674"/>
+    </element>
+    <element id="266" class="VoltageTransformer" shape="55" name="CVT (V)" voltage="1" layer="0" x="1995" y="1942" orient="180">
+      <port name="1" node="675"/>
+    </element>
+    <element id="267" class="Capacitor" shape="388" name="Capacitor (V)" voltage="1" layer="0" x="1813" y="1905">
+      <port name="1" node="676"/>
+      <port name="2" node="677"/>
+    </element>
+    <element id="268" class="Capacitor" shape="388" name="Capacitor (V)" voltage="1" layer="0" x="1813" y="1945">
+      <port name="1" node="678"/>
+      <port name="2" node="679"/>
+    </element>
+    <element id="269" class="Ground" shape="31" name="Earth Ground" voltage="1" layer="0" x="1812" y="1995">
+      <port name="1" node="680"/>
+    </element>
+    <element id="270" class="GroundSwitch" shape="54" name="Earth Switch (V)" voltage="1" layer="0" x="882" y="1704" state="0">
+      <port name="1" node="681"/>
+    </element>
+    <element id="271" class="GroundSwitch" shape="54" name="Earth Switch (V)" voltage="1" layer="0" x="932" y="1704" state="0">
+      <port name="1" node="682"/>
+    </element>
+    <element id="272" class="GroundSwitch" shape="54" name="Earth Switch (V)" voltage="1" layer="0" x="1382" y="1694" state="0">
+      <port name="1" node="683"/>
+    </element>
+    <element id="273" class="GroundSwitch" shape="54" name="Earth Switch (V)" voltage="1" layer="0" x="1452" y="1694" state="0">
+      <port name="1" node="684"/>
+    </element>
+    <element id="274" class="Disconnector" shape="162" name="Switch" voltage="1" layer="0" x="1849" y="1514" state="0">
+      <port name="1" node="685"/>
+      <port name="2" node="686"/>
+    </element>
+    <element id="275" class="Reactor" shape="37" name="Reactor (V)" voltage="1" layer="0" x="1853" y="1588">
+      <port name="1" node="687"/>
+      <port name="2" node="688"/>
+    </element>
+    <element id="276" class="Reactor" shape="37" name="Reactor (V)" voltage="1" layer="0" x="1853" y="1648">
+      <port name="1" node="689"/>
+      <port name="2" node="690"/>
+    </element>
+    <element id="277" class="Ground" shape="31" name="Earth Ground" voltage="1" layer="0" x="1852" y="1685">
+      <port name="1" node="691"/>
+    </element>
+    <element id="278" class="GroundSwitch" shape="54" name="Earth Switch (V)" voltage="1" layer="0" x="1822" y="1534" orient="-90" state="0">
+      <port name="1" node="692"/>
+    </element>
+    <element id="279" class="SurgeArrester" shape="35" name="Surge Arrester" voltage="1" layer="0" x="1762" y="1592" orient="-90">
+      <port name="1" node="693"/>
+      <port name="2" node="694"/>
+    </element>
+    <element id="280" class="Disconnector" shape="162" name="Switch" voltage="1" layer="0" x="1691" y="1506" state="0">
+      <port name="1" node="695"/>
+      <port name="2" node="696"/>
+    </element>
+    <element id="281" class="Reactor" shape="37" name="Reactor (V)" voltage="1" layer="0" x="1693" y="1578">
+      <port name="1" node="697"/>
+      <port name="2" node="698"/>
+    </element>
+    <element id="282" class="Reactor" shape="37" name="Reactor (V)" voltage="1" layer="0" x="1693" y="1638">
+      <port name="1" node="699"/>
+      <port name="2" node="700"/>
+    </element>
+    <element id="283" class="Ground" shape="31" name="Earth Ground" voltage="1" layer="0" x="1692" y="1685">
+      <port name="1" node="701"/>
+    </element>
+    <element id="284" class="GroundSwitch" shape="54" name="Earth Switch (V)" voltage="1" layer="0" x="1642" y="1534" orient="-90" state="0">
+      <port name="1" node="702"/>
+    </element>
+    <element id="285" class="Ground" shape="31" name="Earth Ground" voltage="1" layer="0" x="1182" y="1895">
+      <port name="1" node="703"/>
+    </element>
+    <element id="286" class="Breaker" shape="41" name="Circuit Breaker" voltage="1" layer="0" x="582" y="472" orient="90" state="1">
+      <port name="1" node="704"/>
+      <port name="2" node="705"/>
+    </element>
+    <element id="287" class="Breaker" shape="41" name="Circuit Breaker" voltage="1" layer="0" x="1792" y="472" orient="90" state="1">
+      <port name="1" node="706"/>
+      <port name="2" node="707"/>
+    </element>
+    <element id="288" class="Breaker" shape="41" name="Circuit Breaker" voltage="1" layer="0" x="1632" y="572" orient="180" state="1">
+      <port name="1" node="708"/>
+      <port name="2" node="709"/>
+    </element>
+  </elements>
+  <connectors>
+    <connector id="755" kind="BusbarWire" layer="0" from="710" to="711">
+      <point x="1252" y="260"/>
+      <point x="1402" y="260"/>
+    </connector>
+    <connector id="756" kind="BusbarWire" layer="0" from="712" to="713">
+      <point x="1252" y="312"/>
+      <point x="1402" y="312"/>
+    </connector>
+    <connector id="757" kind="BusbarWire" voltage="1" layer="0" from="714" to="713">
+      <point x="1510" y="342"/>
+      <point x="1510" y="327"/>
+      <point x="1402" y="327"/>
+      <point x="1402" y="312"/>
+    </connector>
+    <connector id="758" kind="BusbarWire" voltage="1" layer="0" from="715" to="711">
+      <point x="1520" y="227"/>
+      <point x="1520" y="243.5"/>
+      <point x="1402" y="243.5"/>
+      <point x="1402" y="260"/>
+    </connector>
+    <connector id="759" kind="BusbarWire" voltage="1" layer="0" from="716" to="710">
+      <point x="1150" y="222"/>
+      <point x="1150" y="241"/>
+      <point x="1252" y="241"/>
+      <point x="1252" y="260"/>
+    </connector>
+    <connector id="760" kind="BusbarWire" voltage="1" layer="0" from="717" to="712">
+      <point x="1150" y="337"/>
+      <point x="1150" y="324.5"/>
+      <point x="1252" y="324.5"/>
+      <point x="1252" y="312"/>
+    </connector>
+    <connector id="761" kind="BusbarWire" voltage="1" layer="0" from="716" to="289">
+      <point x="1150" y="222"/>
+      <point x="1150" y="313"/>
+      <point x="1202" y="313"/>
+      <point x="1202" y="404"/>
+    </connector>
+    <connector id="762" kind="BusbarWire" voltage="1" layer="0" from="714" to="290">
+      <point x="1510" y="342"/>
+      <point x="1510" y="368"/>
+      <point x="1442" y="368"/>
+      <point x="1442" y="394"/>
+    </connector>
+    <connector id="763" kind="BusbarWire" voltage="1" layer="0" from="715" to="291">
+      <point x="1520" y="227"/>
+      <point x="1520" y="310.5"/>
+      <point x="1492" y="310.5"/>
+      <point x="1492" y="394"/>
+    </connector>
+    <connector id="764" kind="BusbarWire" voltage="1" layer="0" from="717" to="292">
+      <point x="1150" y="337"/>
+      <point x="1150" y="365.5"/>
+      <point x="1172" y="365.5"/>
+      <point x="1172" y="394"/>
+    </connector>
+    <connector id="765" kind="BusbarWire" voltage="1" layer="0" from="718" to="297">
+      <point x="950" y="222"/>
+      <point x="950" y="230.5"/>
+      <point x="927" y="230.5"/>
+      <point x="927" y="239"/>
+    </connector>
+    <connector id="766" kind="BusbarWire" voltage="1" layer="0" from="719" to="296">
+      <point x="950" y="337"/>
+      <point x="950" y="338"/>
+      <point x="927" y="338"/>
+      <point x="927" y="339"/>
+    </connector>
+    <connector id="767" kind="BusbarWire" voltage="1" layer="0" from="296" to="294">
+      <point x="927" y="339"/>
+      <point x="927" y="315.5"/>
+      <point x="803" y="315.5"/>
+      <point x="803" y="292"/>
+    </connector>
+    <connector id="768" kind="BusbarWire" voltage="1" layer="0" from="293" to="298">
+      <point x="852" y="415"/>
+      <point x="852" y="398.5"/>
+      <point x="855" y="398.5"/>
+      <point x="855" y="382"/>
+    </connector>
+    <connector id="769" kind="BusbarWire" voltage="1" layer="0" from="298" to="296">
+      <point x="855" y="382"/>
+      <point x="855" y="360.5"/>
+      <point x="927" y="360.5"/>
+      <point x="927" y="339"/>
+    </connector>
+    <connector id="770" kind="BusbarWire" voltage="1" layer="0" from="295" to="300">
+      <point x="763" y="292"/>
+      <point x="613" y="292"/>
+    </connector>
+    <connector id="771" kind="BusbarWire" voltage="1" layer="0" from="301" to="303">
+      <point x="361" y="386"/>
+      <point x="361" y="370"/>
+      <point x="322" y="370"/>
+      <point x="322" y="354"/>
+    </connector>
+    <connector id="772" kind="BusbarWire" voltage="1" layer="0" from="304" to="305">
+      <point x="442" y="544"/>
+      <point x="442" y="510"/>
+      <point x="471" y="510"/>
+      <point x="471" y="476"/>
+    </connector>
+    <connector id="773" kind="BusbarWire" voltage="1" layer="0" from="307" to="306">
+      <point x="532" y="524"/>
+      <point x="532" y="500"/>
+      <point x="491" y="500"/>
+      <point x="491" y="476"/>
+    </connector>
+    <connector id="774" kind="BusbarWire" voltage="1" layer="0" from="311" to="310">
+      <point x="902" y="524"/>
+      <point x="902" y="500"/>
+      <point x="661" y="500"/>
+      <point x="661" y="476"/>
+    </connector>
+    <connector id="775" kind="BusbarWire" voltage="1" layer="0" from="720" to="312">
+      <point x="1710" y="342"/>
+      <point x="1710" y="340.5"/>
+      <point x="1717" y="340.5"/>
+      <point x="1717" y="339"/>
+    </connector>
+    <connector id="776" kind="BusbarWire" voltage="1" layer="0" from="721" to="313">
+      <point x="1710" y="227"/>
+      <point x="1710" y="233"/>
+      <point x="1717" y="233"/>
+      <point x="1717" y="239"/>
+    </connector>
+    <connector id="777" kind="BusbarWire" voltage="1" layer="0" from="314" to="312">
+      <point x="1765" y="392"/>
+      <point x="1765" y="365.5"/>
+      <point x="1717" y="365.5"/>
+      <point x="1717" y="339"/>
+    </connector>
+    <connector id="778" kind="BusbarWire" voltage="1" layer="0" from="317" to="312">
+      <point x="1793" y="292"/>
+      <point x="1755" y="292"/>
+      <point x="1755" y="339"/>
+      <point x="1717" y="339"/>
+    </connector>
+    <connector id="779" kind="BusbarWire" voltage="1" layer="0" from="316" to="319">
+      <point x="1833" y="292"/>
+      <point x="1893" y="292"/>
+    </connector>
+    <connector id="780" kind="BusbarWire" voltage="1" layer="0" from="325" to="324">
+      <point x="1873" y="355"/>
+      <point x="1873" y="345"/>
+    </connector>
+    <connector id="781" kind="BusbarWire" voltage="1" layer="0" from="327" to="326">
+      <point x="1872" y="415"/>
+      <point x="1872" y="395"/>
+      <point x="1873" y="395"/>
+      <point x="1873" y="375"/>
+    </connector>
+    <connector id="782" kind="BusbarWire" voltage="1" layer="0" from="323" to="319">
+      <point x="1873" y="325"/>
+      <point x="1873" y="308.5"/>
+      <point x="1893" y="308.5"/>
+      <point x="1893" y="292"/>
+    </connector>
+    <connector id="783" kind="BusbarWire" voltage="1" layer="0" from="320" to="316">
+      <point x="1843" y="322"/>
+      <point x="1843" y="307"/>
+      <point x="1833" y="307"/>
+      <point x="1833" y="292"/>
+    </connector>
+    <connector id="784" kind="BusbarWire" voltage="1" layer="0" from="328" to="321">
+      <point x="1843" y="365"/>
+      <point x="1843" y="342"/>
+    </connector>
+    <connector id="785" kind="BusbarWire" voltage="1" layer="0" from="322" to="329">
+      <point x="1842" y="415"/>
+      <point x="1842" y="400"/>
+      <point x="1843" y="400"/>
+      <point x="1843" y="385"/>
+    </connector>
+    <connector id="786" kind="BusbarWire" voltage="1" layer="0" from="330" to="712">
+      <point x="1332" y="365"/>
+      <point x="1332" y="338.5"/>
+      <point x="1252" y="338.5"/>
+      <point x="1252" y="312"/>
+    </connector>
+    <connector id="787" kind="BusbarWire" voltage="1" layer="0" from="331" to="318">
+      <point x="1932" y="364"/>
+      <point x="1932.5" y="364"/>
+      <point x="1932.5" y="292"/>
+      <point x="1933" y="292"/>
+    </connector>
+    <connector id="788" kind="BusbarWire" voltage="1" layer="0" from="332" to="331">
+      <point x="1959" y="424"/>
+      <point x="1959" y="394"/>
+      <point x="1932" y="394"/>
+      <point x="1932" y="364"/>
+    </connector>
+    <connector id="789" kind="BusbarWire" voltage="1" layer="0" from="315" to="335">
+      <point x="1769" y="444"/>
+      <point x="1769" y="424"/>
+    </connector>
+    <connector id="790" kind="BusbarWire" voltage="1" layer="0" from="334" to="314">
+      <point x="1769" y="404"/>
+      <point x="1769" y="398"/>
+      <point x="1765" y="398"/>
+      <point x="1765" y="392"/>
+    </connector>
+    <connector id="791" kind="BusbarWire" voltage="1" layer="0" from="336" to="333">
+      <point x="1959" y="524"/>
+      <point x="1959" y="444"/>
+    </connector>
+    <connector id="792" kind="BusbarWire" voltage="1" layer="0" from="338" to="336">
+      <point x="1932" y="504"/>
+      <point x="1932" y="514"/>
+      <point x="1959" y="514"/>
+      <point x="1959" y="524"/>
+    </connector>
+    <connector id="793" kind="BusbarWire" voltage="1" layer="0" from="338" to="340">
+      <point x="1932" y="504"/>
+      <point x="1932" y="490"/>
+      <point x="1901" y="490"/>
+      <point x="1901" y="476"/>
+    </connector>
+    <connector id="794" kind="BusbarWire" voltage="1" layer="0" from="341" to="339">
+      <point x="1832" y="514"/>
+      <point x="1832" y="495"/>
+      <point x="1881" y="495"/>
+      <point x="1881" y="476"/>
+    </connector>
+    <connector id="795" kind="BusbarWire" voltage="1" layer="0" from="345" to="343">
+      <point x="1682" y="514"/>
+      <point x="1682" y="495"/>
+      <point x="1711" y="495"/>
+      <point x="1711" y="476"/>
+    </connector>
+    <connector id="796" kind="BusbarWire" voltage="1" layer="0" from="342" to="344">
+      <point x="1762" y="514"/>
+      <point x="1762" y="495"/>
+      <point x="1731" y="495"/>
+      <point x="1731" y="476"/>
+    </connector>
+    <connector id="797" kind="BusbarWire" voltage="1" layer="0" from="345" to="346">
+      <point x="1682" y="514"/>
+      <point x="1682" y="509"/>
+      <point x="1629" y="509"/>
+      <point x="1629" y="504"/>
+    </connector>
+    <connector id="798" kind="BusbarWire" voltage="1" layer="0" from="348" to="346">
+      <point x="1489" y="504"/>
+      <point x="1629" y="504"/>
+    </connector>
+    <connector id="799" kind="BusbarWire" voltage="1" layer="0" from="353" to="348">
+      <point x="1389" y="504"/>
+      <point x="1489" y="504"/>
+    </connector>
+    <connector id="800" kind="BusbarWire" voltage="1" layer="0" from="364" to="353">
+      <point x="1319" y="504"/>
+      <point x="1389" y="504"/>
+    </connector>
+    <connector id="801" kind="BusbarWire" voltage="1" layer="0" from="368" to="364">
+      <point x="1239" y="504"/>
+      <point x="1319" y="504"/>
+    </connector>
+    <connector id="802" kind="BusbarWire" voltage="1" layer="0" from="368" to="371">
+      <point x="1239" y="504"/>
+      <point x="1239" y="490"/>
+      <point x="1161" y="490"/>
+      <point x="1161" y="476"/>
+    </connector>
+    <connector id="803" kind="BusbarWire" voltage="1" layer="0" from="311" to="372">
+      <point x="902" y="524"/>
+      <point x="902" y="500"/>
+      <point x="1051" y="500"/>
+      <point x="1051" y="476"/>
+    </connector>
+    <connector id="804" kind="BusbarWire" voltage="1" layer="0" from="357" to="377">
+      <point x="1390" y="622"/>
+      <point x="1390" y="597"/>
+      <point x="1392" y="597"/>
+      <point x="1392" y="572"/>
+    </connector>
+    <connector id="805" kind="BusbarWire" voltage="1" layer="0" from="357" to="356">
+      <point x="1390" y="622"/>
+      <point x="1390" y="608"/>
+      <point x="1422" y="608"/>
+      <point x="1422" y="594"/>
+    </connector>
+    <connector id="806" kind="BusbarWire" voltage="1" layer="0" from="382" to="370">
+      <point x="1112" y="504"/>
+      <point x="1112" y="490"/>
+      <point x="1141" y="490"/>
+      <point x="1141" y="476"/>
+    </connector>
+    <connector id="807" kind="BusbarWire" voltage="1" layer="0" from="382" to="373">
+      <point x="1112" y="504"/>
+      <point x="1112" y="490"/>
+      <point x="1071" y="490"/>
+      <point x="1071" y="476"/>
+    </connector>
+    <connector id="808" kind="BusbarWire" voltage="1" layer="0" from="722" to="386">
+      <point x="1631" y="932"/>
+      <point x="1631" y="626"/>
+    </connector>
+    <connector id="809" kind="BusbarWire" voltage="1" layer="0" from="390" to="388">
+      <point x="1961" y="696"/>
+      <point x="1961" y="649"/>
+      <point x="1962" y="649"/>
+      <point x="1962" y="602"/>
+    </connector>
+    <connector id="810" kind="BusbarWire" voltage="1" layer="0" from="723" to="391">
+      <point x="1961" y="932"/>
+      <point x="1961" y="716"/>
+    </connector>
+    <connector id="811" kind="BusbarWire" voltage="1" layer="0" from="392" to="390">
+      <point x="1912" y="654"/>
+      <point x="1936.5" y="654"/>
+      <point x="1936.5" y="696"/>
+      <point x="1961" y="696"/>
+    </connector>
+    <connector id="812" kind="BusbarWire" voltage="1" layer="0" from="393" to="391">
+      <point x="1912" y="764"/>
+      <point x="1936.5" y="764"/>
+      <point x="1936.5" y="716"/>
+      <point x="1961" y="716"/>
+    </connector>
+    <connector id="813" kind="BusbarWire" voltage="1" layer="0" from="395" to="311">
+      <point x="902" y="592"/>
+      <point x="902" y="524"/>
+    </connector>
+    <connector id="814" kind="BusbarWire" voltage="1" layer="0" from="401" to="400">
+      <point x="992" y="592"/>
+      <point x="992" y="534"/>
+    </connector>
+    <connector id="815" kind="BusbarWire" voltage="1" layer="0" from="400" to="372">
+      <point x="992" y="534"/>
+      <point x="992" y="505"/>
+      <point x="1051" y="505"/>
+      <point x="1051" y="476"/>
+    </connector>
+    <connector id="816" kind="BusbarWire" voltage="1" layer="0" from="302" to="407">
+      <point x="361" y="406"/>
+      <point x="361" y="506"/>
+    </connector>
+    <connector id="817" kind="BusbarWire" voltage="1" layer="0" from="409" to="408">
+      <point x="362" y="602"/>
+      <point x="362" y="564"/>
+      <point x="361" y="564"/>
+      <point x="361" y="526"/>
+    </connector>
+    <connector id="818" kind="BusbarWire" voltage="1" layer="0" from="304" to="302">
+      <point x="442" y="544"/>
+      <point x="442" y="475"/>
+      <point x="361" y="475"/>
+      <point x="361" y="406"/>
+    </connector>
+    <connector id="819" kind="BusbarWire" voltage="1" layer="0" from="400" to="411">
+      <point x="992" y="534"/>
+      <point x="992" y="559"/>
+      <point x="1022" y="559"/>
+      <point x="1022" y="584"/>
+    </connector>
+    <connector id="820" kind="BusbarWire" voltage="1" layer="0" from="413" to="311">
+      <point x="932" y="574"/>
+      <point x="917" y="574"/>
+      <point x="917" y="524"/>
+      <point x="902" y="524"/>
+    </connector>
+    <connector id="821" kind="BusbarWire" voltage="1" layer="0" from="415" to="311">
+      <point x="822" y="504"/>
+      <point x="822" y="514"/>
+      <point x="902" y="514"/>
+      <point x="902" y="524"/>
+    </connector>
+    <connector id="822" kind="BusbarWire" voltage="1" layer="0" from="416" to="415">
+      <point x="762" y="504"/>
+      <point x="822" y="504"/>
+    </connector>
+    <connector id="823" kind="BusbarWire" voltage="1" layer="0" from="416" to="419">
+      <point x="762" y="504"/>
+      <point x="762" y="562"/>
+    </connector>
+    <connector id="824" kind="BusbarWire" voltage="1" layer="0" from="420" to="421">
+      <point x="762" y="582"/>
+      <point x="762" y="603.5"/>
+      <point x="763" y="603.5"/>
+      <point x="763" y="625"/>
+    </connector>
+    <connector id="825" kind="BusbarWire" voltage="1" layer="0" from="415" to="417">
+      <point x="822" y="504"/>
+      <point x="822" y="562"/>
+    </connector>
+    <connector id="826" kind="BusbarWire" voltage="1" layer="0" from="418" to="423">
+      <point x="822" y="582"/>
+      <point x="822" y="603.5"/>
+      <point x="823" y="603.5"/>
+      <point x="823" y="625"/>
+    </connector>
+    <connector id="827" kind="BusbarWire" voltage="1" layer="0" from="427" to="417">
+      <point x="852" y="534"/>
+      <point x="837" y="534"/>
+      <point x="837" y="562"/>
+      <point x="822" y="562"/>
+    </connector>
+    <connector id="828" kind="BusbarWire" voltage="1" layer="0" from="425" to="418">
+      <point x="852" y="614"/>
+      <point x="837" y="614"/>
+      <point x="837" y="582"/>
+      <point x="822" y="582"/>
+    </connector>
+    <connector id="829" kind="BusbarWire" voltage="1" layer="0" from="416" to="428">
+      <point x="762" y="504"/>
+      <point x="762" y="529"/>
+      <point x="782" y="529"/>
+      <point x="782" y="554"/>
+    </connector>
+    <connector id="830" kind="BusbarWire" voltage="1" layer="0" from="420" to="426">
+      <point x="762" y="582"/>
+      <point x="762" y="598"/>
+      <point x="792" y="598"/>
+      <point x="792" y="614"/>
+    </connector>
+    <connector id="831" kind="BusbarWire" voltage="1" layer="0" from="434" to="431">
+      <point x="701" y="556"/>
+      <point x="701" y="584"/>
+      <point x="702" y="584"/>
+      <point x="702" y="612"/>
+    </connector>
+    <connector id="832" kind="BusbarWire" voltage="1" layer="0" from="433" to="416">
+      <point x="701" y="536"/>
+      <point x="701" y="520"/>
+      <point x="762" y="520"/>
+      <point x="762" y="504"/>
+    </connector>
+    <connector id="833" kind="BusbarWire" voltage="1" layer="0" from="406" to="310">
+      <point x="672" y="544"/>
+      <point x="672" y="510"/>
+      <point x="661" y="510"/>
+      <point x="661" y="476"/>
+    </connector>
+    <connector id="834" kind="BusbarWire" voltage="1" layer="0" from="431" to="436">
+      <point x="702" y="612"/>
+      <point x="702" y="598"/>
+      <point x="722" y="598"/>
+      <point x="722" y="584"/>
+    </connector>
+    <connector id="835" kind="BusbarWire" voltage="1" layer="0" from="435" to="432">
+      <point x="732" y="664"/>
+      <point x="717" y="664"/>
+      <point x="717" y="632"/>
+      <point x="702" y="632"/>
+    </connector>
+    <connector id="836" kind="BusbarWire" voltage="1" layer="0" from="439" to="432">
+      <point x="701" y="706"/>
+      <point x="701" y="669"/>
+      <point x="702" y="669"/>
+      <point x="702" y="632"/>
+    </connector>
+    <connector id="837" kind="BusbarWire" voltage="1" layer="0" from="724" to="440">
+      <point x="701" y="1012"/>
+      <point x="701" y="726"/>
+    </connector>
+    <connector id="838" kind="BusbarWire" voltage="1" layer="0" from="725" to="438">
+      <point x="361" y="972"/>
+      <point x="361" y="736"/>
+    </connector>
+    <connector id="839" kind="BusbarWire" voltage="1" layer="0" from="437" to="410">
+      <point x="361" y="716"/>
+      <point x="361" y="669"/>
+      <point x="362" y="669"/>
+      <point x="362" y="622"/>
+    </connector>
+    <connector id="840" kind="BusbarWire" voltage="1" layer="0" from="442" to="409">
+      <point x="302" y="564"/>
+      <point x="332" y="564"/>
+      <point x="332" y="602"/>
+      <point x="362" y="602"/>
+    </connector>
+    <connector id="841" kind="BusbarWire" voltage="1" layer="0" from="443" to="437">
+      <point x="332" y="684"/>
+      <point x="346.5" y="684"/>
+      <point x="346.5" y="716"/>
+      <point x="361" y="716"/>
+    </connector>
+    <connector id="842" kind="BusbarWire" voltage="1" layer="0" from="438" to="444">
+      <point x="361" y="736"/>
+      <point x="361" y="765"/>
+      <point x="332" y="765"/>
+      <point x="332" y="794"/>
+    </connector>
+    <connector id="843" kind="BusbarWire" voltage="1" layer="0" from="726" to="441">
+      <point x="565" y="972"/>
+      <point x="565" y="850"/>
+    </connector>
+    <connector id="844" kind="BusbarWire" voltage="1" layer="0" from="362" to="381">
+      <point x="1240" y="622"/>
+      <point x="1240" y="602"/>
+      <point x="1242" y="602"/>
+      <point x="1242" y="582"/>
+    </connector>
+    <connector id="845" kind="BusbarWire" voltage="1" layer="0" from="447" to="362">
+      <point x="1272" y="624"/>
+      <point x="1256" y="624"/>
+      <point x="1256" y="622"/>
+      <point x="1240" y="622"/>
+    </connector>
+    <connector id="846" kind="BusbarWire" voltage="1" layer="0" from="380" to="369">
+      <point x="1242" y="562"/>
+      <point x="1242" y="543"/>
+      <point x="1239" y="543"/>
+      <point x="1239" y="524"/>
+    </connector>
+    <connector id="847" kind="BusbarWire" voltage="1" layer="0" from="361" to="380">
+      <point x="1262" y="544"/>
+      <point x="1252" y="544"/>
+      <point x="1252" y="562"/>
+      <point x="1242" y="562"/>
+    </connector>
+    <connector id="848" kind="BusbarWire" voltage="1" layer="0" from="363" to="448">
+      <point x="1240" y="642"/>
+      <point x="1240" y="720"/>
+    </connector>
+    <connector id="849" kind="BusbarWire" voltage="1" layer="0" from="301" to="299">
+      <point x="361" y="386"/>
+      <point x="361" y="339"/>
+      <point x="573" y="339"/>
+      <point x="573" y="292"/>
+    </connector>
+    <connector id="850" kind="BusbarWire" voltage="1" layer="0" from="450" to="449">
+      <point x="1242" y="825"/>
+      <point x="1242" y="782.5"/>
+      <point x="1240" y="782.5"/>
+      <point x="1240" y="740"/>
+    </connector>
+    <connector id="851" kind="BusbarWire" voltage="1" layer="0" from="367" to="451">
+      <point x="1320" y="652"/>
+      <point x="1320" y="720"/>
+    </connector>
+    <connector id="852" kind="BusbarWire" voltage="1" layer="0" from="366" to="379">
+      <point x="1320" y="632"/>
+      <point x="1320" y="612"/>
+      <point x="1322" y="612"/>
+      <point x="1322" y="592"/>
+    </connector>
+    <connector id="853" kind="BusbarWire" voltage="1" layer="0" from="366" to="360">
+      <point x="1320" y="632"/>
+      <point x="1320" y="623"/>
+      <point x="1342" y="623"/>
+      <point x="1342" y="614"/>
+    </connector>
+    <connector id="854" kind="BusbarWire" voltage="1" layer="0" from="378" to="365">
+      <point x="1322" y="572"/>
+      <point x="1322" y="548"/>
+      <point x="1319" y="548"/>
+      <point x="1319" y="524"/>
+    </connector>
+    <connector id="855" kind="BusbarWire" voltage="1" layer="0" from="378" to="359">
+      <point x="1322" y="572"/>
+      <point x="1322" y="558"/>
+      <point x="1342" y="558"/>
+      <point x="1342" y="544"/>
+    </connector>
+    <connector id="856" kind="BusbarWire" voltage="1" layer="0" from="453" to="452">
+      <point x="1322" y="825"/>
+      <point x="1322" y="782.5"/>
+      <point x="1320" y="782.5"/>
+      <point x="1320" y="740"/>
+    </connector>
+    <connector id="857" kind="BusbarWire" voltage="1" layer="0" from="383" to="455">
+      <point x="1392" y="815"/>
+      <point x="1392" y="777.5"/>
+      <point x="1390" y="777.5"/>
+      <point x="1390" y="740"/>
+    </connector>
+    <connector id="858" kind="BusbarWire" voltage="1" layer="0" from="358" to="454">
+      <point x="1390" y="642"/>
+      <point x="1390" y="720"/>
+    </connector>
+    <connector id="859" kind="BusbarWire" voltage="1" layer="0" from="351" to="456">
+      <point x="1490" y="622"/>
+      <point x="1490" y="720"/>
+    </connector>
+    <connector id="860" kind="BusbarWire" voltage="1" layer="0" from="384" to="457">
+      <point x="1492" y="815"/>
+      <point x="1492" y="777.5"/>
+      <point x="1490" y="777.5"/>
+      <point x="1490" y="740"/>
+    </connector>
+    <connector id="861" kind="BusbarWire" voltage="1" layer="0" from="376" to="354">
+      <point x="1392" y="552"/>
+      <point x="1392" y="538"/>
+      <point x="1389" y="538"/>
+      <point x="1389" y="524"/>
+    </connector>
+    <connector id="862" kind="BusbarWire" voltage="1" layer="0" from="355" to="376">
+      <point x="1412" y="524"/>
+      <point x="1402" y="524"/>
+      <point x="1402" y="552"/>
+      <point x="1392" y="552"/>
+    </connector>
+    <connector id="863" kind="BusbarWire" voltage="1" layer="0" from="374" to="349">
+      <point x="1492" y="562"/>
+      <point x="1492" y="543"/>
+      <point x="1489" y="543"/>
+      <point x="1489" y="524"/>
+    </connector>
+    <connector id="864" kind="BusbarWire" voltage="1" layer="0" from="350" to="374">
+      <point x="1522" y="524"/>
+      <point x="1507" y="524"/>
+      <point x="1507" y="562"/>
+      <point x="1492" y="562"/>
+    </connector>
+    <connector id="865" kind="BusbarWire" voltage="1" layer="0" from="404" to="458">
+      <point x="990" y="662"/>
+      <point x="990" y="730"/>
+    </connector>
+    <connector id="866" kind="BusbarWire" voltage="1" layer="0" from="405" to="459">
+      <point x="992" y="835"/>
+      <point x="992" y="792.5"/>
+      <point x="990" y="792.5"/>
+      <point x="990" y="750"/>
+    </connector>
+    <connector id="867" kind="BusbarWire" voltage="1" layer="0" from="402" to="403">
+      <point x="992" y="612"/>
+      <point x="992" y="627"/>
+      <point x="990" y="627"/>
+      <point x="990" y="642"/>
+    </connector>
+    <connector id="868" kind="BusbarWire" voltage="1" layer="0" from="412" to="402">
+      <point x="1022" y="634"/>
+      <point x="1007" y="634"/>
+      <point x="1007" y="612"/>
+      <point x="992" y="612"/>
+    </connector>
+    <connector id="869" kind="BusbarWire" voltage="1" layer="0" from="398" to="460">
+      <point x="900" y="652"/>
+      <point x="900" y="730"/>
+    </connector>
+    <connector id="870" kind="BusbarWire" voltage="1" layer="0" from="397" to="396">
+      <point x="900" y="632"/>
+      <point x="900" y="622"/>
+      <point x="902" y="622"/>
+      <point x="902" y="612"/>
+    </connector>
+    <connector id="871" kind="BusbarWire" voltage="1" layer="0" from="414" to="396">
+      <point x="932" y="624"/>
+      <point x="917" y="624"/>
+      <point x="917" y="612"/>
+      <point x="902" y="612"/>
+    </connector>
+    <connector id="872" kind="BusbarWire" voltage="1" layer="0" from="399" to="461">
+      <point x="902" y="835"/>
+      <point x="902" y="792.5"/>
+      <point x="900" y="792.5"/>
+      <point x="900" y="750"/>
+    </connector>
+    <connector id="873" kind="BusbarWire" voltage="1" layer="0" from="424" to="462">
+      <point x="823" y="645"/>
+      <point x="823" y="692.5"/>
+      <point x="820" y="692.5"/>
+      <point x="820" y="740"/>
+    </connector>
+    <connector id="874" kind="BusbarWire" voltage="1" layer="0" from="430" to="463">
+      <point x="822" y="845"/>
+      <point x="822" y="802.5"/>
+      <point x="820" y="802.5"/>
+      <point x="820" y="760"/>
+    </connector>
+    <connector id="875" kind="BusbarWire" voltage="1" layer="0" from="422" to="464">
+      <point x="763" y="645"/>
+      <point x="763" y="692.5"/>
+      <point x="760" y="692.5"/>
+      <point x="760" y="740"/>
+    </connector>
+    <connector id="876" kind="BusbarWire" voltage="1" layer="0" from="429" to="465">
+      <point x="762" y="845"/>
+      <point x="762" y="802.5"/>
+      <point x="760" y="802.5"/>
+      <point x="760" y="760"/>
+    </connector>
+    <connector id="877" kind="BusbarWire" voltage="1" layer="0" from="727" to="466">
+      <point x="2120" y="977"/>
+      <point x="2120" y="1031.5"/>
+      <point x="2111" y="1031.5"/>
+      <point x="2111" y="1086"/>
+    </connector>
+    <connector id="878" kind="BusbarWire" voltage="1" layer="0" from="466" to="468">
+      <point x="2111" y="1086"/>
+      <point x="2111" y="1070"/>
+      <point x="2072" y="1070"/>
+      <point x="2072" y="1054"/>
+    </connector>
+    <connector id="879" kind="BusbarWire" voltage="1" layer="0" from="469" to="467">
+      <point x="2112" y="1152"/>
+      <point x="2112" y="1129"/>
+      <point x="2111" y="1129"/>
+      <point x="2111" y="1106"/>
+    </connector>
+    <connector id="880" kind="BusbarWire" voltage="1" layer="0" from="471" to="469">
+      <point x="2072" y="1124"/>
+      <point x="2092" y="1124"/>
+      <point x="2092" y="1152"/>
+      <point x="2112" y="1152"/>
+    </connector>
+    <connector id="881" kind="BusbarWire" voltage="1" layer="0" from="728" to="472">
+      <point x="1995" y="977"/>
+      <point x="1995" y="1040"/>
+    </connector>
+    <connector id="882" kind="BusbarWire" voltage="1" layer="0" from="729" to="394">
+      <point x="1795" y="932"/>
+      <point x="1795" y="830"/>
+    </connector>
+    <connector id="883" kind="BusbarWire" voltage="1" layer="0" from="730" to="474">
+      <point x="1881" y="932"/>
+      <point x="1881" y="1086"/>
+    </connector>
+    <connector id="884" kind="BusbarWire" voltage="1" layer="0" from="475" to="473">
+      <point x="1882" y="1162"/>
+      <point x="1882" y="1134"/>
+      <point x="1881" y="1134"/>
+      <point x="1881" y="1106"/>
+    </connector>
+    <connector id="885" kind="BusbarWire" voltage="1" layer="0" from="478" to="476">
+      <point x="1881" y="1236"/>
+      <point x="1881" y="1209"/>
+      <point x="1882" y="1209"/>
+      <point x="1882" y="1182"/>
+    </connector>
+    <connector id="886" kind="BusbarWire" voltage="1" layer="0" from="479" to="473">
+      <point x="1922" y="1124"/>
+      <point x="1901.5" y="1124"/>
+      <point x="1901.5" y="1106"/>
+      <point x="1881" y="1106"/>
+    </connector>
+    <connector id="887" kind="BusbarWire" voltage="1" layer="0" from="480" to="476">
+      <point x="1922" y="1214"/>
+      <point x="1902" y="1214"/>
+      <point x="1902" y="1182"/>
+      <point x="1882" y="1182"/>
+    </connector>
+    <connector id="888" kind="BusbarWire" voltage="1" layer="0" from="481" to="470">
+      <point x="2111" y="1236"/>
+      <point x="2111" y="1204"/>
+      <point x="2112" y="1204"/>
+      <point x="2112" y="1172"/>
+    </connector>
+    <connector id="889" kind="BusbarWire" voltage="1" layer="0" from="483" to="482">
+      <point x="2111" y="1596"/>
+      <point x="2111" y="1256"/>
+    </connector>
+    <connector id="890" kind="BusbarWire" voltage="1" layer="0" from="731" to="732">
+      <point x="1820" y="932"/>
+      <point x="1820" y="977"/>
+    </connector>
+    <connector id="891" kind="BusbarWire" voltage="1" layer="0" from="733" to="489">
+      <point x="1721" y="977"/>
+      <point x="1721" y="1046"/>
+    </connector>
+    <connector id="892" kind="BusbarWire" voltage="1" layer="0" from="485" to="490">
+      <point x="1722" y="1152"/>
+      <point x="1722" y="1109"/>
+      <point x="1721" y="1109"/>
+      <point x="1721" y="1066"/>
+    </connector>
+    <connector id="893" kind="BusbarWire" voltage="1" layer="0" from="487" to="486">
+      <point x="1721" y="1246"/>
+      <point x="1721" y="1209"/>
+      <point x="1722" y="1209"/>
+      <point x="1722" y="1172"/>
+    </connector>
+    <connector id="894" kind="BusbarWire" voltage="1" layer="0" from="491" to="486">
+      <point x="1702" y="1214"/>
+      <point x="1712" y="1214"/>
+      <point x="1712" y="1172"/>
+      <point x="1722" y="1172"/>
+    </connector>
+    <connector id="895" kind="BusbarWire" voltage="1" layer="0" from="492" to="485">
+      <point x="1692" y="1114"/>
+      <point x="1707" y="1114"/>
+      <point x="1707" y="1152"/>
+      <point x="1722" y="1152"/>
+    </connector>
+    <connector id="896" kind="BusbarWire" voltage="1" layer="0" from="734" to="494">
+      <point x="1520" y="932"/>
+      <point x="1520" y="999"/>
+      <point x="1521" y="999"/>
+      <point x="1521" y="1066"/>
+    </connector>
+    <connector id="897" kind="BusbarWire" voltage="1" layer="0" from="497" to="493">
+      <point x="1522" y="1142"/>
+      <point x="1522" y="1114"/>
+      <point x="1521" y="1114"/>
+      <point x="1521" y="1086"/>
+    </connector>
+    <connector id="898" kind="BusbarWire" voltage="1" layer="0" from="498" to="496">
+      <point x="1522" y="1162"/>
+      <point x="1522" y="1199"/>
+      <point x="1521" y="1199"/>
+      <point x="1521" y="1236"/>
+    </connector>
+    <connector id="899" kind="BusbarWire" voltage="1" layer="0" from="499" to="493">
+      <point x="1562" y="1114"/>
+      <point x="1541.5" y="1114"/>
+      <point x="1541.5" y="1086"/>
+      <point x="1521" y="1086"/>
+    </connector>
+    <connector id="900" kind="BusbarWire" voltage="1" layer="0" from="500" to="496">
+      <point x="1562" y="1204"/>
+      <point x="1541.5" y="1204"/>
+      <point x="1541.5" y="1236"/>
+      <point x="1521" y="1236"/>
+    </connector>
+    <connector id="901" kind="BusbarWire" voltage="1" layer="0" from="501" to="481">
+      <point x="2072" y="1214"/>
+      <point x="2091.5" y="1214"/>
+      <point x="2091.5" y="1236"/>
+      <point x="2111" y="1236"/>
+    </connector>
+    <connector id="902" kind="BusbarWire" voltage="1" layer="0" from="503" to="504">
+      <point x="2012" y="1352"/>
+      <point x="2031.5" y="1352"/>
+      <point x="2031.5" y="1356"/>
+      <point x="2051" y="1356"/>
+    </connector>
+    <connector id="903" kind="BusbarWire" voltage="1" layer="0" from="505" to="482">
+      <point x="2071" y="1356"/>
+      <point x="2091" y="1356"/>
+      <point x="2091" y="1256"/>
+      <point x="2111" y="1256"/>
+    </connector>
+    <connector id="904" kind="BusbarWire" voltage="1" layer="0" from="507" to="502">
+      <point x="1941" y="1356"/>
+      <point x="1966.5" y="1356"/>
+      <point x="1966.5" y="1352"/>
+      <point x="1992" y="1352"/>
+    </connector>
+    <connector id="905" kind="BusbarWire" voltage="1" layer="0" from="477" to="506">
+      <point x="1881" y="1256"/>
+      <point x="1881" y="1306"/>
+      <point x="1921" y="1306"/>
+      <point x="1921" y="1356"/>
+    </connector>
+    <connector id="906" kind="BusbarWire" voltage="1" layer="0" from="510" to="507">
+      <point x="1952" y="1404"/>
+      <point x="1952" y="1380"/>
+      <point x="1941" y="1380"/>
+      <point x="1941" y="1356"/>
+    </connector>
+    <connector id="907" kind="BusbarWire" voltage="1" layer="0" from="508" to="503">
+      <point x="2022" y="1404"/>
+      <point x="2022" y="1378"/>
+      <point x="2012" y="1378"/>
+      <point x="2012" y="1352"/>
+    </connector>
+    <connector id="908" kind="BusbarWire" voltage="1" layer="0" from="509" to="505">
+      <point x="2082" y="1404"/>
+      <point x="2082" y="1380"/>
+      <point x="2071" y="1380"/>
+      <point x="2071" y="1356"/>
+    </connector>
+    <connector id="909" kind="BusbarWire" voltage="1" layer="0" from="511" to="506">
+      <point x="1881" y="1496"/>
+      <point x="1881" y="1426"/>
+      <point x="1921" y="1426"/>
+      <point x="1921" y="1356"/>
+    </connector>
+    <connector id="910" kind="BusbarWire" voltage="1" layer="0" from="518" to="513">
+      <point x="1561" y="1376"/>
+      <point x="1581.5" y="1376"/>
+      <point x="1581.5" y="1372"/>
+      <point x="1602" y="1372"/>
+    </connector>
+    <connector id="911" kind="BusbarWire" voltage="1" layer="0" from="514" to="515">
+      <point x="1622" y="1372"/>
+      <point x="1641.5" y="1372"/>
+      <point x="1641.5" y="1376"/>
+      <point x="1661" y="1376"/>
+    </connector>
+    <connector id="912" kind="BusbarWire" voltage="1" layer="0" from="495" to="517">
+      <point x="1521" y="1256"/>
+      <point x="1521" y="1316"/>
+      <point x="1541" y="1316"/>
+      <point x="1541" y="1376"/>
+    </connector>
+    <connector id="913" kind="BusbarWire" voltage="1" layer="0" from="523" to="518">
+      <point x="1582" y="1409"/>
+      <point x="1582" y="1392.5"/>
+      <point x="1561" y="1392.5"/>
+      <point x="1561" y="1376"/>
+    </connector>
+    <connector id="914" kind="BusbarWire" voltage="1" layer="0" from="522" to="514">
+      <point x="1642" y="1414"/>
+      <point x="1642" y="1393"/>
+      <point x="1622" y="1393"/>
+      <point x="1622" y="1372"/>
+    </connector>
+    <connector id="915" kind="BusbarWire" voltage="1" layer="0" from="521" to="517">
+      <point x="1532" y="1404"/>
+      <point x="1532" y="1390"/>
+      <point x="1541" y="1390"/>
+      <point x="1541" y="1376"/>
+    </connector>
+    <connector id="916" kind="BusbarWire" voltage="1" layer="0" from="525" to="517">
+      <point x="1431" y="1366"/>
+      <point x="1431" y="1371"/>
+      <point x="1541" y="1371"/>
+      <point x="1541" y="1376"/>
+    </connector>
+    <connector id="917" kind="BusbarWire" voltage="1" layer="0" from="527" to="525">
+      <point x="1351" y="1366"/>
+      <point x="1431" y="1366"/>
+    </connector>
+    <connector id="918" kind="BusbarWire" voltage="1" layer="0" from="533" to="526">
+      <point x="1352" y="1312"/>
+      <point x="1352" y="1329"/>
+      <point x="1351" y="1329"/>
+      <point x="1351" y="1346"/>
+    </connector>
+    <connector id="919" kind="BusbarWire" voltage="1" layer="0" from="524" to="531">
+      <point x="1431" y="1346"/>
+      <point x="1431" y="1329"/>
+      <point x="1432" y="1329"/>
+      <point x="1432" y="1312"/>
+    </connector>
+    <connector id="920" kind="BusbarWire" voltage="1" layer="0" from="532" to="537">
+      <point x="1352" y="1292"/>
+      <point x="1352" y="1273.5"/>
+      <point x="1353" y="1273.5"/>
+      <point x="1353" y="1255"/>
+    </connector>
+    <connector id="921" kind="BusbarWire" voltage="1" layer="0" from="530" to="535">
+      <point x="1432" y="1292"/>
+      <point x="1432" y="1273.5"/>
+      <point x="1433" y="1273.5"/>
+      <point x="1433" y="1255"/>
+    </connector>
+    <connector id="922" kind="BusbarWire" voltage="1" layer="0" from="536" to="539">
+      <point x="1353" y="1235"/>
+      <point x="1353" y="1207.5"/>
+      <point x="1350" y="1207.5"/>
+      <point x="1350" y="1180"/>
+    </connector>
+    <connector id="923" kind="BusbarWire" voltage="1" layer="0" from="534" to="541">
+      <point x="1433" y="1235"/>
+      <point x="1433" y="1207.5"/>
+      <point x="1430" y="1207.5"/>
+      <point x="1430" y="1180"/>
+    </connector>
+    <connector id="924" kind="BusbarWire" voltage="1" layer="0" from="542" to="540">
+      <point x="1432" y="1095"/>
+      <point x="1432" y="1127.5"/>
+      <point x="1430" y="1127.5"/>
+      <point x="1430" y="1160"/>
+    </connector>
+    <connector id="925" kind="BusbarWire" voltage="1" layer="0" from="543" to="538">
+      <point x="1352" y="1095"/>
+      <point x="1352" y="1127.5"/>
+      <point x="1350" y="1127.5"/>
+      <point x="1350" y="1160"/>
+    </connector>
+    <connector id="926" kind="BusbarWire" voltage="1" layer="0" from="545" to="527">
+      <point x="1271" y="1366"/>
+      <point x="1351" y="1366"/>
+    </connector>
+    <connector id="927" kind="BusbarWire" voltage="1" layer="0" from="529" to="545">
+      <point x="1201" y="1366"/>
+      <point x="1271" y="1366"/>
+    </connector>
+    <connector id="928" kind="BusbarWire" voltage="1" layer="0" from="544" to="547">
+      <point x="1271" y="1346"/>
+      <point x="1271" y="1329"/>
+      <point x="1272" y="1329"/>
+      <point x="1272" y="1312"/>
+    </connector>
+    <connector id="929" kind="BusbarWire" voltage="1" layer="0" from="546" to="549">
+      <point x="1272" y="1292"/>
+      <point x="1272" y="1273.5"/>
+      <point x="1273" y="1273.5"/>
+      <point x="1273" y="1255"/>
+    </connector>
+    <connector id="930" kind="BusbarWire" voltage="1" layer="0" from="548" to="551">
+      <point x="1273" y="1235"/>
+      <point x="1273" y="1207.5"/>
+      <point x="1270" y="1207.5"/>
+      <point x="1270" y="1180"/>
+    </connector>
+    <connector id="931" kind="BusbarWire" voltage="1" layer="0" from="552" to="550">
+      <point x="1272" y="1095"/>
+      <point x="1272" y="1127.5"/>
+      <point x="1270" y="1127.5"/>
+      <point x="1270" y="1160"/>
+    </connector>
+    <connector id="932" kind="BusbarWire" voltage="1" layer="0" from="528" to="554">
+      <point x="1201" y="1346"/>
+      <point x="1201" y="1329"/>
+      <point x="1202" y="1329"/>
+      <point x="1202" y="1312"/>
+    </connector>
+    <connector id="933" kind="BusbarWire" voltage="1" layer="0" from="553" to="556">
+      <point x="1202" y="1292"/>
+      <point x="1202" y="1273.5"/>
+      <point x="1203" y="1273.5"/>
+      <point x="1203" y="1255"/>
+    </connector>
+    <connector id="934" kind="BusbarWire" voltage="1" layer="0" from="555" to="558">
+      <point x="1203" y="1235"/>
+      <point x="1203" y="1207.5"/>
+      <point x="1200" y="1207.5"/>
+      <point x="1200" y="1180"/>
+    </connector>
+    <connector id="935" kind="BusbarWire" voltage="1" layer="0" from="559" to="557">
+      <point x="1202" y="1095"/>
+      <point x="1202" y="1127.5"/>
+      <point x="1200" y="1127.5"/>
+      <point x="1200" y="1160"/>
+    </connector>
+    <connector id="936" kind="BusbarWire" voltage="1" layer="0" from="560" to="524">
+      <point x="1452" y="1324"/>
+      <point x="1441.5" y="1324"/>
+      <point x="1441.5" y="1346"/>
+      <point x="1431" y="1346"/>
+    </connector>
+    <connector id="937" kind="BusbarWire" voltage="1" layer="0" from="561" to="530">
+      <point x="1452" y="1274"/>
+      <point x="1442" y="1274"/>
+      <point x="1442" y="1292"/>
+      <point x="1432" y="1292"/>
+    </connector>
+    <connector id="938" kind="BusbarWire" voltage="1" layer="0" from="562" to="532">
+      <point x="1382" y="1274"/>
+      <point x="1367" y="1274"/>
+      <point x="1367" y="1292"/>
+      <point x="1352" y="1292"/>
+    </connector>
+    <connector id="939" kind="BusbarWire" voltage="1" layer="0" from="563" to="533">
+      <point x="1382" y="1334"/>
+      <point x="1367" y="1334"/>
+      <point x="1367" y="1312"/>
+      <point x="1352" y="1312"/>
+    </connector>
+    <connector id="940" kind="BusbarWire" voltage="1" layer="0" from="565" to="544">
+      <point x="1302" y="1334"/>
+      <point x="1286.5" y="1334"/>
+      <point x="1286.5" y="1346"/>
+      <point x="1271" y="1346"/>
+    </connector>
+    <connector id="941" kind="BusbarWire" voltage="1" layer="0" from="564" to="549">
+      <point x="1302" y="1274"/>
+      <point x="1287.5" y="1274"/>
+      <point x="1287.5" y="1255"/>
+      <point x="1273" y="1255"/>
+    </connector>
+    <connector id="942" kind="BusbarWire" voltage="1" layer="0" from="567" to="528">
+      <point x="1222" y="1334"/>
+      <point x="1211.5" y="1334"/>
+      <point x="1211.5" y="1346"/>
+      <point x="1201" y="1346"/>
+    </connector>
+    <connector id="943" kind="BusbarWire" voltage="1" layer="0" from="566" to="553">
+      <point x="1222" y="1276"/>
+      <point x="1212" y="1276"/>
+      <point x="1212" y="1292"/>
+      <point x="1202" y="1292"/>
+    </connector>
+    <connector id="944" kind="BusbarWire" voltage="1" layer="0" from="735" to="568">
+      <point x="311" y="1012"/>
+      <point x="311" y="1076"/>
+    </connector>
+    <connector id="945" kind="BusbarWire" voltage="1" layer="0" from="570" to="569">
+      <point x="312" y="1172"/>
+      <point x="312" y="1134"/>
+      <point x="311" y="1134"/>
+      <point x="311" y="1096"/>
+    </connector>
+    <connector id="946" kind="BusbarWire" voltage="1" layer="0" from="572" to="571">
+      <point x="311" y="1266"/>
+      <point x="311" y="1229"/>
+      <point x="312" y="1229"/>
+      <point x="312" y="1192"/>
+    </connector>
+    <connector id="947" kind="BusbarWire" voltage="1" layer="0" from="574" to="570">
+      <point x="252" y="1134"/>
+      <point x="282" y="1134"/>
+      <point x="282" y="1172"/>
+      <point x="312" y="1172"/>
+    </connector>
+    <connector id="948" kind="BusbarWire" voltage="1" layer="0" from="575" to="572">
+      <point x="252" y="1224"/>
+      <point x="281.5" y="1224"/>
+      <point x="281.5" y="1266"/>
+      <point x="311" y="1266"/>
+    </connector>
+    <connector id="949" kind="BusbarWire" voltage="1" layer="0" from="576" to="573">
+      <point x="311" y="1616"/>
+      <point x="311" y="1286"/>
+    </connector>
+    <connector id="950" kind="BusbarWire" voltage="1" layer="0" from="578" to="568">
+      <point x="252" y="1034"/>
+      <point x="281.5" y="1034"/>
+      <point x="281.5" y="1076"/>
+      <point x="311" y="1076"/>
+    </connector>
+    <connector id="951" kind="BusbarWire" voltage="1" layer="0" from="736" to="579">
+      <point x="681" y="972"/>
+      <point x="681" y="1086"/>
+    </connector>
+    <connector id="952" kind="BusbarWire" voltage="1" layer="0" from="737" to="581">
+      <point x="545" y="1012"/>
+      <point x="545" y="1060"/>
+    </connector>
+    <connector id="953" kind="BusbarWire" voltage="1" layer="0" from="580" to="582">
+      <point x="681" y="1106"/>
+      <point x="681" y="1144"/>
+      <point x="682" y="1144"/>
+      <point x="682" y="1182"/>
+    </connector>
+    <connector id="954" kind="BusbarWire" voltage="1" layer="0" from="584" to="583">
+      <point x="681" y="1266"/>
+      <point x="681" y="1234"/>
+      <point x="682" y="1234"/>
+      <point x="682" y="1202"/>
+    </connector>
+    <connector id="955" kind="BusbarWire" voltage="1" layer="0" from="589" to="590">
+      <point x="482" y="1352"/>
+      <point x="511.5" y="1352"/>
+      <point x="511.5" y="1356"/>
+      <point x="541" y="1356"/>
+    </connector>
+    <connector id="956" kind="BusbarWire" voltage="1" layer="0" from="587" to="588">
+      <point x="411" y="1356"/>
+      <point x="436.5" y="1356"/>
+      <point x="436.5" y="1352"/>
+      <point x="462" y="1352"/>
+    </connector>
+    <connector id="957" kind="BusbarWire" voltage="1" layer="0" from="591" to="585">
+      <point x="561" y="1356"/>
+      <point x="621" y="1356"/>
+      <point x="621" y="1286"/>
+      <point x="681" y="1286"/>
+    </connector>
+    <connector id="958" kind="BusbarWire" voltage="1" layer="0" from="586" to="573">
+      <point x="391" y="1356"/>
+      <point x="351" y="1356"/>
+      <point x="351" y="1286"/>
+      <point x="311" y="1286"/>
+    </connector>
+    <connector id="959" kind="BusbarWire" voltage="1" layer="0" from="593" to="591">
+      <point x="751" y="1346"/>
+      <point x="751" y="1351"/>
+      <point x="561" y="1351"/>
+      <point x="561" y="1356"/>
+    </connector>
+    <connector id="960" kind="BusbarWire" voltage="1" layer="0" from="595" to="593">
+      <point x="811" y="1346"/>
+      <point x="751" y="1346"/>
+    </connector>
+    <connector id="961" kind="BusbarWire" voltage="1" layer="0" from="597" to="595">
+      <point x="871" y="1346"/>
+      <point x="811" y="1346"/>
+    </connector>
+    <connector id="962" kind="BusbarWire" voltage="1" layer="0" from="601" to="597">
+      <point x="931" y="1346"/>
+      <point x="871" y="1346"/>
+    </connector>
+    <connector id="963" kind="BusbarWire" voltage="1" layer="0" from="592" to="603">
+      <point x="751" y="1326"/>
+      <point x="751" y="1304"/>
+      <point x="752" y="1304"/>
+      <point x="752" y="1282"/>
+    </connector>
+    <connector id="964" kind="BusbarWire" voltage="1" layer="0" from="594" to="605">
+      <point x="811" y="1326"/>
+      <point x="811" y="1304"/>
+      <point x="812" y="1304"/>
+      <point x="812" y="1282"/>
+    </connector>
+    <connector id="965" kind="BusbarWire" voltage="1" layer="0" from="596" to="607">
+      <point x="871" y="1326"/>
+      <point x="871" y="1304"/>
+      <point x="872" y="1304"/>
+      <point x="872" y="1282"/>
+    </connector>
+    <connector id="966" kind="BusbarWire" voltage="1" layer="0" from="600" to="609">
+      <point x="931" y="1326"/>
+      <point x="931" y="1304"/>
+      <point x="932" y="1304"/>
+      <point x="932" y="1282"/>
+    </connector>
+    <connector id="967" kind="BusbarWire" voltage="1" layer="0" from="610" to="598">
+      <point x="652" y="1244"/>
+      <point x="666.5" y="1244"/>
+      <point x="666.5" y="1266"/>
+      <point x="681" y="1266"/>
+    </connector>
+    <connector id="968" kind="BusbarWire" voltage="1" layer="0" from="611" to="586">
+      <point x="362" y="1414"/>
+      <point x="362" y="1385"/>
+      <point x="391" y="1385"/>
+      <point x="391" y="1356"/>
+    </connector>
+    <connector id="969" kind="BusbarWire" voltage="1" layer="0" from="612" to="587">
+      <point x="432" y="1414"/>
+      <point x="432" y="1385"/>
+      <point x="411" y="1385"/>
+      <point x="411" y="1356"/>
+    </connector>
+    <connector id="970" kind="BusbarWire" voltage="1" layer="0" from="613" to="589">
+      <point x="512" y="1414"/>
+      <point x="512" y="1383"/>
+      <point x="482" y="1383"/>
+      <point x="482" y="1352"/>
+    </connector>
+    <connector id="971" kind="BusbarWire" voltage="1" layer="0" from="614" to="591">
+      <point x="582" y="1414"/>
+      <point x="582" y="1385"/>
+      <point x="561" y="1385"/>
+      <point x="561" y="1356"/>
+    </connector>
+    <connector id="972" kind="BusbarWire" voltage="1" layer="0" from="616" to="602">
+      <point x="753" y="1235"/>
+      <point x="753" y="1248.5"/>
+      <point x="752" y="1248.5"/>
+      <point x="752" y="1262"/>
+    </connector>
+    <connector id="973" kind="BusbarWire" voltage="1" layer="0" from="618" to="604">
+      <point x="813" y="1235"/>
+      <point x="813" y="1248.5"/>
+      <point x="812" y="1248.5"/>
+      <point x="812" y="1262"/>
+    </connector>
+    <connector id="974" kind="BusbarWire" voltage="1" layer="0" from="620" to="606">
+      <point x="873" y="1235"/>
+      <point x="873" y="1248.5"/>
+      <point x="872" y="1248.5"/>
+      <point x="872" y="1262"/>
+    </connector>
+    <connector id="975" kind="BusbarWire" voltage="1" layer="0" from="622" to="608">
+      <point x="933" y="1235"/>
+      <point x="933" y="1248.5"/>
+      <point x="932" y="1248.5"/>
+      <point x="932" y="1262"/>
+    </connector>
+    <connector id="976" kind="BusbarWire" voltage="1" layer="0" from="624" to="615">
+      <point x="750" y="1160"/>
+      <point x="750" y="1187.5"/>
+      <point x="753" y="1187.5"/>
+      <point x="753" y="1215"/>
+    </connector>
+    <connector id="977" kind="BusbarWire" voltage="1" layer="0" from="617" to="626">
+      <point x="813" y="1215"/>
+      <point x="813" y="1187.5"/>
+      <point x="810" y="1187.5"/>
+      <point x="810" y="1160"/>
+    </connector>
+    <connector id="978" kind="BusbarWire" voltage="1" layer="0" from="619" to="628">
+      <point x="873" y="1215"/>
+      <point x="873" y="1187.5"/>
+      <point x="870" y="1187.5"/>
+      <point x="870" y="1160"/>
+    </connector>
+    <connector id="979" kind="BusbarWire" voltage="1" layer="0" from="621" to="630">
+      <point x="933" y="1215"/>
+      <point x="933" y="1187.5"/>
+      <point x="930" y="1187.5"/>
+      <point x="930" y="1160"/>
+    </connector>
+    <connector id="980" kind="BusbarWire" voltage="1" layer="0" from="631" to="623">
+      <point x="752" y="1085"/>
+      <point x="752" y="1112.5"/>
+      <point x="750" y="1112.5"/>
+      <point x="750" y="1140"/>
+    </connector>
+    <connector id="981" kind="BusbarWire" voltage="1" layer="0" from="632" to="625">
+      <point x="812" y="1085"/>
+      <point x="812" y="1112.5"/>
+      <point x="810" y="1112.5"/>
+      <point x="810" y="1140"/>
+    </connector>
+    <connector id="982" kind="BusbarWire" voltage="1" layer="0" from="633" to="627">
+      <point x="872" y="1085"/>
+      <point x="872" y="1112.5"/>
+      <point x="870" y="1112.5"/>
+      <point x="870" y="1140"/>
+    </connector>
+    <connector id="983" kind="BusbarWire" voltage="1" layer="0" from="634" to="629">
+      <point x="932" y="1085"/>
+      <point x="932" y="1112.5"/>
+      <point x="930" y="1112.5"/>
+      <point x="930" y="1140"/>
+    </connector>
+    <connector id="984" kind="BusbarWire" voltage="1" layer="0" from="635" to="602">
+      <point x="772" y="1244"/>
+      <point x="762" y="1244"/>
+      <point x="762" y="1262"/>
+      <point x="752" y="1262"/>
+    </connector>
+    <connector id="985" kind="BusbarWire" voltage="1" layer="0" from="636" to="603">
+      <point x="772" y="1304"/>
+      <point x="762" y="1304"/>
+      <point x="762" y="1282"/>
+      <point x="752" y="1282"/>
+    </connector>
+    <connector id="986" kind="BusbarWire" voltage="1" layer="0" from="637" to="604">
+      <point x="832" y="1244"/>
+      <point x="822" y="1244"/>
+      <point x="822" y="1262"/>
+      <point x="812" y="1262"/>
+    </connector>
+    <connector id="987" kind="BusbarWire" voltage="1" layer="0" from="638" to="594">
+      <point x="832" y="1306"/>
+      <point x="821.5" y="1306"/>
+      <point x="821.5" y="1326"/>
+      <point x="811" y="1326"/>
+    </connector>
+    <connector id="988" kind="BusbarWire" voltage="1" layer="0" from="639" to="606">
+      <point x="892" y="1244"/>
+      <point x="882" y="1244"/>
+      <point x="882" y="1262"/>
+      <point x="872" y="1262"/>
+    </connector>
+    <connector id="989" kind="BusbarWire" voltage="1" layer="0" from="640" to="596">
+      <point x="892" y="1304"/>
+      <point x="881.5" y="1304"/>
+      <point x="881.5" y="1326"/>
+      <point x="871" y="1326"/>
+    </connector>
+    <connector id="990" kind="BusbarWire" voltage="1" layer="0" from="641" to="608">
+      <point x="952" y="1244"/>
+      <point x="942" y="1244"/>
+      <point x="942" y="1262"/>
+      <point x="932" y="1262"/>
+    </connector>
+    <connector id="991" kind="BusbarWire" voltage="1" layer="0" from="642" to="600">
+      <point x="952" y="1304"/>
+      <point x="941.5" y="1304"/>
+      <point x="941.5" y="1326"/>
+      <point x="931" y="1326"/>
+    </connector>
+    <connector id="992" kind="BusbarWire" voltage="1" layer="0" from="644" to="646">
+      <point x="683" y="1842"/>
+      <point x="543" y="1842"/>
+    </connector>
+    <connector id="993" kind="BusbarWire" voltage="1" layer="0" from="577" to="645">
+      <point x="311" y="1636"/>
+      <point x="311" y="1739"/>
+      <point x="503" y="1739"/>
+      <point x="503" y="1842"/>
+    </connector>
+    <connector id="994" kind="BusbarWire" voltage="1" layer="0" from="647" to="577">
+      <point x="262" y="1714"/>
+      <point x="286.5" y="1714"/>
+      <point x="286.5" y="1636"/>
+      <point x="311" y="1636"/>
+    </connector>
+    <connector id="995" kind="BusbarWire" voltage="1" layer="0" from="643" to="648">
+      <point x="723" y="1842"/>
+      <point x="775" y="1842"/>
+      <point x="775" y="1889"/>
+      <point x="827" y="1889"/>
+    </connector>
+    <connector id="996" kind="BusbarWire" voltage="1" layer="0" from="738" to="649">
+      <point x="840" y="1767"/>
+      <point x="840" y="1778"/>
+      <point x="827" y="1778"/>
+      <point x="827" y="1789"/>
+    </connector>
+    <connector id="997" kind="BusbarWire" voltage="1" layer="0" from="739" to="648">
+      <point x="840" y="1907"/>
+      <point x="840" y="1898"/>
+      <point x="827" y="1898"/>
+      <point x="827" y="1889"/>
+    </connector>
+    <connector id="998" kind="BusbarWire" voltage="1" layer="0" from="741" to="740">
+      <point x="1030" y="1767"/>
+      <point x="1030" y="1793.5"/>
+      <point x="1072" y="1793.5"/>
+      <point x="1072" y="1820"/>
+    </connector>
+    <connector id="999" kind="BusbarWire" voltage="1" layer="0" from="743" to="742">
+      <point x="1030" y="1907"/>
+      <point x="1030" y="1889.5"/>
+      <point x="1072" y="1889.5"/>
+      <point x="1072" y="1872"/>
+    </connector>
+    <connector id="1000" kind="BusbarWire" voltage="1" layer="0" from="744" to="650">
+      <point x="1570" y="1912"/>
+      <point x="1570" y="1905.5"/>
+      <point x="1607" y="1905.5"/>
+      <point x="1607" y="1899"/>
+    </connector>
+    <connector id="1001" kind="BusbarWire" voltage="1" layer="0" from="745" to="651">
+      <point x="1550" y="1767"/>
+      <point x="1550" y="1783"/>
+      <point x="1607" y="1783"/>
+      <point x="1607" y="1799"/>
+    </connector>
+    <connector id="1002" kind="BusbarWire" voltage="1" layer="0" from="747" to="746">
+      <point x="1360" y="1767"/>
+      <point x="1360" y="1793.5"/>
+      <point x="1282" y="1793.5"/>
+      <point x="1282" y="1820"/>
+    </connector>
+    <connector id="1003" kind="BusbarWire" voltage="1" layer="0" from="749" to="748">
+      <point x="1370" y="1912"/>
+      <point x="1370" y="1892"/>
+      <point x="1282" y="1892"/>
+      <point x="1282" y="1872"/>
+    </connector>
+    <connector id="1004" kind="BusbarWire" voltage="1" layer="0" from="653" to="655">
+      <point x="1903" y="1852"/>
+      <point x="1773" y="1852"/>
+    </connector>
+    <connector id="1005" kind="BusbarWire" voltage="1" layer="0" from="650" to="654">
+      <point x="1607" y="1899"/>
+      <point x="1607" y="1875.5"/>
+      <point x="1733" y="1875.5"/>
+      <point x="1733" y="1852"/>
+    </connector>
+    <connector id="1006" kind="BusbarWire" voltage="1" layer="0" from="484" to="652">
+      <point x="2111" y="1616"/>
+      <point x="2111" y="1734"/>
+      <point x="1943" y="1734"/>
+      <point x="1943" y="1852"/>
+    </connector>
+    <connector id="1007" kind="BusbarWire" voltage="1" layer="0" from="656" to="484">
+      <point x="2057" y="1704"/>
+      <point x="2084" y="1704"/>
+      <point x="2084" y="1616"/>
+      <point x="2111" y="1616"/>
+    </connector>
+    <connector id="1008" kind="BusbarWire" voltage="1" layer="0" from="660" to="659">
+      <point x="643" y="1905"/>
+      <point x="643" y="1895"/>
+    </connector>
+    <connector id="1009" kind="BusbarWire" voltage="1" layer="0" from="662" to="661">
+      <point x="642" y="1965"/>
+      <point x="642" y="1945"/>
+      <point x="643" y="1945"/>
+      <point x="643" y="1925"/>
+    </connector>
+    <connector id="1010" kind="BusbarWire" voltage="1" layer="0" from="666" to="665">
+      <point x="573" y="1915"/>
+      <point x="573" y="1895"/>
+    </connector>
+    <connector id="1011" kind="BusbarWire" voltage="1" layer="0" from="668" to="667">
+      <point x="572" y="1965"/>
+      <point x="572" y="1950"/>
+      <point x="573" y="1950"/>
+      <point x="573" y="1935"/>
+    </connector>
+    <connector id="1012" kind="BusbarWire" voltage="1" layer="0" from="658" to="644">
+      <point x="643" y="1875"/>
+      <point x="643" y="1858.5"/>
+      <point x="683" y="1858.5"/>
+      <point x="683" y="1842"/>
+    </connector>
+    <connector id="1013" kind="BusbarWire" voltage="1" layer="0" from="664" to="646">
+      <point x="573" y="1875"/>
+      <point x="573" y="1858.5"/>
+      <point x="543" y="1858.5"/>
+      <point x="543" y="1842"/>
+    </connector>
+    <connector id="1014" kind="BusbarWire" voltage="1" layer="0" from="663" to="643">
+      <point x="755" y="1922"/>
+      <point x="755" y="1882"/>
+      <point x="723" y="1882"/>
+      <point x="723" y="1842"/>
+    </connector>
+    <connector id="1015" kind="BusbarWire" voltage="1" layer="0" from="657" to="663">
+      <point x="752" y="1955"/>
+      <point x="752" y="1938.5"/>
+      <point x="755" y="1938.5"/>
+      <point x="755" y="1922"/>
+    </connector>
+    <connector id="1016" kind="BusbarWire" voltage="1" layer="0" from="672" to="671">
+      <point x="1883" y="1925"/>
+      <point x="1883" y="1915"/>
+    </connector>
+    <connector id="1017" kind="BusbarWire" voltage="1" layer="0" from="674" to="673">
+      <point x="1882" y="1995"/>
+      <point x="1882" y="1970"/>
+      <point x="1883" y="1970"/>
+      <point x="1883" y="1945"/>
+    </connector>
+    <connector id="1018" kind="BusbarWire" voltage="1" layer="0" from="678" to="677">
+      <point x="1813" y="1935"/>
+      <point x="1813" y="1915"/>
+    </connector>
+    <connector id="1019" kind="BusbarWire" voltage="1" layer="0" from="680" to="679">
+      <point x="1812" y="1985"/>
+      <point x="1812" y="1970"/>
+      <point x="1813" y="1970"/>
+      <point x="1813" y="1955"/>
+    </connector>
+    <connector id="1020" kind="BusbarWire" voltage="1" layer="0" from="669" to="675">
+      <point x="1992" y="1975"/>
+      <point x="1992" y="1958.5"/>
+      <point x="1995" y="1958.5"/>
+      <point x="1995" y="1942"/>
+    </connector>
+    <connector id="1021" kind="BusbarWire" voltage="1" layer="0" from="676" to="655">
+      <point x="1813" y="1895"/>
+      <point x="1813" y="1873.5"/>
+      <point x="1773" y="1873.5"/>
+      <point x="1773" y="1852"/>
+    </connector>
+    <connector id="1022" kind="BusbarWire" voltage="1" layer="0" from="670" to="653">
+      <point x="1883" y="1895"/>
+      <point x="1883" y="1873.5"/>
+      <point x="1903" y="1873.5"/>
+      <point x="1903" y="1852"/>
+    </connector>
+    <connector id="1023" kind="BusbarWire" voltage="1" layer="0" from="675" to="652">
+      <point x="1995" y="1942"/>
+      <point x="1995" y="1897"/>
+      <point x="1943" y="1897"/>
+      <point x="1943" y="1852"/>
+    </connector>
+    <connector id="1024" kind="BusbarWire" voltage="1" layer="0" from="750" to="681">
+      <point x="882" y="1767"/>
+      <point x="882" y="1714"/>
+    </connector>
+    <connector id="1025" kind="BusbarWire" voltage="1" layer="0" from="751" to="682">
+      <point x="932" y="1907"/>
+      <point x="932" y="1714"/>
+    </connector>
+    <connector id="1026" kind="BusbarWire" voltage="1" layer="0" from="749" to="683">
+      <point x="1370" y="1912"/>
+      <point x="1370" y="1808"/>
+      <point x="1382" y="1808"/>
+      <point x="1382" y="1704"/>
+    </connector>
+    <connector id="1027" kind="BusbarWire" voltage="1" layer="0" from="752" to="684">
+      <point x="1452" y="1767"/>
+      <point x="1452" y="1704"/>
+    </connector>
+    <connector id="1028" kind="BusbarWire" voltage="1" layer="0" from="685" to="511">
+      <point x="1849" y="1504"/>
+      <point x="1849" y="1500"/>
+      <point x="1881" y="1500"/>
+      <point x="1881" y="1496"/>
+    </connector>
+    <connector id="1029" kind="BusbarWire" voltage="1" layer="0" from="687" to="686">
+      <point x="1853" y="1568"/>
+      <point x="1853" y="1546"/>
+      <point x="1849" y="1546"/>
+      <point x="1849" y="1524"/>
+    </connector>
+    <connector id="1030" kind="BusbarWire" voltage="1" layer="0" from="689" to="688">
+      <point x="1853" y="1628"/>
+      <point x="1853" y="1608"/>
+    </connector>
+    <connector id="1031" kind="BusbarWire" voltage="1" layer="0" from="691" to="690">
+      <point x="1852" y="1675"/>
+      <point x="1852" y="1671.5"/>
+      <point x="1853" y="1671.5"/>
+      <point x="1853" y="1668"/>
+    </connector>
+    <connector id="1032" kind="BusbarWire" voltage="1" layer="0" from="519" to="488">
+      <point x="1721" y="1486"/>
+      <point x="1721" y="1266"/>
+    </connector>
+    <connector id="1033" kind="BusbarWire" voltage="1" layer="0" from="516" to="488">
+      <point x="1681" y="1376"/>
+      <point x="1701" y="1376"/>
+      <point x="1701" y="1266"/>
+      <point x="1721" y="1266"/>
+    </connector>
+    <connector id="1034" kind="BusbarWire" voltage="1" layer="0" from="692" to="687">
+      <point x="1832" y="1534"/>
+      <point x="1842.5" y="1534"/>
+      <point x="1842.5" y="1568"/>
+      <point x="1853" y="1568"/>
+    </connector>
+    <connector id="1035" kind="BusbarWire" voltage="1" layer="0" from="520" to="693">
+      <point x="1721" y="1506"/>
+      <point x="1721" y="1549"/>
+      <point x="1752" y="1549"/>
+      <point x="1752" y="1592"/>
+    </connector>
+    <connector id="1036" kind="BusbarWire" voltage="1" layer="0" from="695" to="519">
+      <point x="1691" y="1496"/>
+      <point x="1691" y="1491"/>
+      <point x="1721" y="1491"/>
+      <point x="1721" y="1486"/>
+    </connector>
+    <connector id="1037" kind="BusbarWire" voltage="1" layer="0" from="697" to="696">
+      <point x="1693" y="1558"/>
+      <point x="1693" y="1537"/>
+      <point x="1691" y="1537"/>
+      <point x="1691" y="1516"/>
+    </connector>
+    <connector id="1038" kind="BusbarWire" voltage="1" layer="0" from="699" to="698">
+      <point x="1693" y="1618"/>
+      <point x="1693" y="1598"/>
+    </connector>
+    <connector id="1039" kind="BusbarWire" voltage="1" layer="0" from="701" to="700">
+      <point x="1692" y="1675"/>
+      <point x="1692" y="1666.5"/>
+      <point x="1693" y="1666.5"/>
+      <point x="1693" y="1658"/>
+    </connector>
+    <connector id="1040" kind="BusbarWire" voltage="1" layer="0" from="702" to="696">
+      <point x="1652" y="1534"/>
+      <point x="1671.5" y="1534"/>
+      <point x="1671.5" y="1516"/>
+      <point x="1691" y="1516"/>
+    </connector>
+    <connector id="1041" kind="BusbarWire" layer="0" from="740" to="746">
+      <point x="1072" y="1820"/>
+      <point x="1282" y="1820"/>
+    </connector>
+    <connector id="1042" kind="BusbarWire" layer="0" from="742" to="748">
+      <point x="1072" y="1872"/>
+      <point x="1282" y="1872"/>
+    </connector>
+    <connector id="1043" kind="BusbarWire" voltage="1" layer="0" from="703" to="742">
+      <point x="1182" y="1885"/>
+      <point x="1182" y="1878.5"/>
+      <point x="1072" y="1878.5"/>
+      <point x="1072" y="1872"/>
+    </connector>
+    <connector id="1044" kind="BusbarWire" voltage="1" layer="0" from="704" to="309">
+      <point x="592" y="472"/>
+      <point x="616.5" y="472"/>
+      <point x="616.5" y="476"/>
+      <point x="641" y="476"/>
+    </connector>
+    <connector id="1045" kind="BusbarWire" voltage="1" layer="0" from="705" to="307">
+      <point x="572" y="472"/>
+      <point x="552" y="472"/>
+      <point x="552" y="524"/>
+      <point x="532" y="524"/>
+    </connector>
+    <connector id="1046" kind="BusbarWire" voltage="1" layer="0" from="308" to="704">
+      <point x="612" y="524"/>
+      <point x="612" y="498"/>
+      <point x="592" y="498"/>
+      <point x="592" y="472"/>
+    </connector>
+    <connector id="1047" kind="BusbarWire" voltage="1" layer="0" from="341" to="706">
+      <point x="1832" y="514"/>
+      <point x="1832" y="493"/>
+      <point x="1802" y="493"/>
+      <point x="1802" y="472"/>
+    </connector>
+    <connector id="1048" kind="BusbarWire" voltage="1" layer="0" from="342" to="707">
+      <point x="1762" y="514"/>
+      <point x="1762" y="493"/>
+      <point x="1782" y="493"/>
+      <point x="1782" y="472"/>
+    </connector>
+    <connector id="1049" kind="BusbarWire" voltage="1" layer="0" from="387" to="337">
+      <point x="1962" y="582"/>
+      <point x="1962" y="563"/>
+      <point x="1959" y="563"/>
+      <point x="1959" y="544"/>
+    </connector>
+    <connector id="1050" kind="BusbarWire" voltage="1" layer="0" from="709" to="347">
+      <point x="1632" y="562"/>
+      <point x="1632" y="543"/>
+      <point x="1629" y="543"/>
+      <point x="1629" y="524"/>
+    </connector>
+    <connector id="1051" kind="BusbarWire" voltage="1" layer="0" from="708" to="385">
+      <point x="1632" y="582"/>
+      <point x="1632" y="594"/>
+      <point x="1631" y="594"/>
+      <point x="1631" y="606"/>
+    </connector>
+    <connector id="1052" kind="BusbarWire" voltage="1" layer="0" from="389" to="387">
+      <point x="1912" y="564"/>
+      <point x="1937" y="564"/>
+      <point x="1937" y="582"/>
+      <point x="1962" y="582"/>
+    </connector>
+    <connector id="1053" kind="BusbarWire" voltage="1" layer="0" from="351" to="375">
+      <point x="1490" y="622"/>
+      <point x="1490" y="602"/>
+      <point x="1492" y="602"/>
+      <point x="1492" y="582"/>
+    </connector>
+    <connector id="1054" kind="BusbarWire" voltage="1" layer="0" from="753" to="445">
+      <point x="262" y="972"/>
+      <point x="262" y="844"/>
+    </connector>
+    <connector id="1055" kind="BusbarWire" voltage="1" layer="0" from="754" to="446">
+      <point x="210" y="1012"/>
+      <point x="210" y="933"/>
+      <point x="202" y="933"/>
+      <point x="202" y="854"/>
+    </connector>
+  </connectors>
+  <labels>
+    <label id="1056" layer="0" x="1330" y="212" size="11" anchor="middle" color="#185FA5" valign="middle">Pole 1 500MW</label>
+    <label id="1057" layer="0" x="990" y="292" size="11" anchor="middle" color="#185FA5" valign="middle">CWT-11</label>
+    <label id="1058" layer="0" x="790" y="392" size="11" anchor="middle" color="#185FA5" valign="middle">PLC FILTER</label>
+    <label id="1059" layer="0" x="1680" y="292" size="11" anchor="middle" color="#185FA5" valign="middle">CWT 31</label>
+    <label id="1060" layer="0" x="1850" y="452" size="11" anchor="middle" color="#185FA5" valign="middle">PLC FILTER</label>
+    <label id="1061" layer="0" x="1160" y="412" size="11" anchor="middle" color="#185FA5" valign="middle">Q32</label>
+    <label id="1062" layer="0" x="1450" y="428" size="11" anchor="middle" color="#185FA5" valign="middle">Q33</label>
+    <label id="1063" layer="0" x="1210" y="432" size="11" anchor="middle" color="#185FA5" valign="middle">Q31</label>
+    <label id="1064" layer="0" x="1500" y="428" size="11" anchor="middle" color="#185FA5" valign="middle">Q34</label>
+    <label id="1065" layer="0" x="330" y="342" size="11" anchor="middle" color="#185FA5" valign="middle">Q38</label>
+    <label id="1066" layer="0" x="390" y="392" size="11" anchor="middle" color="#185FA5" valign="middle">Q28</label>
+    <label id="1067" layer="0" x="1930" y="348" size="11" anchor="middle" color="#185FA5" valign="middle">Q38</label>
+    <label id="1068" layer="0" x="1990" y="422" size="11" anchor="middle" color="#185FA5" valign="middle">Q52</label>
+    <label id="1069" layer="0" x="1910" y="462" size="11" anchor="middle" color="#185FA5" valign="middle">Q22</label>
+    <label id="1070" layer="0" x="1620" y="412" size="11" anchor="middle" color="#185FA5" valign="middle">Q50</label>
+    <label id="1071" layer="0" x="1720" y="462" size="11" anchor="middle" color="#185FA5" valign="middle">Q23</label>
+    <label id="1072" layer="0" x="1980" y="522" size="11" anchor="middle" color="#185FA5" valign="middle">Q21</label>
+    <label id="1073" layer="0" x="1690" y="552" size="11" anchor="middle" color="#185FA5" valign="middle">Q40</label>
+    <label id="1074" layer="0" x="1770" y="552" size="11" anchor="middle" color="#185FA5" valign="middle">Q33</label>
+    <label id="1075" layer="0" x="1840" y="552" size="11" anchor="middle" color="#185FA5" valign="middle">Q32</label>
+    <label id="1076" layer="0" x="1930" y="542" size="11" anchor="middle" color="#185FA5" valign="middle">Q39</label>
+    <label id="1077" layer="0" x="1650" y="502" size="11" anchor="middle" color="#185FA5" valign="middle">Q24</label>
+    <label id="1078" layer="0" x="1510" y="502" size="11" anchor="middle" color="#185FA5" valign="middle">Q20</label>
+    <label id="1079" layer="0" x="1670" y="572" size="11" anchor="middle" color="#185FA5" valign="middle">Q52</label>
+    <label id="1080" layer="0" x="1600" y="522" size="11" anchor="middle" color="#185FA5" valign="middle">Q34</label>
+    <label id="1081" layer="0" x="1540" y="508" size="11" anchor="middle" color="#185FA5" valign="middle">Q30</label>
+    <label id="1082" layer="0" x="1410" y="502" size="11" anchor="middle" color="#185FA5" valign="middle">Q20</label>
+    <label id="1083" layer="0" x="1440" y="508" size="11" anchor="middle" color="#185FA5" valign="middle">Q30</label>
+    <label id="1084" layer="0" x="1550" y="628" size="11" anchor="middle" color="#185FA5" valign="middle">Q31</label>
+    <label id="1085" layer="0" x="1260" y="492" size="11" anchor="middle" color="#185FA5" valign="middle">Q20</label>
+    <label id="1086" layer="0" x="1340" y="502" size="11" anchor="middle" color="#185FA5" valign="middle">Q20</label>
+    <label id="1087" layer="0" x="1440" y="562" size="11" anchor="middle" color="#185FA5" valign="middle">Q50</label>
+    <label id="1088" layer="0" x="1350" y="568" size="11" anchor="middle" color="#185FA5" valign="middle">Q50</label>
+    <label id="1089" layer="0" x="1480" y="562" size="11" anchor="middle" color="#185FA5" valign="middle">Q50</label>
+    <label id="1090" layer="0" x="1360" y="628" size="11" anchor="middle" color="#185FA5" valign="middle">Q31</label>
+    <label id="1091" layer="0" x="1360" y="528" size="11" anchor="middle" color="#185FA5" valign="middle">Q30</label>
+    <label id="1092" layer="0" x="1280" y="518" size="11" anchor="middle" color="#185FA5" valign="middle">Q30</label>
+    <label id="1093" layer="0" x="1270" y="648" size="11" anchor="middle" color="#185FA5" valign="middle">Q31</label>
+    <label id="1094" layer="0" x="1290" y="582" size="11" anchor="middle" color="#185FA5" valign="middle">Q50</label>
+    <label id="1095" layer="0" x="1810" y="592" size="11" anchor="middle" color="#185FA5" valign="middle">CWD-30</label>
+    <label id="1096" layer="0" x="1130" y="552" size="11" anchor="middle" color="#185FA5" valign="middle">CWE-62</label>
+    <label id="1097" layer="0" x="1130" y="508" size="11" anchor="middle" color="#185FA5" valign="middle">Q37</label>
+    <label id="1098" layer="0" x="1150" y="458" size="11" anchor="middle" color="#185FA5" valign="middle">Q27</label>
+    <label id="1099" layer="0" x="1070" y="458" size="11" anchor="middle" color="#185FA5" valign="middle">Q26</label>
+    <label id="1100" layer="0" x="1115" y="442" size="11" anchor="middle" color="#185FA5" valign="middle">AC BYPASS</label>
+    <label id="1101" layer="0" x="1195" y="848" size="11" anchor="middle" color="#185FA5" valign="middle">CWC-33</label>
+    <label id="1102" layer="0" x="1335" y="858" size="11" anchor="middle" color="#185FA5" valign="middle">CWC-34</label>
+    <label id="1103" layer="0" x="1405" y="858" size="11" anchor="middle" color="#185FA5" valign="middle">CWC-35</label>
+    <label id="1104" layer="0" x="1485" y="858" size="11" anchor="middle" color="#185FA5" valign="middle">CWC-36</label>
+    <label id="1105" layer="0" x="1410" y="878" size="11" anchor="middle" color="#185FA5" valign="middle">3 X 106 MVR</label>
+    <label id="1106" layer="0" x="1410" y="907" size="11" anchor="middle" color="#185FA5" valign="middle">D-TYPE FILTER</label>
+    <label id="1107" layer="0" x="1440" y="927" size="11" anchor="middle" color="#185FA5" valign="middle">12th and 14th HARMONIC</label>
+    <label id="1108" layer="0" x="1610" y="582" size="11" anchor="middle" color="#185FA5" valign="middle">Q35</label>
+    <label id="1109" layer="0" x="1660" y="632" size="11" anchor="middle" color="#185FA5" valign="middle">Q25</label>
+    <label id="1110" layer="0" x="1920" y="578" size="11" anchor="middle" color="#185FA5" valign="middle">Q31</label>
+    <label id="1111" layer="0" x="2010" y="592" size="11" anchor="middle" color="#185FA5" valign="middle">Q51</label>
+    <label id="1112" layer="0" x="1910" y="642" size="11" anchor="middle" color="#185FA5" valign="middle">Q30</label>
+    <label id="1113" layer="0" x="2010" y="702" size="11" anchor="middle" color="#185FA5" valign="middle">Q20</label>
+    <label id="1114" layer="0" x="1910" y="752" size="11" anchor="middle" color="#185FA5" valign="middle">Q41</label>
+    <label id="1115" layer="0" x="1820" y="822" size="11" anchor="middle" color="#185FA5" valign="middle">CVT</label>
+    <label id="1116" layer="0" x="2105" y="827" size="11" anchor="middle" color="#185FA5" valign="middle">SOUTH</label>
+    <label id="1117" layer="0" x="2080" y="952" size="11" anchor="middle" color="#185FA5" valign="middle">SOUTH BUS 1</label>
+    <label id="1118" layer="0" x="1260" y="872" size="11" anchor="middle" color="#185FA5" valign="middle">106 MVR</label>
+    <label id="1119" layer="0" x="1240" y="892" size="11" anchor="middle" color="#185FA5" valign="middle">C-TYPE FILTER</label>
+    <label id="1120" layer="0" x="1250" y="927" size="11" anchor="middle" color="#185FA5" valign="middle">3rd HARMONIC</label>
+    <label id="1121" layer="0" x="520" y="462" size="11" anchor="middle" color="#185FA5" valign="middle">Q22</label>
+    <label id="1122" layer="0" x="670" y="462" size="11" anchor="middle" color="#185FA5" valign="middle">Q23</label>
+    <label id="1123" layer="0" x="410" y="522" size="11" anchor="middle" color="#185FA5" valign="middle">Q21</label>
+    <label id="1124" layer="0" x="470" y="582" size="11" anchor="middle" color="#185FA5" valign="middle">Q39</label>
+    <label id="1125" layer="0" x="570" y="562" size="11" anchor="middle" color="#185FA5" valign="middle">Q32</label>
+    <label id="1126" layer="0" x="660" y="532" size="11" anchor="middle" color="#185FA5" valign="middle">Q33</label>
+    <label id="1127" layer="0" x="670" y="578" size="11" anchor="middle" color="#185FA5" valign="middle">Q40</label>
+    <label id="1128" layer="0" x="1040" y="532" size="11" anchor="middle" color="#185FA5" valign="middle">Q20</label>
+    <label id="1129" layer="0" x="1040" y="602" size="11" anchor="middle" color="#185FA5" valign="middle">Q50</label>
+    <label id="1130" layer="0" x="1060" y="572" size="11" anchor="middle" color="#185FA5" valign="middle">Q30</label>
+    <label id="1131" layer="0" x="1060" y="622" size="11" anchor="middle" color="#185FA5" valign="middle">Q31</label>
+    <label id="1132" layer="0" x="940" y="522" size="11" anchor="middle" color="#185FA5" valign="middle">Q20</label>
+    <label id="1133" layer="0" x="950" y="602" size="11" anchor="middle" color="#185FA5" valign="middle">Q50</label>
+    <label id="1134" layer="0" x="970" y="562" size="11" anchor="middle" color="#185FA5" valign="middle">Q30</label>
+    <label id="1135" layer="0" x="970" y="642" size="11" anchor="middle" color="#185FA5" valign="middle">Q31</label>
+    <label id="1136" layer="0" x="860" y="502" size="11" anchor="middle" color="#185FA5" valign="middle">Q20</label>
+    <label id="1137" layer="0" x="810" y="502" size="11" anchor="middle" color="#185FA5" valign="middle">Q20</label>
+    <label id="1138" layer="0" x="890" y="522" size="11" anchor="middle" color="#185FA5" valign="middle">Q30</label>
+    <label id="1139" layer="0" x="790" y="642" size="11" anchor="middle" color="#185FA5" valign="middle">Q31</label>
+    <label id="1140" layer="0" x="850" y="568" size="11" anchor="middle" color="#185FA5" valign="middle">Q50</label>
+    <label id="1141" layer="0" x="810" y="542" size="11" anchor="middle" color="#185FA5" valign="middle">Q30</label>
+    <label id="1142" layer="0" x="860" y="628" size="11" anchor="middle" color="#185FA5" valign="middle">Q31</label>
+    <label id="1143" layer="0" x="790" y="588" size="11" anchor="middle" color="#185FA5" valign="middle">Q50</label>
+    <label id="1144" layer="0" x="735" y="858" size="11" anchor="middle" color="#185FA5" valign="middle">CWC-13</label>
+    <label id="1145" layer="0" x="850" y="892" size="11" anchor="middle" color="#185FA5" valign="middle">CWC-14</label>
+    <label id="1146" layer="0" x="930" y="882" size="11" anchor="middle" color="#185FA5" valign="middle">CWC-15</label>
+    <label id="1147" layer="0" x="1030" y="892" size="11" anchor="middle" color="#185FA5" valign="middle">CWC-16</label>
+    <label id="1148" layer="0" x="770" y="892" size="11" anchor="middle" color="#185FA5" valign="middle">106 MVR</label>
+    <label id="1149" layer="0" x="750" y="912" size="11" anchor="middle" color="#185FA5" valign="middle">C-TYPE FILTER</label>
+    <label id="1150" layer="0" x="770" y="947" size="11" anchor="middle" color="#185FA5" valign="middle">3rd HARMONIC</label>
+    <label id="1151" layer="0" x="920" y="908" size="11" anchor="middle" color="#185FA5" valign="middle">3 X 106 MVR</label>
+    <label id="1152" layer="0" x="930" y="937" size="11" anchor="middle" color="#185FA5" valign="middle">D-TYPE FILTER</label>
+    <label id="1153" layer="0" x="950" y="957" size="11" anchor="middle" color="#185FA5" valign="middle">12th and 14th HARMONIC</label>
+    <label id="1154" layer="0" x="720" y="528" size="11" anchor="middle" color="#185FA5" valign="middle">Q24</label>
+    <label id="1155" layer="0" x="730" y="572" size="11" anchor="middle" color="#185FA5" valign="middle">Q34</label>
+    <label id="1156" layer="0" x="740" y="648" size="11" anchor="middle" color="#185FA5" valign="middle">Q35</label>
+    <label id="1157" layer="0" x="730" y="618" size="11" anchor="middle" color="#185FA5" valign="middle">Q52</label>
+    <label id="1158" layer="0" x="350" y="782" size="11" anchor="middle" color="#185FA5" valign="middle">Q41</label>
+    <label id="1159" layer="0" x="410" y="742" size="11" anchor="middle" color="#185FA5" valign="middle">Q20</label>
+    <label id="1160" layer="0" x="350" y="672" size="11" anchor="middle" color="#185FA5" valign="middle">Q30</label>
+    <label id="1161" layer="0" x="340" y="612" size="11" anchor="middle" color="#185FA5" valign="middle">Q51</label>
+    <label id="1162" layer="0" x="360" y="552" size="11" anchor="middle" color="#185FA5" valign="middle">Q31</label>
+    <label id="1163" layer="0" x="290" y="752" size="11" anchor="middle" color="#185FA5" valign="middle">389L</label>
+    <label id="1164" layer="0" x="2160" y="1092" size="11" anchor="middle" color="#185FA5" valign="middle">Q25</label>
+    <label id="1165" layer="0" x="2070" y="1038" size="11" anchor="middle" color="#185FA5" valign="middle">Q42</label>
+    <label id="1166" layer="0" x="2070" y="1108" size="11" anchor="middle" color="#185FA5" valign="middle">Q34</label>
+    <label id="1167" layer="0" x="1930" y="1108" size="11" anchor="middle" color="#185FA5" valign="middle">Q30</label>
+    <label id="1168" layer="0" x="2000" y="1108" size="11" anchor="middle" color="#185FA5" valign="middle">CVT</label>
+    <label id="1169" layer="0" x="1940" y="1202" size="11" anchor="middle" color="#185FA5" valign="middle">Q31</label>
+    <label id="1170" layer="0" x="1910" y="1168" size="11" anchor="middle" color="#185FA5" valign="middle">Q51</label>
+    <label id="1171" layer="0" x="2140" y="1158" size="11" anchor="middle" color="#185FA5" valign="middle">Q52</label>
+    <label id="1172" layer="0" x="2020" y="1152" size="11" anchor="middle" color="#185FA5" valign="middle">CWD-40</label>
+    <label id="1173" layer="0" x="1870" y="1102" size="11" anchor="middle" color="#185FA5" valign="middle">Q20</label>
+    <label id="1174" layer="0" x="1870" y="1242" size="11" anchor="middle" color="#185FA5" valign="middle">Q21</label>
+    <label id="1175" layer="0" x="1850" y="1282" size="11" anchor="middle" color="#185FA5" valign="middle">Q25</label>
+    <label id="1176" layer="0" x="1770" y="1252" size="11" anchor="middle" color="#185FA5" valign="middle">Q24</label>
+    <label id="1177" layer="0" x="1680" y="1098" size="11" anchor="middle" color="#185FA5" valign="middle">Q35</label>
+    <label id="1178" layer="0" x="1710" y="1232" size="11" anchor="middle" color="#185FA5" valign="middle">Q34</label>
+    <label id="1179" layer="0" x="1690" y="1168" size="11" anchor="middle" color="#185FA5" valign="middle">Q52</label>
+    <label id="1180" layer="0" x="1590" y="1102" size="11" anchor="middle" color="#185FA5" valign="middle">Q30</label>
+    <label id="1181" layer="0" x="1560" y="1158" size="11" anchor="middle" color="#185FA5" valign="middle">Q51</label>
+    <label id="1182" layer="0" x="1630" y="1172" size="11" anchor="middle" color="#185FA5" valign="middle">CWD-50</label>
+    <label id="1183" layer="0" x="2160" y="1232" size="11" anchor="middle" color="#185FA5" valign="middle">Q24</label>
+    <label id="1184" layer="0" x="1940" y="1342" size="11" anchor="middle" color="#185FA5" valign="middle">Q22</label>
+    <label id="1185" layer="0" x="2010" y="1332" size="11" anchor="middle" color="#185FA5" valign="middle">Q50</label>
+    <label id="1186" layer="0" x="1970" y="1442" size="11" anchor="middle" color="#185FA5" valign="middle">Q32</label>
+    <label id="1187" layer="0" x="2030" y="1448" size="11" anchor="middle" color="#185FA5" valign="middle">Q33</label>
+    <label id="1188" layer="0" x="2080" y="1452" size="11" anchor="middle" color="#185FA5" valign="middle">Q40</label>
+    <label id="1189" layer="0" x="1480" y="1362" size="11" anchor="middle" color="#185FA5" valign="middle">Q20</label>
+    <label id="1190" layer="0" x="1460" y="1302" size="11" anchor="middle" color="#185FA5" valign="middle">Q50</label>
+    <label id="1191" layer="0" x="1490" y="1342" size="11" anchor="middle" color="#185FA5" valign="middle">Q30</label>
+    <label id="1192" layer="0" x="1480" y="1258" size="11" anchor="middle" color="#185FA5" valign="middle">Q31</label>
+    <label id="1193" layer="0" x="1435" y="1057" size="11" anchor="middle" color="#185FA5" valign="middle">CWC-56</label>
+    <label id="1194" layer="0" x="1360" y="1052" size="11" anchor="middle" color="#185FA5" valign="middle">CWC-55</label>
+    <label id="1195" layer="0" x="1210" y="1062" size="11" anchor="middle" color="#185FA5" valign="middle">CWC-53</label>
+    <label id="1196" layer="0" x="1275" y="1048" size="11" anchor="middle" color="#185FA5" valign="middle">CWC-54</label>
+    <label id="1197" layer="0" x="1380" y="1312" size="11" anchor="middle" color="#185FA5" valign="middle">Q50</label>
+    <label id="1198" layer="0" x="1230" y="1372" size="11" anchor="middle" color="#185FA5" valign="middle">Q20</label>
+    <label id="1199" layer="0" x="1300" y="1298" size="11" anchor="middle" color="#185FA5" valign="middle">Q50</label>
+    <label id="1200" layer="0" x="1310" y="1258" size="11" anchor="middle" color="#185FA5" valign="middle">Q31</label>
+    <label id="1201" layer="0" x="1400" y="1348" size="11" anchor="middle" color="#185FA5" valign="middle">Q30</label>
+    <label id="1202" layer="0" x="1385" y="1368" size="11" anchor="middle" color="#185FA5" valign="middle">Q20</label>
+    <label id="1203" layer="0" x="1230" y="1298" size="11" anchor="middle" color="#185FA5" valign="middle">Q50</label>
+    <label id="1204" layer="0" x="1300" y="1368" size="11" anchor="middle" color="#185FA5" valign="middle">Q20</label>
+    <label id="1205" layer="0" x="1390" y="1258" size="11" anchor="middle" color="#185FA5" valign="middle">Q31</label>
+    <label id="1206" layer="0" x="1320" y="1348" size="11" anchor="middle" color="#185FA5" valign="middle">Q30</label>
+    <label id="1207" layer="0" x="1230" y="1258" size="11" anchor="middle" color="#185FA5" valign="middle">Q31</label>
+    <label id="1208" layer="0" x="1240" y="1352" size="11" anchor="middle" color="#185FA5" valign="middle">Q30</label>
+    <label id="1209" layer="0" x="1200" y="1012" size="11" anchor="middle" color="#185FA5" valign="middle">106 MVR</label>
+    <label id="1210" layer="0" x="1190" y="1022" size="11" anchor="middle" color="#185FA5" valign="middle">C-TYPE FILTER</label>
+    <label id="1211" layer="0" x="1190" y="1047" size="11" anchor="middle" color="#185FA5" valign="middle">3rd HARMONIC</label>
+    <label id="1212" layer="0" x="1340" y="998" size="11" anchor="middle" color="#185FA5" valign="middle">3 X 106 MVR</label>
+    <label id="1213" layer="0" x="1350" y="1017" size="11" anchor="middle" color="#185FA5" valign="middle">D-TYPE FILTER</label>
+    <label id="1214" layer="0" x="1370" y="1037" size="11" anchor="middle" color="#185FA5" valign="middle">12th and 14th HARMONIC</label>
+    <label id="1215" layer="0" x="200" y="798" size="11" anchor="middle" color="#185FA5" valign="middle">489L</label>
+    <label id="1216" layer="0" x="140" y="738" size="11" anchor="middle" color="#185FA5" valign="middle">489L</label>
+    <label id="1217" layer="0" x="290" y="722" size="11" anchor="middle" color="#185FA5" valign="middle">389L</label>
+    <label id="1218" layer="0" x="270" y="672" size="11" anchor="middle" color="#185FA5" valign="middle">HDVC</label>
+    <label id="1219" layer="0" x="270" y="692" size="11" anchor="middle" color="#185FA5" valign="middle">FDR-1</label>
+    <label id="1220" layer="0" x="200" y="672" size="11" anchor="middle" color="#185FA5" valign="middle">HDVC</label>
+    <label id="1221" layer="0" x="200" y="692" size="11" anchor="middle" color="#185FA5" valign="middle">FDR-2</label>
+    <label id="1222" layer="0" x="220" y="642" size="11" anchor="middle" color="#185FA5" valign="middle">FROM 400KV  BHADRAWATI AC S/S</label>
+    <label id="1223" layer="0" x="110" y="932" size="11" anchor="middle" color="#185FA5" valign="middle">WEST</label>
+    <label id="1224" layer="0" x="130" y="972" size="11" anchor="middle" color="#185FA5" valign="middle">WEST BUS 1</label>
+    <label id="1225" layer="0" x="80" y="1022" size="11" anchor="middle" color="#185FA5" valign="middle">WEST BUS-2</label>
+    <label id="1226" layer="0" x="260" y="1062" size="11" anchor="middle" color="#185FA5" valign="middle">Q42</label>
+    <label id="1227" layer="0" x="260" y="1162" size="11" anchor="middle" color="#185FA5" valign="middle">Q35</label>
+    <label id="1228" layer="0" x="260" y="1252" size="11" anchor="middle" color="#185FA5" valign="middle">Q34</label>
+    <label id="1229" layer="0" x="360" y="1092" size="11" anchor="middle" color="#185FA5" valign="middle">Q25</label>
+    <label id="1230" layer="0" x="360" y="1272" size="11" anchor="middle" color="#185FA5" valign="middle">Q24</label>
+    <label id="1231" layer="0" x="360" y="1192" size="11" anchor="middle" color="#185FA5" valign="middle">Q52</label>
+    <label id="1232" layer="0" x="440" y="1332" size="11" anchor="middle" color="#185FA5" valign="middle">Q23</label>
+    <label id="1233" layer="0" x="590" y="1342" size="11" anchor="middle" color="#185FA5" valign="middle">Q24</label>
+    <label id="1234" layer="0" x="660" y="1042" size="11" anchor="middle" color="#185FA5" valign="middle">Q41</label>
+    <label id="1235" layer="0" x="640" y="1122" size="11" anchor="middle" color="#185FA5" valign="middle">Q30</label>
+    <label id="1236" layer="0" x="660" y="1212" size="11" anchor="middle" color="#185FA5" valign="middle">Q31</label>
+    <label id="1237" layer="0" x="660" y="1192" size="11" anchor="middle" color="#185FA5" valign="middle">Q51</label>
+    <label id="1238" layer="0" x="705" y="1082" size="11" anchor="middle" color="#185FA5" valign="middle">Q20</label>
+    <label id="1239" layer="0" x="720" y="1292" size="11" anchor="middle" color="#185FA5" valign="middle">Q21</label>
+    <label id="1240" layer="0" x="510" y="1172" size="11" anchor="middle" color="#185FA5" valign="middle">CWD-20</label>
+    <label id="1241" layer="0" x="370" y="1452" size="11" anchor="middle" color="#185FA5" valign="middle">Q40</label>
+    <label id="1242" layer="0" x="445" y="1462" size="11" anchor="middle" color="#185FA5" valign="middle">Q33</label>
+    <label id="1243" layer="0" x="520" y="1462" size="11" anchor="middle" color="#185FA5" valign="middle">Q32</label>
+    <label id="1244" layer="0" x="590" y="1458" size="11" anchor="middle" color="#185FA5" valign="middle">Q39</label>
+    <label id="1245" layer="0" x="480" y="1332" size="11" anchor="middle" color="#185FA5" valign="middle">Q50</label>
+    <label id="1246" layer="0" x="1000" y="1232" size="11" anchor="middle" color="#185FA5" valign="middle">Q31</label>
+    <label id="1247" layer="0" x="1000" y="1292" size="11" anchor="middle" color="#185FA5" valign="middle">Q30</label>
+    <label id="1248" layer="0" x="960" y="1342" size="11" anchor="middle" color="#185FA5" valign="middle">Q20</label>
+    <label id="1249" layer="0" x="960" y="1268" size="11" anchor="middle" color="#185FA5" valign="middle">Q50</label>
+    <label id="1250" layer="0" x="910" y="1228" size="11" anchor="middle" color="#185FA5" valign="middle">Q31</label>
+    <label id="1251" layer="0" x="910" y="1318" size="11" anchor="middle" color="#185FA5" valign="middle">Q30</label>
+    <label id="1252" layer="0" x="900" y="1338" size="11" anchor="middle" color="#185FA5" valign="middle">Q20</label>
+    <label id="1253" layer="0" x="900" y="1272" size="11" anchor="middle" color="#185FA5" valign="middle">Q50</label>
+    <label id="1254" layer="0" x="860" y="1292" size="11" anchor="middle" color="#185FA5" valign="middle">Label</label>
+    <label id="1255" layer="0" x="840" y="1338" size="11" anchor="middle" color="#185FA5" valign="middle">Q20</label>
+    <label id="1256" layer="0" x="850" y="1228" size="11" anchor="middle" color="#185FA5" valign="middle">Q31</label>
+    <label id="1257" layer="0" x="840" y="1268" size="11" anchor="middle" color="#185FA5" valign="middle">Q50</label>
+    <label id="1258" layer="0" x="780" y="1272" size="11" anchor="middle" color="#185FA5" valign="middle">Q50</label>
+    <label id="1259" layer="0" x="780" y="1228" size="11" anchor="middle" color="#185FA5" valign="middle">Q31</label>
+    <label id="1260" layer="0" x="780" y="1322" size="11" anchor="middle" color="#185FA5" valign="middle">Q30</label>
+    <label id="1261" layer="0" x="780" y="1338" size="11" anchor="middle" color="#185FA5" valign="middle">Q20</label>
+    <label id="1262" layer="0" x="735" y="1058" size="11" anchor="middle" color="#185FA5" valign="middle">CWC-23</label>
+    <label id="1263" layer="0" x="805" y="1048" size="11" anchor="middle" color="#185FA5" valign="middle">CWC-24</label>
+    <label id="1264" layer="0" x="875" y="1052" size="11" anchor="middle" color="#185FA5" valign="middle">CWC-25</label>
+    <label id="1265" layer="0" x="960" y="1052" size="11" anchor="middle" color="#185FA5" valign="middle">CWC-26</label>
+    <label id="1266" layer="0" x="760" y="1012" size="11" anchor="middle" color="#185FA5" valign="middle">106 MVR</label>
+    <label id="1267" layer="0" x="740" y="1032" size="11" anchor="middle" color="#185FA5" valign="middle">C-TYPE FILTER</label>
+    <label id="1268" layer="0" x="760" y="1027" size="11" anchor="middle" color="#185FA5" valign="middle">3rd HARMONIC</label>
+    <label id="1269" layer="0" x="860" y="1018" size="11" anchor="middle" color="#185FA5" valign="middle">3 X 106 MVR</label>
+    <label id="1270" layer="0" x="940" y="1027" size="11" anchor="middle" color="#185FA5" valign="middle">D-TYPE FILTER</label>
+    <label id="1271" layer="0" x="920" y="1037" size="11" anchor="middle" color="#185FA5" valign="middle">12th and 14th HARMONIC</label>
+    <label id="1272" layer="0" x="240" y="1728" size="11" anchor="middle" color="#185FA5" valign="middle">Q38</label>
+    <label id="1273" layer="0" x="360" y="1642" size="11" anchor="middle" color="#185FA5" valign="middle">Q28</label>
+    <label id="1274" layer="0" x="2180" y="1602" size="11" anchor="middle" color="#185FA5" valign="middle">Q28</label>
+    <label id="1275" layer="0" x="2050" y="1682" size="11" anchor="middle" color="#185FA5" valign="middle">Q38</label>
+    <label id="1276" layer="0" x="670" y="2022" size="11" anchor="middle" color="#185FA5" valign="middle">PLC FILTER</label>
+    <label id="1277" layer="0" x="890" y="1832" size="11" anchor="middle" color="#185FA5" valign="middle">CWT-22</label>
+    <label id="1278" layer="0" x="1910" y="2052" size="11" anchor="middle" color="#185FA5" valign="middle">PLC FILTER</label>
+    <label id="1279" layer="0" x="860" y="1712" size="11" anchor="middle" color="#185FA5" valign="middle">Q32</label>
+    <label id="1280" layer="0" x="970" y="1712" size="11" anchor="middle" color="#185FA5" valign="middle">Q31</label>
+    <label id="1281" layer="0" x="1350" y="1702" size="11" anchor="middle" color="#185FA5" valign="middle">Q33</label>
+    <label id="1282" layer="0" x="1500" y="1692" size="11" anchor="middle" color="#185FA5" valign="middle">Q34</label>
+    <label id="1283" layer="0" x="1550" y="1842" size="11" anchor="middle" color="#185FA5" valign="middle">CWT-42</label>
+    <label id="1284" layer="0" x="1650" y="1462" size="11" anchor="middle" color="#185FA5" valign="middle">Q32</label>
+    <label id="1285" layer="0" x="1590" y="1462" size="11" anchor="middle" color="#185FA5" valign="middle">Q33</label>
+    <label id="1286" layer="0" x="1540" y="1452" size="11" anchor="middle" color="#185FA5" valign="middle">Q40</label>
+    <label id="1287" layer="0" x="1670" y="1358" size="11" anchor="middle" color="#185FA5" valign="middle">Q23</label>
+    <label id="1288" layer="0" x="1620" y="1348" size="11" anchor="middle" color="#185FA5" valign="middle">Q50</label>
+    <label id="1289" layer="0" x="1580" y="1352" size="11" anchor="middle" color="#185FA5" valign="middle">Q22</label>
+    <label id="1290" layer="0" x="1550" y="1252" size="11" anchor="middle" color="#185FA5" valign="middle">Q21</label>
+    <label id="1291" layer="0" x="1500" y="1078" size="11" anchor="middle" color="#185FA5" valign="middle">Q20</label>
+    <label id="1292" layer="0" x="1590" y="1232" size="11" anchor="middle" color="#185FA5" valign="middle">Q31</label>
+    <label id="1293" layer="0" x="1710" y="1722" size="11" anchor="middle" color="#185FA5" valign="middle">CWL-52</label>
+    <label id="1294" layer="0" x="1880" y="1722" size="11" anchor="middle" color="#185FA5" valign="middle">CWL 41</label>
+    <label id="1295" layer="0" x="1760" y="1687" size="11" anchor="middle" color="#185FA5" valign="middle">RAMAGUNDAM 2</label>
+    <label id="1296" layer="0" x="1930" y="1687" size="11" anchor="middle" color="#185FA5" valign="middle">RAMAGUNDAM 1</label>
+    <label id="1297" layer="0" x="1940" y="1488" size="11" anchor="middle" color="#185FA5" valign="middle">Q39</label>
+    <label id="1298" layer="0" x="1910" y="1512" size="11" anchor="middle" color="#185FA5" valign="middle">Q26</label>
+    <label id="1299" layer="0" x="1960" y="1532" size="11" anchor="middle" color="#185FA5" valign="middle">Q36</label>
+    <label id="1300" layer="0" x="1840" y="1588" size="11" anchor="middle" color="#185FA5" valign="middle">LR</label>
+    <label id="1301" layer="0" x="1830" y="1652" size="11" anchor="middle" color="#185FA5" valign="middle">NGR</label>
+    <label id="1302" layer="0" x="1830" y="1512" size="11" anchor="middle" color="#185FA5" valign="middle">Q27</label>
+    <label id="1303" layer="0" x="1840" y="1542" size="11" anchor="middle" color="#185FA5" valign="middle">Q37</label>
+    <label id="1304" layer="0" x="1670" y="1578" size="11" anchor="middle" color="#185FA5" valign="middle">LR</label>
+    <label id="1305" layer="0" x="1670" y="1638" size="11" anchor="middle" color="#185FA5" valign="middle">NGR</label>
+    <label id="1306" layer="0" x="1780" y="1452" size="11" anchor="middle" color="#185FA5" valign="middle">Q39</label>
+    <label id="1307" layer="0" x="1760" y="1498" size="11" anchor="middle" color="#185FA5" valign="middle">Q26</label>
+    <label id="1308" layer="0" x="1760" y="1548" size="11" anchor="middle" color="#185FA5" valign="middle">Q36</label>
+    <label id="1309" layer="0" x="1660" y="1512" size="11" anchor="middle" color="#185FA5" valign="middle">Q27</label>
+    <label id="1310" layer="0" x="1200" y="1782" size="11" anchor="middle" color="#185FA5" valign="middle">POLE 2</label>
+    <label id="1311" layer="0" x="1200" y="1802" size="11" anchor="middle" color="#185FA5" valign="middle">500 MV</label>
+    <label id="1312" layer="0" x="2060" y="1002" size="11" anchor="middle" color="#185FA5" valign="middle">SOUTH BUS 2</label>
+    <label id="1313" layer="0" x="2070" y="1332" size="11" anchor="middle" color="#185FA5" valign="middle">Q23</label>
+    <label id="1314" layer="0" x="550" y="658" size="11" anchor="middle" color="#185FA5" valign="middle">CWD-10</label>
+    <label id="1315" layer="0" x="590" y="498" size="11" anchor="middle" color="#185FA5" valign="middle">Q50</label>
+    <label id="1316" layer="0" x="710" y="742" size="11" anchor="middle" color="#185FA5" valign="middle">Q25</label>
+    <label id="1317" layer="0" x="1800" y="502" size="11" anchor="middle" color="#185FA5" valign="middle">Q33</label>
+    <label id="1318" layer="0" x="2070" y="1238" size="11" anchor="middle" color="#185FA5" valign="middle">Q34</label>
+    <label id="1319" layer="0" x="1430" y="618" size="11" anchor="middle" color="#185FA5" valign="middle">Q31</label>
+    <label id="1320" layer="0" x="425" y="88" size="11" anchor="middle" color="#185FA5" valign="middle">RTU-1</label>
+    <label id="1321" layer="0" x="555" y="88" size="11" anchor="middle" color="#185FA5" valign="middle">RTU-2</label>
+    <label id="1322" layer="0" x="720" y="92" size="11" anchor="middle" color="#185FA5" valign="middle">COMMON_AUX_GENERAL</label>
+    <label id="1323" layer="0" x="920" y="92" size="11" anchor="middle" color="#185FA5" valign="middle">SYSTEM_AUX_GENERAL</label>
+    <label id="1324" layer="0" x="435" y="202" size="11" anchor="middle" color="#185FA5" valign="middle">AIRCCON</label>
+  </labels>
+</diagram>

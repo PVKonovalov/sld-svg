@@ -152,12 +152,20 @@ Example output (trimmed):
 ### Render a diagram back into SVG
 
 ```
-go run ./cmd/svg-sld render -in diagrams/substation.xsld -symbols symbols.xml -out rendered/substation.svg
+go run ./cmd/svg-sld render -in diagrams/substation.xsld -symbols base.xml -out rendered/substation.svg
 ```
 
 Whole directory:
 ```
-go run ./cmd/svg-sld render -in diagrams -symbols symbols.xml -out rendered
+go run ./cmd/svg-sld render -in diagrams -symbols base.xml -out rendered
 ```
 
-[`symbols.xml`](symbols.xml) at the repo root is the tracked symbol library — one local-coordinate SVG template per `shape` code. `render` does not aim to byte-for-byte reproduce the original SVG (unlike `svg-text inject`); it draws a fresh document from the diagram model. If an element's `shape` has no template in the library, `render` still writes everything else and reports the missing shape(s) once the document is complete, instead of stopping at the first one.
+[`base.xml`](base.xml) at the repo root is the tracked element library — a copy of sld-editor's own `backend/assets/elements/base.xml`, so `render` draws every shape exactly as the editor does: one local-coordinate SVG template per `shape` code, plus each shape's electrical `<terminals>`. Update it by copying the editor's file over it, not by editing it here. `render` does not aim to byte-for-byte reproduce the original SVG (unlike `svg-text inject`); it draws a fresh document from the diagram model. If an element's `shape` has no template in the library, `render` still writes everything else and reports the missing shape(s) once the document is complete, instead of stopping at the first one.
+
+### Importing CIM
+
+```
+go run ./cmd/svg-sld import-cim -cim cim/RTUHVDC_cim-4.xml -layout cim/RTUHVDC_sld-4.json -out diagrams/RTUHVDC.xsld
+```
+
+`import-cim` builds a `.xsld` from a CIM RDF/XML equipment export plus the React Flow layout JSON that places the same equipment (CIM carries no diagram layout of its own). Equipment, connectivity, names, switch states and base voltages come from CIM, positions from the layout; each device's ports sit on its shape's `<terminals>` from `-symbols` (default `base.xml`), and the result is repaired the way sld-editor repairs an imported diagram. CIM equipment that can't be matched to a layout node is skipped and listed, never guessed.

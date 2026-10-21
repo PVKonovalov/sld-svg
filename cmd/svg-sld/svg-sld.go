@@ -12,6 +12,8 @@ import (
 	"strings"
 
 	"github.com/PVKonovalov/slddoc"
+
+	"sld-svg/internal/cimimport"
 )
 
 // defaultStateColors preserves this tool's own previous fixed switching-device
@@ -35,6 +37,8 @@ func main() {
 		err = runExtract(os.Args[2:])
 	case "render":
 		err = runRender(os.Args[2:])
+	case "import-cim":
+		err = runImportCIM(os.Args[2:])
 	case "-h", "-help", "--help":
 		usage()
 		return
@@ -51,7 +55,8 @@ func main() {
 func usage() {
 	fmt.Fprintln(os.Stderr, `Usage:
   svg-sld extract -in <svg-file-or-dir> -out <xsld-file-or-dir> [-voltage-hints <csv>]
-  svg-sld render  -in <xsld-file-or-dir> -symbols <symbols.xml> -out <svg-file-or-dir>
+  svg-sld render  -in <xsld-file-or-dir> -symbols <base.xml> -out <svg-file-or-dir>
+  svg-sld import-cim -cim <cim.xml> -layout <reactflow.json> -out <xsld-file> [-symbols <base.xml>]
 
 A directory -in is walked recursively; the corresponding -out path mirrors
 its subdirectory structure, with the extension swapped as appropriate.
@@ -60,7 +65,13 @@ svg-sld only understands a representative subset of xsde2svg's equipment
 catalog (busbars, generic wires, junction points, breakers, disconnectors,
 ground switches, 2-winding power transformers, lamp status indicators, and
 fault passage indicators). Everything else in a source SVG is left out of
-the extracted diagram; extract reports what it skipped.`)
+the extracted diagram; extract reports what it skipped.
+
+import-cim builds a diagram from a CIM/CGMES RDF/XML equipment export (the
+equipment, its connectivity, names, switch states and base voltages) plus a
+React Flow layout JSON that places the same equipment, with ports on the
+element library's <terminals>, then repairs it as sld-editor does. CIM
+equipment that can't be matched to a layout position is skipped and listed.`)
 }
 
 func runExtract(args []string) error {
@@ -147,10 +158,78 @@ func extractOne(svgPath, outXMLPath string, hints map[string]string) error {
 	return nil
 }
 
+func runImportCIM(args []string) error {
+	fs := flag.NewFlagSet("import-cim", flag.ExitOnError)
+	cimPath := fs.String("cim", "", "CIM/CGMES RDF/XML equipment export (required)")
+	layoutPath := fs.String("layout", "", "React Flow layout JSON placing the same equipment (required)")
+	outPath := fs.String("out", "", "Output .xsld file (required)")
+	symbolsPath := fs.String("symbols", "base.xml", "Element library whose <terminals> place each device's ports")
+	fs.Parse(args)
+
+	if *cimPath == "" || *layoutPath == "" || *outPath == "" {
+		return fmt.Errorf("import-cim: -cim, -layout and -out are required")
+	}
+	libFile, err := os.Open(*symbolsPath)
+	if err != nil {
+		return err
+	}
+	terminals, err := cimimport.LoadTerminals(libFile)
+	libFile.Close()
+	if err != nil {
+		return err
+	}
+	cimFile, err := os.Open(*cimPath)
+	if err != nil {
+		return err
+	}
+	defer cimFile.Close()
+	layoutFile, err := os.Open(*layoutPath)
+	if err != nil {
+		return err
+	}
+	defer layoutFile.Close()
+
+	d, report, err := cimimport.Import(cimFile, layoutFile, terminals, filepath.Base(*cimPath))
+	if err != nil {
+		return err
+	}
+
+	if err := os.MkdirAll(filepath.Dir(*outPath), 0o755); err != nil {
+		return err
+	}
+	f, err := os.Create(*outPath)
+	if err != nil {
+		return err
+	}
+	defer f.Close()
+	if err := d.Save(f); err != nil {
+		return err
+	}
+
+	fmt.Printf("%s + %s -> %s: %d elements, %d connectors, %d nodes, %d labels\n",
+		*cimPath, *layoutPath, *outPath, report.Elements, report.Connectors, report.Nodes, report.Labels)
+	if len(report.Unsupported) > 0 {
+		fmt.Printf("  unsupported CIM classes (not drawn, wires kept): %v\n", report.Unsupported)
+	}
+	if n := len(report.Unmatched); n > 0 {
+		fmt.Printf("  %d CIM equipment skipped, no layout position found:\n", n)
+		for _, u := range report.Unmatched {
+			fmt.Printf("    %s\n", u)
+		}
+	}
+	if report.DroppedConnections > 0 {
+		fmt.Printf("  %d connections dropped (an end was skipped)\n", report.DroppedConnections)
+	}
+	if len(report.UnusedLayout) > 0 {
+		fmt.Printf("  layout nodes not imported: %v\n", report.UnusedLayout)
+	}
+	return nil
+}
+
 func runRender(args []string) error {
 	fs := flag.NewFlagSet("render", flag.ExitOnError)
 	inPath := fs.String("in", "", "Diagram .xsld file or directory to render (required)")
-	symbolsPath := fs.String("symbols", "", "Symbol library .xml file (required), see symbols.xml")
+	symbolsPath := fs.String("symbols", "", "Element library .xml file (required), see base.xml")
 	outPath := fs.String("out", "", "Output .svg file, or directory when -in is a directory (required)")
 	fs.Parse(args)
 
