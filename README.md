@@ -102,7 +102,7 @@ go run ./cmd/svg-sld extract -in examples/sld -out diagrams -voltage-hints volta
 
 `-voltage-hints` is optional; it pre-fills a diagram's `<voltageClasses>` table with the real voltage-level name (`"10кВ"`, `"6кВ"`, ...) for colors already confirmed elsewhere in the corpus — see [`voltage-hints.csv`](voltage-hints.csv) at the repo root. Without it, a class still gets extracted, just named after its own color as a placeholder to fill in by hand.
 
-The full output format is described in [`slddoc/FORMAT.md`](https://github.com/PVKonovalov/slddoc/blob/main/FORMAT.md).
+The full output format is described in [`slddoc/XSLD_FORMAT.md`](https://github.com/PVKonovalov/slddoc/blob/main/XSLD_FORMAT.md).
 
 Example output (trimmed):
 ```xml
